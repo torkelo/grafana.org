@@ -10,11 +10,11 @@
     <name>Grafana</name>
   </author>
   <entry>
-    <title>Grafana - Blog - Grafana 1.5.3 released.</title>
+    <title>Grafana 1.5.3 released.</title>
     <link rel="alternate" href="http://grafana.org/blog/2014/04/17/grafana-1-5-3-released.html"/>
     <id>http://grafana.org/blog/2014/04/17/grafana-1-5-3-released.html</id>
     <published>2014-04-17T00:00:00Z</published>
-    <updated>2014-04-17T23:03:29+02:00</updated>
+    <updated>2014-04-17T23:19:21+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -43,11 +43,11 @@ can now write async dashboard scripts that use for example a jquery ajax call to
 </content>
   </entry>
   <entry>
-    <title>Grafana - Blog New website</title>
+    <title>New website</title>
     <link rel="alternate" href="http://grafana.org/blog/2014/04/17/new-grafana-org-site.html"/>
     <id>http://grafana.org/blog/2014/04/17/new-grafana-org-site.html</id>
     <published>2014-04-17T00:00:00Z</published>
-    <updated>2014-04-17T22:04:41+02:00</updated>
+    <updated>2014-04-17T23:19:16+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
