@@ -2,29 +2,23 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Grafana Blog</title>
   <subtitle>Blog posts on Grafana, Metrics, Graphite, Monitoring, Build measure learn</subtitle>
-  <id>http://influxdb.org/blog</id>
-  <link href="http://influxdb.org/blog"/>
-  <link href="http://influxdb.org/feed.xml" rel="self"/>
+  <id>http://grafana.org/blog</id>
+  <link href="http://grafana.org/blog"/>
+  <link href="http://grafana.org/feed.xml" rel="self"/>
   <updated>2014-04-06T00:00:00Z</updated>
   <author>
     <name>Grafana</name>
   </author>
   <entry>
-    <title>Grafana is the future</title>
-    <link rel="alternate" href="http://influxdb.org/blog/2014/04/06/new-grafana-org-site.html"/>
-    <id>http://influxdb.org/blog/2014/04/06/new-grafana-org-site.html</id>
+    <title>New website</title>
+    <link rel="alternate" href="http://grafana.org/blog/2014/04/06/new-grafana-org-site.html"/>
+    <id>http://grafana.org/blog/2014/04/06/new-grafana-org-site.html</id>
     <published>2014-04-06T00:00:00Z</published>
-    <updated>2014-04-06T14:42:31+02:00</updated>
+    <updated>2014-04-17T11:58:27+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
-    <content type="html">&lt;p&gt;This is just a test&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;asd&lt;/li&gt;
-&lt;li&gt;second&lt;/li&gt;
-&lt;li&gt;third&lt;/li&gt;
-&lt;/ul&gt;
+    <content type="html">&lt;p&gt;The new website is now live! Time to finish up the v1.6 release!&lt;/p&gt;
 </content>
   </entry>
 </feed>

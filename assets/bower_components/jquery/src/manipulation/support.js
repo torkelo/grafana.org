@@ -1,0 +1,1 @@
+define(["../var/support"],function(t){return function(){var e=document.createDocumentFragment(),n=e.appendChild(document.createElement("div"));n.innerHTML="<input type='radio' checked='checked' name='t'/>",t.checkClone=n.cloneNode(!0).cloneNode(!0).lastChild.checked,n.innerHTML="<textarea>x</textarea>",t.noCloneChecked=!!n.cloneNode(!0).lastChild.defaultValue}(),t});
