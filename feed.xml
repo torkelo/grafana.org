@@ -5,15 +5,48 @@
   <id>http://grafana.org/blog</id>
   <link href="http://grafana.org/blog"/>
   <link href="http://grafana.org/feed.xml" rel="self"/>
-  <updated>2014-04-06T00:00:00Z</updated>
+  <updated>2014-04-17T00:00:00Z</updated>
   <author>
     <name>Grafana</name>
   </author>
   <entry>
+    <title>Grafana - Blog - Grafana 1.5.3 released.</title>
+    <link rel="alternate" href="http://grafana.org/blog/2014/04/17/grafana-1-5-3-released.html"/>
+    <id>http://grafana.org/blog/2014/04/17/grafana-1-5-3-released.html</id>
+    <published>2014-04-17T00:00:00Z</published>
+    <updated>2014-04-17T23:03:29+02:00</updated>
+    <author>
+      <name>Torkel Ödegaard</name>
+    </author>
+    <content type="html">&lt;p&gt;Just pushed a new release! v1.5.3 is now available for &lt;a href="/download"&gt;download&lt;/a&gt;. There is no big new feature, just a collection
+of small improvements and bugfixes. Been too busy making this new site to have time for any big
+new features.&lt;/p&gt;
+
+&lt;p&gt;Some notable new features in this release is a new error inspector. Now when you get the &lt;code&gt;&amp;quot;Oops! Graphite HTTP Request Error&amp;quot;&lt;/code&gt; banner
+you will also get a &lt;strong&gt;view details&lt;/strong&gt; link that will open the inspector.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/img/blog/error_inspector_view_details.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;The inspector has two tabs, one with request details and one with the full error response.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/img/blog/error_inspector.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/img/blog/error_inspector2.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;The Response tab shows the full HTTP response from graphite in an iframe. To get descriptive errors like above
+DEBUG=True must be configured graphite-web&amp;rsquo;s local_settings.py.&lt;/p&gt;
+
+&lt;p&gt;There is more in this relase! Some improvements to InfluxDB support, like using aliases. There is also an improvement to scripted dashboards. You
+can now write async dashboard scripts that use for example a jquery ajax call to fetch data and create even more dynamic dashboards.&lt;/p&gt;
+
+&lt;p&gt;Happy Easter!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Grafana - Blog New website</title>
-    <link rel="alternate" href="http://grafana.org/blog/2014/04/06/new-grafana-org-site.html"/>
-    <id>http://grafana.org/blog/2014/04/06/new-grafana-org-site.html</id>
-    <published>2014-04-06T00:00:00Z</published>
+    <link rel="alternate" href="http://grafana.org/blog/2014/04/17/new-grafana-org-site.html"/>
+    <id>http://grafana.org/blog/2014/04/17/new-grafana-org-site.html</id>
+    <published>2014-04-17T00:00:00Z</published>
     <updated>2014-04-17T22:04:41+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
