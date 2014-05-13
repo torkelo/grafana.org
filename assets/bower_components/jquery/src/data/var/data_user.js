@@ -1,1 +1,1 @@
-define(["../Data"],function(t){return new t});
+define(["../Data"],function(n){return new n});

@@ -5,16 +5,43 @@
   <id>http://grafana.org/blog</id>
   <link href="http://grafana.org/blog"/>
   <link href="http://grafana.org/feed.xml" rel="self"/>
-  <updated>2014-05-01T00:00:00Z</updated>
+  <updated>2014-05-13T00:00:00Z</updated>
   <author>
     <name>Grafana</name>
   </author>
+  <entry>
+    <title>Grafana 1.5.4 released.</title>
+    <link rel="alternate" href="http://grafana.org/blog/2014/05/13/Grafana-1-5-4-released.html"/>
+    <id>http://grafana.org/blog/2014/05/13/Grafana-1-5-4-released.html</id>
+    <published>2014-05-13T00:00:00Z</published>
+    <updated>2014-05-13T19:45:52+02:00</updated>
+    <author>
+      <name>Torkel Ödegaard</name>
+    </author>
+    <content type="html">&lt;p&gt;New release today! v1.5.4 is now available for &lt;a href="/download"&gt;download&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Some small new features and enhancements. Check the download page for a complete changelog.&lt;/p&gt;
+
+&lt;p&gt;One notable change is the unsaved changes tracking. You now get a warning when moving to another dashboard without
+having saved your changes, or when you close tab / window.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/img/blog/unsaved_changes_dialog.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;The progress for bigger new features and improvements has been slow. There are a number of pull requests that are wating for review. Preparation
+for Monitorama PDX conference talk and the week in US has been the main reason. I have another talk at a conference next week as well which
+will limit Grafana time. I currently only have evenings and weekends to spend working on Grafana.&lt;/p&gt;
+
+&lt;p&gt;After June that will all change. From July and onwards I will be working on Grafana and Grafana related things full time.&lt;/p&gt;
+
+&lt;p&gt;If you haven&amp;rsquo;t noticed there is now a &lt;a href="http://play.grafana.org"&gt;live playground and demo site&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Monitorama PDX.</title>
     <link rel="alternate" href="http://grafana.org/blog/2014/05/01/monitorama.html"/>
     <id>http://grafana.org/blog/2014/05/01/monitorama.html</id>
     <published>2014-05-01T00:00:00Z</published>
-    <updated>2014-05-12T19:00:01+02:00</updated>
+    <updated>2014-05-01T11:53:55+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -36,11 +63,23 @@ been a busy week trying to get a publicly accessable demo and playground ready s
 </content>
   </entry>
   <entry>
+    <title>New website</title>
+    <link rel="alternate" href="http://grafana.org/blog/2014/04/17/new-grafana-org-site.html"/>
+    <id>http://grafana.org/blog/2014/04/17/new-grafana-org-site.html</id>
+    <published>2014-04-17T00:00:00Z</published>
+    <updated>2014-04-23T08:39:59+02:00</updated>
+    <author>
+      <name>Torkel Ödegaard</name>
+    </author>
+    <content type="html">&lt;p&gt;The new website is now live! Time to finish up the v1.6 release!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
     <title>Grafana 1.5.3 released.</title>
     <link rel="alternate" href="http://grafana.org/blog/2014/04/17/grafana-1-5-3-released.html"/>
     <id>http://grafana.org/blog/2014/04/17/grafana-1-5-3-released.html</id>
     <published>2014-04-17T00:00:00Z</published>
-    <updated>2014-04-17T23:19:21+02:00</updated>
+    <updated>2014-04-23T08:41:28+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -66,18 +105,6 @@ DEBUG=True must be configured graphite-web&amp;rsquo;s local_settings.py.&lt;/p&
 can now write async dashboard scripts that use for example a jquery ajax call to fetch data and create even more dynamic dashboards.&lt;/p&gt;
 
 &lt;p&gt;Happy Easter!&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>New website</title>
-    <link rel="alternate" href="http://grafana.org/blog/2014/04/17/new-grafana-org-site.html"/>
-    <id>http://grafana.org/blog/2014/04/17/new-grafana-org-site.html</id>
-    <published>2014-04-17T00:00:00Z</published>
-    <updated>2014-04-17T23:19:16+02:00</updated>
-    <author>
-      <name>Torkel Ödegaard</name>
-    </author>
-    <content type="html">&lt;p&gt;The new website is now live! Time to finish up the v1.6 release!&lt;/p&gt;
 </content>
   </entry>
 </feed>
