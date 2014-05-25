@@ -5,16 +5,48 @@
   <id>http://grafana.org/blog</id>
   <link href="http://grafana.org/blog"/>
   <link href="http://grafana.org/feed.xml" rel="self"/>
-  <updated>2014-05-13T00:00:00Z</updated>
+  <updated>2014-05-25T00:00:00Z</updated>
   <author>
     <name>Grafana</name>
   </author>
+  <entry>
+    <title>Video from Monitorama Grafana workshop and project status update</title>
+    <link rel="alternate" href="http://grafana.org/blog/2014/05/25/monitorama-video-and-update.html"/>
+    <id>http://grafana.org/blog/2014/05/25/monitorama-video-and-update.html</id>
+    <published>2014-05-25T00:00:00Z</published>
+    <updated>2014-05-25T13:50:14+02:00</updated>
+    <author>
+      <name>Torkel Ödegaard</name>
+    </author>
+    <content type="html">&lt;iframe src="//player.vimeo.com/video/95316672?portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="padding-bottom: 10px"&gt;
+
+&lt;/iframe&gt;
+
+&lt;p&gt;The Monitorama conference was a blast. If you did not get a chance to attend you can still checkout all the presentations
+at &lt;a href="http://vimeo.com/monitorama"&gt;vimeo.com/monitorama&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the end of the presentation I talk a little bit about the future for Grafana. Especially noteworthy is the fact that
+I will be working full time on Grafana and related things by the end of July.&lt;/p&gt;
+
+&lt;p&gt;I apologize for the slow progress on pull requests. The last 3-4 weeks has been busy with preparing conferences (and the US trip) as well
+as recovering from a pretty intense (no free/relax time) period as all work on Grafana is done in evenings and weekends. That should change in
+the coming weeks but especially after July!&lt;/p&gt;
+
+&lt;p&gt;There are currently &amp;gt;150 open github issues. Almost all are for small/large enhancements and general improvement ideas. So there is so much fun stuff that can really make a big difference
+in how we consume, visualize, share metrics. I am incredibly excited about the coming months.&lt;/p&gt;
+
+&lt;p&gt;If you are interested in Sponsoring Grafana development or collaborate in anyway please &lt;a href="mailto:torkel@grafana.org"&gt;let me know&lt;/a&gt;. After summer I will also be available for meetups, workshops and
+Graphite coaching.&lt;/p&gt;
+
+&lt;p&gt;PS. &lt;a href="http://influxdb.org"&gt;InfluxDB&lt;/a&gt; just launched a hosting service for InfluxDB and Grafana.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Grafana 1.5.4 released.</title>
     <link rel="alternate" href="http://grafana.org/blog/2014/05/13/Grafana-1-5-4-released.html"/>
     <id>http://grafana.org/blog/2014/05/13/Grafana-1-5-4-released.html</id>
     <published>2014-05-13T00:00:00Z</published>
-    <updated>2014-05-13T19:45:52+02:00</updated>
+    <updated>2014-05-25T13:06:31+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -41,7 +73,7 @@ will limit Grafana time. I currently only have evenings and weekends to spend wo
     <link rel="alternate" href="http://grafana.org/blog/2014/05/01/monitorama.html"/>
     <id>http://grafana.org/blog/2014/05/01/monitorama.html</id>
     <published>2014-05-01T00:00:00Z</published>
-    <updated>2014-05-01T11:53:55+02:00</updated>
+    <updated>2014-05-12T19:00:01+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -67,7 +99,7 @@ been a busy week trying to get a publicly accessable demo and playground ready s
     <link rel="alternate" href="http://grafana.org/blog/2014/04/17/new-grafana-org-site.html"/>
     <id>http://grafana.org/blog/2014/04/17/new-grafana-org-site.html</id>
     <published>2014-04-17T00:00:00Z</published>
-    <updated>2014-04-23T08:39:59+02:00</updated>
+    <updated>2014-04-17T23:19:16+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -79,7 +111,7 @@ been a busy week trying to get a publicly accessable demo and playground ready s
     <link rel="alternate" href="http://grafana.org/blog/2014/04/17/grafana-1-5-3-released.html"/>
     <id>http://grafana.org/blog/2014/04/17/grafana-1-5-3-released.html</id>
     <published>2014-04-17T00:00:00Z</published>
-    <updated>2014-04-23T08:41:28+02:00</updated>
+    <updated>2014-04-17T23:19:21+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
