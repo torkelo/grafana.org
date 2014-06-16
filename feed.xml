@@ -5,16 +5,71 @@
   <id>http://grafana.org/blog</id>
   <link href="http://grafana.org/blog"/>
   <link href="http://grafana.org/feed.xml" rel="self"/>
-  <updated>2014-05-25T00:00:00Z</updated>
+  <updated>2014-06-16T00:00:00Z</updated>
   <author>
     <name>Grafana</name>
   </author>
+  <entry>
+    <title>Grafana 1.6.0 released.</title>
+    <link rel="alternate" href="http://grafana.org/blog/2014/06/16/Grafana-1-6-0-Released.html"/>
+    <id>http://grafana.org/blog/2014/06/16/Grafana-1-6-0-Released.html</id>
+    <published>2014-06-16T00:00:00Z</published>
+    <updated>2014-06-16T18:22:32+02:00</updated>
+    <author>
+      <name>Torkel Ödegaard</name>
+    </author>
+    <content type="html">&lt;p&gt;New release today! v1.6.0 is now available for &lt;a href="/download"&gt;download&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is a pretty big release with a many of small improvements and new features.&lt;/p&gt;
+
+&lt;h3&gt;OpenTSDB&lt;/h3&gt;
+
+&lt;p&gt;This release marks the first release with initial support for &lt;a href="http://opentsdb.net/"&gt;OpenTSDB&lt;/a&gt;
+as a metrics datasource. Checkout the docs article for &lt;a href="/docs/features/opentsdb"&gt;how to configure opentsdb&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/img/opentsdb/editor_v1.png" /&gt;&lt;/p&gt;
+
+&lt;h3&gt;Dashboard editing improvements&lt;/h3&gt;
+
+&lt;p&gt;Adding, moving and changing row settings as well as adding panels is much improved.
+The row edit icon on the right of the row has been changed into a menu with quick options
+to move the panel up/down, set height, add panel and delete.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/img/animated_gifs/row_edit_menu.gif" /&gt;&lt;/p&gt;
+
+&lt;h3&gt;InfluxDB query editor improvements&lt;/h3&gt;
+
+&lt;p&gt;The query editor is enhanced and more space efficient.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/img/animated_gifs/influxdb_func_editor.gif" /&gt;&lt;/p&gt;
+
+&lt;h3&gt;InfluxDB group by&lt;/h3&gt;
+
+&lt;p&gt;You can now group a single influxdb series into many grafana series by clicking
+on the plus icon and specifying a column to group by.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/img/influxdb/influxdb_query_editor_group_by.png" /&gt;&lt;/p&gt;
+
+&lt;h3&gt;InfluxDB filtering/templated queries&lt;/h3&gt;
+
+&lt;p&gt;You can now use the filtering feature (templated queries) with InfluxDB.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/img/influxdb/templated_query.png" /&gt;&lt;/p&gt;
+
+&lt;h3&gt;Changes&lt;/h3&gt;
+
+&lt;p&gt;The graphite panel is now renamed to simply &lt;code&gt;graph&lt;/code&gt;. Old dashboards will still work.&lt;/p&gt;
+
+&lt;p&gt;There are many more changes and improvements, checkout the complete changelog on the
+&lt;a href="/download"&gt;download&lt;/a&gt; page.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Video from Monitorama Grafana workshop and project status update</title>
     <link rel="alternate" href="http://grafana.org/blog/2014/05/25/monitorama-video-and-update.html"/>
     <id>http://grafana.org/blog/2014/05/25/monitorama-video-and-update.html</id>
     <published>2014-05-25T00:00:00Z</published>
-    <updated>2014-06-11T09:22:46+02:00</updated>
+    <updated>2014-06-01T17:02:36+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -46,7 +101,7 @@ Graphite coaching.&lt;/p&gt;
     <link rel="alternate" href="http://grafana.org/blog/2014/05/13/Grafana-1-5-4-released.html"/>
     <id>http://grafana.org/blog/2014/05/13/Grafana-1-5-4-released.html</id>
     <published>2014-05-13T00:00:00Z</published>
-    <updated>2014-05-13T19:45:52+02:00</updated>
+    <updated>2014-06-01T17:02:36+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -73,7 +128,7 @@ will limit Grafana time. I currently only have evenings and weekends to spend wo
     <link rel="alternate" href="http://grafana.org/blog/2014/05/01/monitorama.html"/>
     <id>http://grafana.org/blog/2014/05/01/monitorama.html</id>
     <published>2014-05-01T00:00:00Z</published>
-    <updated>2014-05-01T11:53:55+02:00</updated>
+    <updated>2014-06-01T17:02:36+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -99,7 +154,7 @@ been a busy week trying to get a publicly accessable demo and playground ready s
     <link rel="alternate" href="http://grafana.org/blog/2014/04/17/new-grafana-org-site.html"/>
     <id>http://grafana.org/blog/2014/04/17/new-grafana-org-site.html</id>
     <published>2014-04-17T00:00:00Z</published>
-    <updated>2014-04-23T08:39:59+02:00</updated>
+    <updated>2014-06-01T17:02:36+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -111,7 +166,7 @@ been a busy week trying to get a publicly accessable demo and playground ready s
     <link rel="alternate" href="http://grafana.org/blog/2014/04/17/grafana-1-5-3-released.html"/>
     <id>http://grafana.org/blog/2014/04/17/grafana-1-5-3-released.html</id>
     <published>2014-04-17T00:00:00Z</published>
-    <updated>2014-04-23T08:41:28+02:00</updated>
+    <updated>2014-06-01T17:02:36+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
