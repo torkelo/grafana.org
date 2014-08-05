@@ -1,62 +1,31 @@
-<!DOCTYPE html><html><head><meta charset="utf-8" /><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><title>Grafana - Docs - Introduction guide</title><meta content="Torkel Ödegaard" name="author" /><meta content="width=device-width, initial-scale=1" name="viewport" /><meta content="Grafana, the graphite dashboard frontend, editor and graph composer" name="description" /><meta content="Grafana, Graphite, Dashboard, InfluxDB, OpenTSDB, Frontend, Metrics, Editor, Composer, Analytics, Graphana" name="keywords" /><link href="/assets/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" /><link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" media="screen" rel="stylesheet" type="text/css" /><link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" media="screen" rel="stylesheet" type="text/css" /><script src="/assets/javascripts/all.js" type="text/javascript"></script><meta content="Grafana - The Graphite dashboard frontend, editor and graph composer" property="og:title" /><meta content="Grafana.org" property="og:site_name" /><meta content="website" property="og:type" /><meta content="http://grafana.org" property="og:url" /><meta content="http://grafana.org/assets/img/edit_dashboards.png" property="og:image" /><meta content="A unique graphite dashboard aimed to be a general purpose dashboard that looks nice and makes it easy to construct and edit dashboards through the UI. It also contains an advanced and unique graph editor and graphite target expression / function editor. Other notible features are fast client side rendering, select to zoom in, multiple y-axes and graph templating." property="og:description" /></head><body class="docs docs_features docs_features_intro docs_features_intro_index"><section class="nav"><div class="row"><nav class="top-bar" data-topbar="1"><ul class="title-area"><li class="name"><a href="/"><img src="/assets/img/logo_transparent_200x75.png" width="150px" /></a></li><li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li></ul><section class="top-bar-section"><ul class="right"><li><a href="/features">Features</a></li><li><a href="/docs">Docs</a></li><li><a href="/donate">Donations</a></li><li><a href="/blog">Blog</a></li><li><a target="blank" href="http://play.grafana.org">Live demo</a></li><li><a target="blank" href="https://github.com/grafana/grafana">Github project</a></li><li class="has-form"><a class="button" href="/download" id="top-bar-button">Download</a></li></ul></section></nav></div></section><section class="main"><div class="row"><div class="large-4 medium-4 columns"><div class="sidebar"><nav><ul class="side-nav"><li class="heading">Installation</li><li><a href="/docs">Installation</a></li><li><a href="/docs/performance">Performance</a></li><li><a href="/docs/support">Support</a></li><li class="divider"></li><li class="heading">Feature guides</li><li><a href="/docs/features/intro">Intro guide</a></li><li><a href="/docs/features/annotations">Annotations</a></li><li><a href="/docs/features/time_range">Time range controls</a></li><li><a href="/docs/features/search">Search features</a></li><li><a href="/docs/features/templated_dashboards">Templated dashboards</a></li><li><a href="/docs/features/scripted_dashboards">Scripted dashboards</a></li><li><a href="/docs/features/playlist">Playlist</a></li><li><a href="/docs/features/function_editor">Function editor</a></li><li><a href="/docs/features/influxdb">InfluxDB</a></li><li><a href="/docs/features/opentsdb">OpenTSDB</a></li><li><a href="/docs/features/export_import">Export & Import</a></li><li class="divider"></li><li class="heading">Contributing</li><li><a href="/docs/contributing/cla.html">CLA</a></li><li><a href="https://github.com/grafana/grafana/blob/master/LICENSE.md">Licence (Apache 2.0)</a></li><li><a href="/docs/contributing/building_from_source.html">Building from source</a></li><li class="divider"></li><li class="heading">Videos</li><li><a href="/docs/videos/feature_tour">Feature tour</a></li><li><a href="/docs/videos/function_editor">Function editor</a></li></ul></nav><a class="button download expand" href="/download" style="margin-bottom: 0;">Download Grafana</a></div></div><div class="large-8 medium-8 columns"><h1>Introduction guide</h1>
+<!DOCTYPE html><html><head><meta charset="utf-8" /><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><title>Grafana - Docs - Getting started</title><meta content="Torkel Ödegaard" name="author" /><meta content="width=device-width, initial-scale=1" name="viewport" /><meta content="Grafana, the graphite dashboard frontend, editor and graph composer" name="description" /><meta content="Grafana, Graphite, Dashboard, InfluxDB, OpenTSDB, Frontend, Metrics, Editor, Composer, Analytics, Graphana" name="keywords" /><link href="/assets/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" /><link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" media="screen" rel="stylesheet" type="text/css" /><link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" media="screen" rel="stylesheet" type="text/css" /><script src="/assets/javascripts/all.js" type="text/javascript"></script><meta content="Grafana - The Graphite dashboard frontend, editor and graph composer" property="og:title" /><meta content="Grafana.org" property="og:site_name" /><meta content="website" property="og:type" /><meta content="http://grafana.org" property="og:url" /><meta content="http://grafana.org/assets/img/edit_dashboards.png" property="og:image" /><meta content="A unique graphite dashboard aimed to be a general purpose dashboard that looks nice and makes it easy to construct and edit dashboards through the UI. It also contains an advanced and unique graph editor and graphite target expression / function editor. Other notible features are fast client side rendering, select to zoom in, multiple y-axes and graph templating." property="og:description" /></head><body class="docs docs_features docs_features_intro docs_features_intro_index"><section class="nav"><div class="row"><nav class="top-bar" data-topbar="1"><ul class="title-area"><li class="name"><a href="/"><img class="no-shadow" src="/assets/img/logo_transparent_200x75.png" width="150px" /></a></li><li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li></ul><section class="top-bar-section"><ul class="right"><li><a href="/features">Features</a></li><li><a href="/docs">Docs</a></li><li><a href="/blog">Blog</a></li><li><a target="blank" href="http://play.grafana.org">Live demo</a></li><li><a target="blank" href="https://github.com/grafana/grafana">Github project</a></li><li class="has-form"><a class="button" href="/download" id="top-bar-button">Download</a></li></ul></section></nav></div></section><section class="main"><div class="row"><div class="large-3 medium-3 columns"><div class="sidebar"><nav><ul class="side-nav"><li class="heading">Installation</li><li><a href="/docs">Installation</a></li><li><a href="/docs#configuration">Configuration</a></li><li><a href="/docs/performance">Performance</a></li><li><a href="/docs/troubleshooting">Troubleshooting</a></li><li><a href="/docs/support">Support</a></li><li class="divider"></li><li class="heading">Feature guides</li><li><a href="/docs/features/intro">Getting Started</a></li><li><a href="/docs/features/graphing">Graphing</a></li><li><a href="/docs/features/annotations">Annotations</a></li><li><a href="/docs/features/time_range">Time range controls</a></li><li><a href="/docs/features/search">Search features</a></li><li><a href="/docs/features/templated_dashboards">Templated dashboards</a></li><li><a href="/docs/features/scripted_dashboards">Scripted dashboards</a></li><li><a href="/docs/features/playlist">Playlist</a></li><li><a href="/docs/features/export_import">Export & Import</a></li><li class="divider"></li><li class="heading">Metric queries</li><li><a href="/docs/features/graphite">Graphite</a></li><li><a href="/docs/features/influxdb">InfluxDB</a></li><li><a href="/docs/features/opentsdb">OpenTSDB</a></li><li class="divider"></li><li class="heading">Contributing</li><li><a href="/docs/contributing/cla.html">CLA</a></li><li><a href="https://github.com/grafana/grafana/blob/master/LICENSE.md">Licence (Apache 2.0)</a></li><li><a href="/docs/contributing/building_from_source.html">Building from source</a></li><li class="divider"></li><li class="heading">Videos</li><li><a href="/docs/videos/feature_tour">Feature tour</a></li><li><a href="/docs/videos/function_editor">Function editor</a></li></ul></nav><a class="button download expand" href="/download" style="margin-bottom: 0;">Download Grafana</a></div></div><div class="medium-9 columns image-shadows"><h1 id="getting-started">Getting started</h1>
 
-<p><a href="http://www.youtube.com/watch?v=OUvJamHeMpw">This video</a> contains a short intro demo and a guide for creating dashboards, editing graphs and creating templated dashboards.</p>
+<p>This guide will help you get started and acquainted with the Grafana user interface.</p>
 
-<h3>Editing dashboards</h3>
+<h2 id="interface-overview">Interface overview</h2>
 
-<p>Click the configure dashboard button on the top menu to the right to open the dashboard settings. Here you can set dashboard title, theme, create, delete and move rows, and much more. <em>(More detail will be added)</em>
-The &ldquo;Import&rdquo; and &ldquo;Metrics&rdquo; tabs contain features that are not ready yet.</p>
+<p><img src="/assets/img/docs/interface_guide1.png" class="no-shadow"></p>
 
-<h3>Editing Rows</h3>
+<h2 id="new-dashboard">New dashboard</h2>
 
-<p>In the dashboard view you will have rows and panels. Each panel can have a specified span (1-12). You can configure the row height and panels by hovering over the orange marker to the left of the row and click on the configure button that will appear. This will open the row editor modal. In the row editor you can set the row height and add, delete panels and set column span for panels.</p>
+<p><img src="/assets/img/animated_gifs/new_dashboard.gif" /></p>
 
-<h3>Adding Graphs</h3>
+<h2 id="edit-graphs">Edit graphs</h2>
 
-<p>You can add the graphite (i.e. graph) panel by clicking on the plus icon that appears to the right of any row with space left. You can also add it in the Row editor modal. In the <em>Add Panel</em> view you should select graphite in the panel type dropdown, set title and a colspan (all can be easily changed later on).</p>
+<p>Click on a panel&rsquo;s title and then <code class="prettyprint">Edit</code> to open a panel in edit mode.
+<img src="/assets/img/docs/edit_graph_ui_guide.png" /></p>
 
-<h3>Editing Graphs</h3>
+<h3 id="editing-rows">Editing Rows</h3>
 
-<p>Now that you have a graph panel you can open its edit mode by clicking on the title and select edit from the dropdown menu. This will open the graph panel in fullscreen edit mode, showing the graph being edited on top and a tabbed edit pane in the bottom.</p>
+<p>To the right of each row you have two colored rectangles, hover over these to get access to quick row controls.
+<img src="/assets/img/animated_gifs/row_edit_menu.gif" /></p>
 
-<p>The edit mode tabs are:
-- General : Set title, and panel span (i.e width)
-- Targets : Add / Edit graphite target expressions
-- Axis Labels : Set any axis labels
-- Style : A multitude of styling options that define how the graph should look (line width, bars, stacked, etc)</p>
+<h3 id="drag-drop-panels">Drag drop panels</h3>
 
-<h4>Graphite target editor</h4>
+<p>Click and drag the panel title to start a drag and drop action.
+<img src="/assets/img/animated_gifs/drag_drop.gif" /></p>
 
-<p>It is in the <em>Targets</em> tab that you will spend the majority of your time. To add a graphite target click the <em>Add target</em> button. This should add a target row with a &ldquo;select metric&rdquo; link followed by a plus icon. Click the select metric link and it should open a dropdown of the top level metric directories, select one to get another select metric link for the next segment (node), continue to you reached the leaf node.</p>
-
-<h5>Side note</h5>
-
-<p>If at any point you find the target editor buggy or not just suitable to what you want to do. Just click the pen icon to the right to edit the target in a normal text box.</p>
-
-<p>To add a function click the plus icon. Once a function has been added you can click on the function to edit parameters. The function editing and the whole clickable metric node segments is no way complete or optimal yet. There are many cases of graphite target expressions and functions that are not supported right now (like functions that take multiple series lists). But this can and will be improved in the future to support more cases. The function editing will also be improved as well as the add function menu (add quick search / autocomplete for example).</p>
-
-<p>You can duplicate any target by clicking the cog icon to the right.</p>
-
-<h4>Style editor</h4>
-
-<p>An important setting in the style editor is the null point mode. This controls similar behavior as the &ldquo;connected line&rdquo;, &ldquo;draw null as zero&rdquo; options have in the standard graphite editor. Another great setting is the Y formats. If your metric represents bytes the bytes format will present a nicer Y-axis. For example (10 KB, 100 MB, 5 GB, etc).</p>
-
-<p><em>More details on settings to be added later</em></p>
-
-<h3>Legends</h3>
-
-<p>Clicking on a legend will hide that series. Clicking on the colored line will open a color selector. In this popup you can change the the series Y-axis to a second Y-axis. This is very useful for showing different related metrics on the same graph that have different scales.</p>
-
-<h3>Drag and drop</h3>
-
-<p>By clicking and dragging a graph title you will start a drag drop operation that will show you possible drop zones.</p>
-
-<h3>Templating</h3>
-
-<p>Open the dashboard settings. Under the controls tab there is a <em>Pulldowns</em> section. Enable filtering and close the
-dashboard settings. You should now see a filtering row below the header. Click the plus icon to add a new filter (i.e. template property). Set the the name and graphite metric query. For example &ldquo;prod.my<em>app.servers.*&rdquo; will generate a filter with all available servers. Now that you have defined your template filter you can open any graph in edit mode and either click on a metric segment and select your filter or if you use the text editor put [[filter</em>name]] any where in the target expression. In the dashboard view you can now click the filter link and select any of the available node segments and have all graphs update with that templated segment replaced with the value you selected.</p>
-
-<h3>Tips and shortcuts</h3>
+<h3 id="tips-and-shortcuts">Tips and shortcuts</h3>
 
 <ul>
 <li>Click the graph title and in the dropdown menu quickly change span or duplicate the panel.</li>
@@ -64,6 +33,9 @@ dashboard settings. You should now see a filtering row below the header. Click t
 <li>Ctrl+F Opens the dashboard finder / search</li>
 <li>Ctrl+H Hides all controls (good for tv displays)</li>
 <li>Hit Escape to exit graph when in fullscreen or edit mode</li>
+<li>Click the colored icon in the legend to select series color</li>
+<li>Click series name in the legend to hide series</li>
+<li>Ctrl/Shift/Meta + Click legend name to hide other series</li>
 <li>Click the Save icon in the menu to save the dashboard with a new name</li>
 <li>Click the Save icon in the menu and then advanced to export the dashboard to json file, or set it as your default dashboard.</li>
 </ul>
