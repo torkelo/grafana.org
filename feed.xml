@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://grafana.org/blog/2014/08/05/grafana-1-7-0-rc1-released.html"/>
     <id>http://grafana.org/blog/2014/08/05/grafana-1-7-0-rc1-released.html</id>
     <published>2014-08-05T00:00:00Z</published>
-    <updated>2014-08-05T15:09:24+02:00</updated>
+    <updated>2014-08-05T15:11:26+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -45,7 +45,7 @@ and a new &lt;a href="/docs/troubleshooting"&gt;Troubleshooting&lt;/a&gt; guide 
 
 &lt;h3 id="fixes-and-small-additions"&gt;Fixes and small additions&lt;/h3&gt;
 
-&lt;p&gt;There are a number of more small improvements and fixes in this release. It also has a number of architectural improvements
+&lt;p&gt;There are also a number of small improvements and fixes in this release. It also has a number of architectural improvements
 that will make future features and additions easier to implement and manage. Check the changelog on the &lt;a href="/download"&gt;download page&lt;/a&gt;
 for a complete list.&lt;/p&gt;
 
