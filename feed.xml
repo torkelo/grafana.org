@@ -14,13 +14,13 @@
     <link rel="alternate" href="http://grafana.org/blog/2014/08/05/grafana-1-7-0-rc1-released.html"/>
     <id>http://grafana.org/blog/2014/08/05/grafana-1-7-0-rc1-released.html</id>
     <published>2014-08-05T00:00:00Z</published>
-    <updated>2014-08-05T15:03:53+02:00</updated>
+    <updated>2014-08-05T15:09:24+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
     <content type="html">&lt;p&gt;New release today! v1.7.0-rc1 is now available for &lt;a href="/download"&gt;download&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;This is big release with a many new features and improvements. There are also a large number
+&lt;p&gt;This is a big release with a many new features and improvements. There are also a large number
 of architectural changes (hence the release candidate status).&lt;/p&gt;
 
 &lt;h3 id="release-highlights"&gt;Release highlights&lt;/h3&gt;
