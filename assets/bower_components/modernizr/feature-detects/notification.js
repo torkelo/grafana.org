@@ -1,1 +1,1 @@
-Modernizr.addTest("notification",!!Modernizr.prefixed("Notifications",window));
+Modernizr.addTest("notification","Notification"in window&&"permission"in window.Notification&&"requestPermission"in window.Notification);
