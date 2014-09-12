@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://grafana.org/blog/2014/09/11/grafana-1-8-0-rc1-released.html"/>
     <id>http://grafana.org/blog/2014/09/11/grafana-1-8-0-rc1-released.html</id>
     <published>2014-09-11T00:00:00Z</published>
-    <updated>2014-09-12T13:38:35+02:00</updated>
+    <updated>2014-09-12T14:06:07+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -30,7 +30,7 @@ dashboard that highlights some of the new features.&lt;/p&gt;
 &lt;h4 id="1)-mixed-graph-styling"&gt;1) Mixed graph styling&lt;/h4&gt;
 
 &lt;p&gt;You can override any display setting for a specific series using the series name or a regex pattern. Mix bars with lines, or disable
-stacking for the right y-axis series, or any combination you can think of!&lt;/p&gt;
+stacking for the right y-axis or any combination you can think of!&lt;/p&gt;
 
 &lt;p&gt;&lt;img src="/assets/img/blog/mixed_styles.png" /&gt;&lt;/p&gt;
 
@@ -150,7 +150,7 @@ for more details&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;A full share feature, where you can share a panel or dashboard with the current time range did not
-make for this release. But will be coming.&lt;/p&gt;
+make it for this release. But will be coming.&lt;/p&gt;
 
 &lt;h4 id="7)-documentation"&gt;7) Documentation&lt;/h4&gt;
 
