@@ -1,0 +1,190 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><title>Grafana - Grafana 1.8.0-rc1 Released!</title><meta content="Torkel Ödegaard" name="author" /><meta content="width=device-width, initial-scale=1" name="viewport" /><meta content="Grafana, the graphite dashboard frontend, editor and graph composer" name="description" /><meta content="Grafana, Graphite, Dashboard, InfluxDB, OpenTSDB, Frontend, Metrics, Editor, Composer, Analytics, Graphana" name="keywords" /><link href="/assets/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" /><link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" media="screen" rel="stylesheet" type="text/css" /><link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" media="screen" rel="stylesheet" type="text/css" /><script src="/assets/javascripts/all.js" type="text/javascript"></script><meta content="Grafana - The Graphite dashboard frontend, editor and graph composer" property="og:title" /><meta content="Grafana.org" property="og:site_name" /><meta content="website" property="og:type" /><meta content="http://grafana.org" property="og:url" /><meta content="http://grafana.org/assets/img/edit_dashboards.png" property="og:image" /><meta content="A unique graphite dashboard aimed to be a general purpose dashboard that looks nice and makes it easy to construct and edit dashboards through the UI. It also contains an advanced and unique graph editor and graphite target expression / function editor. Other notible features are fast client side rendering, select to zoom in, multiple y-axes and graph templating." property="og:description" /></head><body class="blog blog_2014 blog_2014_09 blog_2014_09_11 blog_2014_09_11_grafana-1-8-0-rc1-released"><section class="nav"><div class="row"><nav class="top-bar" data-topbar="1"><ul class="title-area"><li class="name"><a href="/"><img class="no-shadow" src="/assets/img/logo_transparent_200x75.png" width="150px" /></a></li><li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li></ul><section class="top-bar-section"><ul class="right"><li><a href="/features">Features</a></li><li><a href="/docs">Docs</a></li><li><a href="/blog">Blog</a></li><li><a target="blank" href="http://play.grafana.org">Live demo</a></li><li><a target="blank" href="https://github.com/grafana/grafana">GitHub project</a></li><li class="has-form"><a class="button" href="/download" id="top-bar-button">Download</a></li></ul></section></nav></div></section><section class="main"><div class="row"><div class="large-12 columns"><h1 class="docs header">Grafana Blog</h1><hr /></div></div><div class="row padding-bottom-large"><div class="large-9 columns image-shadows"><h2>Grafana 1.8.0-rc1 Released!</h2><div class="row"><div class="small-9 columns"><h5 class="subheader">September 11, 2014 by Torkel Ödegaard</h5></div><div class="small-3 columns"><p id="twitter"><a class="twitter-share-button" data-via="grafana" href="https://twitter.com/share"></a></p><script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div></div><p>New release today! v1.8.0-rc1 is now available for <a href="/download">download</a>.</p>
+
+<p>This is probably the biggest release since the first version was released. So many new features, enhancements and general UI improvements
+that this will likely be a very long blog post. <a href="http://play.grafana.org">play.grafana.org</a> is updated to
+run 1.8.0-rc1, now with InfluxDB demo dashboards. There is also a <a href="http://play.grafana.org/#/dashboard/db/new-features-in-v18">New features in v1.8</a>
+dashboard that highlights some of the new features.</p>
+
+<h3 id="release-highlights">Release highlights</h3>
+
+<h4 id="1)-mixed-graph-styling">1) Mixed graph styling</h4>
+
+<p>You can override any display setting for a specific series using the series name or a regex pattern. Mix bars with lines, or disable
+stacking for the right y-axis series, or any combination you can think of!</p>
+
+<p><img src="/assets/img/blog/mixed_styles.png" /></p>
+
+<p>You find these options under display styles.</p>
+
+<p><img src="/assets/img/blog/series_override_options.png" /></p>
+
+<h4 id="2)-improved-templating-system">2) Improved templating system</h4>
+
+<p>The templating system has been completly rewritten. This feature was previously called filtering. From 1.8 it is renamed to templating.
+Templating allows you to create variables that you can use in metric queries, annotation queries and panel titles to create generic reusable
+dashboards. The new templating system uses a <code class="prettyprint">$variable</code> syntax, but the old <code class="prettyprint">[[variable]]</code> still works.</p>
+
+<p><strong><em>New templating editor</em></strong></p>
+
+<p><img src="/assets/img/blog/template_variable_list.png" /></p>
+
+<p>The new templating system now has full support for InfluxDB. You can extract parts of a metric name using a regex.
+You also have full control over how the &ldquo;All&rdquo; option should be formated so that it works for different
+data sources.</p>
+
+<p><img src="/assets/img/blog/template_editor_influxdb.png" /></p>
+
+<p>InfluxDB users should use <code class="prettyprint">regex wildcard</code> or <code class="prettyprint">regex values</code> for the <code class="prettyprint">All</code> option format.
+Graphite users should use <code class="prettyprint">glob</code> or <code class="prettyprint">wildcard</code>.</p>
+
+<p><strong>Variables in Graphite function parameters</strong><br>
+You can now use template variables for function parameters. There is a special template variable type called <code class="prettyprint">interval</code> that includes
+and auto value, where the interval is calculated based on the time range.</p>
+
+<p><img src="/assets/img/blog/graphite_func_variables.png" /></p>
+
+<p><img src="/assets/img/docs/template_variable_interval.png" /></p>
+
+<p><strong>Template variable selection</strong><br>
+When selecting template variables you now get a text box and and auto complete dropdown. Useful when you have many posible values for
+a variable.</p>
+
+<h4 id="3)-ui-improvements">3) UI Improvements</h4>
+
+<p><strong>No more modals</strong><br>
+All editors are now shown in an edit pane under the menu. This feels much more natural and faster.
+All editors have also been polished and generally look a little better.</p>
+
+<p><img src="/assets/img/blog/new_editor_look.png" /></p>
+
+<p><strong>Improved search &amp; tags</strong><br>
+The search results view has been given a makeover, now with colored tags.</p>
+
+<p><img src="/assets/img/blog/new_search_look.png" /></p>
+
+<p>You can navigate the search results with your up/down keys. The first
+result is always highlighted. Hit enter to open the dashboard. You can add tags in the dashboard
+settings edit pane. You can hit the tab key, to focus the tags link, hit enter again to get
+an overview of all tags, click on the tag to filter by the tag.</p>
+
+<h4 id="4)-improved-graphite-query-editor">4) Improved Graphite Query editor</h4>
+
+<p>Many graphite functions can take other series as arguments. This was something the old
+query editor could not handle. But the new improved query editor allows you to use
+other queries as function arguments. To refer to another query you use a letter, like <code class="prettyprint">#A</code>.</p>
+
+<p><img src="/assets/img/blog/graphite_complex_query1.png" /></p>
+
+<p>Or a shorter version of the same thing:</p>
+
+<p><img src="/assets/img/blog/graphite_complex_query2.png" /></p>
+
+<p>This is very powerful as it allows you to reuse queries in complex expressions. For example
+plot a total and a percentage. If a query is only to be used in another query and not drawn
+simply hide it using the eye.</p>
+
+<h4 id="5)-influxdb-query-editor-enhancements">5) InfluxDB Query Editor enhancements</h4>
+
+<p>The query editor for InfluxDB has been upgraded. There are now two rows for each query, so more space
+for potentially long series names. There is now an option to add <code class="prettyprint">fill(null)</code> or <code class="prettyprint">fill(0)</code>. These options
+are very important to understand and use because they solve some important scenarios that has troubled many
+InfluxDB users.</p>
+
+<p><img src="/assets/img/blog/influxdb_new_query_editor.png" /></p>
+
+<p>A setting that is very important in combination with <code class="prettyprint">fill(0)</code> is the new group by time option below your
+queries. This option allows you to set a fixed group by time for all queries, but more importantly it allows
+you to set a lower limit for the auto group by time. When using <code class="prettyprint">fill(0)</code> you do not want to insert
+zeros between real measurements, so you group by time must never be below the rate of writes.</p>
+
+<p>A low limit for the auto group by time is set using <code class="prettyprint">&gt;10s</code> syntax. This feature together with <code class="prettyprint">fill(0)</code> is important when stacking multiple
+series to ensure that every series have values for every time point.</p>
+
+<h4 id="6)-influxdb-breaking-changes">6) InfluxDB breaking changes</h4>
+
+<p>I am sorry to say that there are some breaking changes in 1.8 for InfluxDB users. All queries that used
+a where clause or raw queries needs to be updated.</p>
+
+<p><strong>Raw Queries</strong></p>
+<pre class="highlight sql"><span class="k">select</span> <span class="n">mean</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">from</span> <span class="nv">&quot;app.status&quot;</span> <span class="k">where</span> <span class="err">$</span><span class="n">timeFilter</span> <span class="k">group</span> <span class="k">by</span> <span class="n">time</span><span class="p">(</span><span class="err">$</span><span class="n">interval</span><span class="p">)</span> <span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="k">order</span> <span class="k">asc</span>
+</pre>
+<p>Raw queries are now required to include <code class="prettyprint">$timeFilter</code> variable for time range, and zoom to work. Before
+Grafana tried to parse and inject the time range filter in the right place, but this was fragile and could
+lead to double time where conditions if there already was one in the query. Raw queries can now use,
+optionally, a <code class="prettyprint">$interval</code> variable which will be replaced with the auto group by time interval.</p>
+
+<p><strong>Where condition</strong></p>
+
+<p>In 1.7.0 you could add a single where condition, using a dropdown to select column, operation, and value.
+This was overly complicated, and is now replaced with a single where condition text box where you
+can enter any number of where conditions. If you open a graph in edit mode the editor will try to
+patch the query (using the old model) to build the where condition for you. But you will have to
+enter edit mode for this &ldquo;patch&rdquo; process to work.</p>
+
+<h4 id="6)-misc-improvements">6) Misc improvements</h4>
+
+<ul>
+<li>Url state for panel edit and fullscreen mode, copy url and you will be taken to edit or fullscreen for that panel</li>
+<li>from and to date range filters can be passed via url, see <a href="https://github.com/grafana/grafana/issues/787">Issue #787</a>
+for more details</li>
+</ul>
+
+<p>A full share feature, where you can share a panel or dashboard with the current time range did not
+make for this release. But will be coming.</p>
+
+<h4 id="7)-documentation">7) Documentation</h4>
+
+<p>The documentation for the new features and changes has yet to be done. That will be the focus for next
+week. In the mean time, this blog post and the demo dashboards on <a href="http://play.grafana.org">play.grafana.org</a>
+will have to suffice.</p>
+
+<h4 id="8)-download">8) Download</h4>
+
+<p>Even though I have two project sponsors, it is not enough
+for me to work full time and long term on Grafana. So please <a href="/donate">pay what you think it is worth</a>, and head to the <a href="/download">download</a> page
+for download links and a complete changelog.</p>
+
+<h3 id="nyc-grafana-+-influxdb-meetup-on-oct-8th">NYC Grafana + InfluxDB Meetup on Oct 8th</h3>
+
+<p>I will be flying to New York on Oct 5th and will stay for two weeks. My project sponsor
+<a href="http://www.squarespace.com/">Squarespace</a> will be hosting a meetup on Oct 8th where I
+and Paul Dix from InfluxDB will be speaking. <a href="http://www.meetup.com/Monitoring-NYC/events/205947512/">Sign up</a>
+for the meetup!</p>
+
+<h3 id="meetups,-conferences-&amp;-company-talks/coaching">Meetups, Conferences &amp; Company talks/coaching</h3>
+
+<p>If you want me to come talk about Grafana, application metrics, build measure learn or Graphite.
+Please email me at <a href="mailto:contact@grafana.org">torkel@grafana.org</a>. I live in Stockholm Sweden so
+travel could be an issue, but I am flexible and available :)</p>
+
+<p>Cheers &amp; keep on graphing!<br>
+Torkel</p>
+
+<p><strong>Big thanks to my sponsors</strong></p>
+
+<ul>
+<li><a href="http://www.squarespace.com">Sponsored by Squarespace</a></li>
+<li><a href="http://www.dreamhost.com">Sponsored by Dreamhost</a></li>
+</ul>
+<hr style="margin-top:30px; margin-bottom:30px"/>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'grafanablog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div><div class="large-3 columns"><h4>Posts</h4><p><a href="/blog/2014/09/11/grafana-1-8-0-rc1-released.html">Grafana 1.8.0-rc1 Released!</a></p><p><a href="/blog/2014/08/05/grafana-1-7-0-rc1-released.html">Grafana 1.7.0-rc1 Released!</a></p><p><a href="/blog/2014/06/16/Grafana-1-6-0-Released.html">Grafana 1.6.0 released.</a></p><hr /><h4>About Grafana</h4><p>Grafana is an open source metrics dashboard and graph composer for Graphite and InfluxDB</p></div></div></section><div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls"><div class="slides"></div><h3 class="title"></h3><a class="prev">‹</a><a class="next">›</a><a class="close">×</a><a class="play-pause"></a><ol class="indicator"></ol></div><footer><section class="newsletter"><div class="row"><h3 class="text-center">Get notified of new releases!</h3></div><div class="row"><div class="large-6 columns push-3"><form action="http://grafana.us8.list-manage.com/subscribe/post?u=2aeb5711db2aececc990be536&amp;id=5585d37ecc" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" target="_blank"><div class="row collapse"><div class="medium-10 columns"><input class="email" id="mce-EMAIL" name="EMAIL" placeholder="email address" type="email" value="" /></div><div class="medium-2 columns"><input class="button postfix" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Subscribe" /></div></div></form></div></div></section><div class="row text-center"><ul class="footer-social"><li><i class="fa fa-github"></i><a href="https://github.com/grafana/grafana/issues">issue tracker</a> on GitHub</li><li><i class="fa fa-comment"></i><a href="irc://chat.freenode.net/#grafana">#grafana</a> on freenode</li><li><i class="fa fa-twitter"></i><a href="http://twitter.com/grafana">@grafana</a> on Twitter</li><li><i class="fa fa-envelope"></i><a href="mailto:torkel@grafana.org">email</a></li></ul></div><div class="row copyright text-center">&copy; 2013 Torkel Ödegaard &amp; Coding Instinct AB<iframe allowtransparency="true" class="github-btn" frameborder="false" height="20" scrolling="0" src="http://ghbtns.com/github-btn.html?user=grafana&amp;repo=grafana&amp;type=watch&amp;count=true" title="Star on GitHub" width="100"></iframe><iframe allowtransparency="true" class="github-btn" frameborder="false" height="20" scrolling="0" src="http://ghbtns.com/github-btn.html?user=grafana&amp;repo=grafana&amp;type=fork&amp;count=true" title="Fork on GitHub" width="80"></iframe></div></footer><script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-47280256-1', 'grafana.org');
+ga('send', 'pageview');</script></body></html>
