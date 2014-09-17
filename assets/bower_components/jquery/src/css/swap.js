@@ -1,1 +1,1 @@
-define(["../core"],function(t){return t.swap=function(t,e,n,i){var r,o,s={};for(o in e)s[o]=t.style[o],t.style[o]=e[o];r=n.apply(t,i||[]);for(o in e)t.style[o]=s[o];return r},t.swap});
+define(["../core"],function(e){return e.swap=function(e,t,n,i){var r,o,s={};for(o in t)s[o]=e.style[o],e.style[o]=t[o];r=n.apply(e,i||[]);for(o in t)e.style[o]=s[o];return r},e.swap});
