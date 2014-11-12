@@ -90,6 +90,14 @@ you really do not want to setup Elasticsearch.</p>
 </pre>
 <p>Please view <a href="/docs/features/opentsdb">this page</a> for details on how to configure OpenTSDB to work with Grafana.</p>
 
+<h3 id="elasticsearch-&amp;-cors">Elasticsearch &amp; CORS</h3>
+
+<p>As of Elasticsearch v1.4 CORS is disabled by default. This needs to be enabled in the Elasticsearch config file, otherwise grafana will not be able to access Elasticsearch.</p>
+<pre class="highlight text">http.cors.enabled: true
+http.cors.allow-origin: *
+</pre>
+<p>Instead of the wildcard you can put your full grafana webserver address (including http:// and port)</p>
+
 <h3 id="basic-authentication">Basic authentication</h3>
 
 <p>If your Graphite or Elasticsearch server require basic authentication you can specify the username and password in the url.
