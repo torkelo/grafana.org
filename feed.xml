@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://grafana.org/blog/2014/11/17/grafana-1-9-0-rc1-released.html"/>
     <id>http://grafana.org/blog/2014/11/17/grafana-1-9-0-rc1-released.html</id>
     <published>2014-11-17T00:00:00Z</published>
-    <updated>2014-11-17T14:51:44+01:00</updated>
+    <updated>2014-11-17T16:29:17+01:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -45,7 +45,16 @@ there could be some bugs.&lt;/p&gt;
 &lt;li&gt;Adding a panel link makes the whole panel act as a link to another dashboard&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id="2)-fill-below-to"&gt;2) Fill below to&lt;/h4&gt;
+&lt;h4 id="2)-share-panel-feature"&gt;2) Share panel feature&lt;/h4&gt;
+
+&lt;p&gt;Click on panel title area (anywhere works, does not need to be the title text) to open the
+new panel menu. Click on the &lt;code class="prettyprint"&gt;share&lt;/code&gt; button to open the new share dialog. In this dialog
+you get a URL to that panel with the current time range and any template variables
+embedded in the URL.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/img/blog/panel_menu.png" /&gt;&lt;/p&gt;
+
+&lt;h4 id="3)-fill-below-to"&gt;3) Fill below to&lt;/h4&gt;
 
 &lt;p&gt;An new series specific style has been added in this release that is very
 useful when visualizing max/min as shadow behind an average.&lt;/p&gt;
@@ -59,7 +68,7 @@ above (ex. max). The value of the option is the series name to fill to (ex min).
 
 &lt;p&gt;&lt;img src="/assets/img/blog/fillbelow_to_option.png" /&gt;&lt;/p&gt;
 
-&lt;h4 id="3)-other-graph-features-&amp;amp;-enhancements"&gt;3) Other graph features &amp;amp; enhancements&lt;/h4&gt;
+&lt;h4 id="4)-other-graph-features-&amp;amp;-enhancements"&gt;4) Other graph features &amp;amp; enhancements&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Shared tooltip option, shows every series when hovering&lt;/li&gt;
@@ -71,7 +80,7 @@ above (ex. max). The value of the option is the series name to fill to (ex min).
 
 &lt;p&gt;&lt;img src="/assets/img/animated_gifs/legend_features.gif" /&gt;&lt;/p&gt;
 
-&lt;h4 id="4)-panel-links"&gt;4) Panel links&lt;/h4&gt;
+&lt;h4 id="5)-panel-links"&gt;5) Panel links&lt;/h4&gt;
 
 &lt;p&gt;In the General tab you can now add links to other dashboards or absolute links
 to other web apps. These links can then be accessed from the panel menu. Links
