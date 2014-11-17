@@ -5,10 +5,109 @@
   <id>http://grafana.org/blog</id>
   <link href="http://grafana.org/blog"/>
   <link href="http://grafana.org/feed.xml" rel="self"/>
-  <updated>2014-09-11T00:00:00Z</updated>
+  <updated>2014-11-17T00:00:00Z</updated>
   <author>
     <name>Grafana</name>
   </author>
+  <entry>
+    <title>Grafana 1.9.0-rc1 Released!</title>
+    <link rel="alternate" href="http://grafana.org/blog/2014/11/17/grafana-1-9-0-rc1-released.html"/>
+    <id>http://grafana.org/blog/2014/11/17/grafana-1-9-0-rc1-released.html</id>
+    <published>2014-11-17T00:00:00Z</published>
+    <updated>2014-11-17T14:51:44+01:00</updated>
+    <author>
+      <name>Torkel Ödegaard</name>
+    </author>
+    <content type="html">&lt;p&gt;New release today! v1.9.0-rc1 is now available for &lt;a href="/download"&gt;download&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://play.grafana.org"&gt;play.grafana.org&lt;/a&gt; is updated to run 1.9.0-rc1.
+There is also a &lt;a href="http://play.grafana.org/#/dashboard/db/new-features-in-v19"&gt;New features in v1.9&lt;/a&gt;
+dashboard that highlights some of the new features.&lt;/p&gt;
+
+&lt;p&gt;No breaking changes, so update should be problem free. But this is a release candidate so
+there could be some bugs.&lt;/p&gt;
+
+&lt;h3 id="release-highlights"&gt;Release highlights&lt;/h3&gt;
+
+&lt;h4 id="1)-singlestat-panel"&gt;1) Singlestat panel&lt;/h4&gt;
+
+&lt;p&gt;This release marks the introduction of a new panel!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/img/docs/singlestat_panel_1.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;A multitude of options makes this panel pretty flexible.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Add sparkline to the bottom of the panel&lt;/li&gt;
+&lt;li&gt;Add text before/after the value&lt;/li&gt;
+&lt;li&gt;Add color thresholds for the value or the panel background&lt;/li&gt;
+&lt;li&gt;Control font size&lt;/li&gt;
+&lt;li&gt;Adding a panel link makes the whole panel act as a link to another dashboard&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="2)-fill-below-to"&gt;2) Fill below to&lt;/h4&gt;
+
+&lt;p&gt;An new series specific style has been added in this release that is very
+useful when visualizing max/min as shadow behind an average.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/img/docs/fillbelow_to.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;This display style is specified by adding a series override rule for the series
+above (ex. max). The value of the option is the series name to fill to (ex min).&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/img/blog/fillbelow_to_option.png" /&gt;&lt;/p&gt;
+
+&lt;h4 id="3)-other-graph-features-&amp;amp;-enhancements"&gt;3) Other graph features &amp;amp; enhancements&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Shared tooltip option, shows every series when hovering&lt;/li&gt;
+&lt;li&gt;Toggle legend from panel menu&lt;/li&gt;
+&lt;li&gt;Improved legend table mode look&lt;/li&gt;
+&lt;li&gt;Sort legend series (only works in table mode)&lt;/li&gt;
+&lt;li&gt;Multi graph crosshair line (shows a vertical red line where you hover on all graphs)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="/assets/img/animated_gifs/legend_features.gif" /&gt;&lt;/p&gt;
+
+&lt;h4 id="4)-panel-links"&gt;4) Panel links&lt;/h4&gt;
+
+&lt;p&gt;In the General tab you can now add links to other dashboards or absolute links
+to other web apps. These links can then be accessed from the panel menu. Links
+to other dashboards will preserve the current time range.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/img/docs/drilldown_links.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;You access these links from the panel menu dropdown. The whole singlestat panel
+will act as link if a drilldown / detail link is added to the panel.&lt;/p&gt;
+
+&lt;h3 id="metrics-meetup-in-san-francisco,-december-3rd"&gt;Metrics meetup in San Francisco, December 3rd&lt;/h3&gt;
+
+&lt;p&gt;I will be flying to San Francisco on November 28th and will stay for one week.
+Rackspace will be hosting a metrics meetup on December 3rd at their office on 620
+Folsom St. I will be speaking about Grafana (showing new and upcoming stuff) and Rackspace will be speaking about
+there open source time series system &lt;a href="http://blueflood.io/"&gt;Blueflood&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.meetup.com/San-Francisco-Metrics-Meetup/events/218611974/"&gt;Sign up for the meetup&lt;/a&gt;!&lt;/p&gt;
+
+&lt;h3 id="meetups,-conferences-&amp;amp;-company-talks/coaching"&gt;Meetups, Conferences &amp;amp; Company talks/coaching&lt;/h3&gt;
+
+&lt;p&gt;If you want me to come and talk about Grafana, application metrics, build measure learn or Graphite.
+Please email me at &lt;a href="mailto:contact@grafana.org"&gt;torkel@grafana.org&lt;/a&gt;. I live in Stockholm Sweden so
+travel could be an issue, but I am flexible and available :)&lt;/p&gt;
+
+&lt;p&gt;Cheers &amp;amp; keep on graphing!&lt;br&gt;
+Torkel&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Big thanks to my sponsors&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.squarespace.com"&gt;Sponsored by Squarespace&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.dreamhost.com"&gt;Sponsored by Dreamhost&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
   <entry>
     <title>Grafana 1.8.0-rc1 Released!</title>
     <link rel="alternate" href="http://grafana.org/blog/2014/09/11/grafana-1-8-0-rc1-released.html"/>
@@ -362,32 +461,6 @@ will limit Grafana time. I currently only have evenings and weekends to spend wo
 &lt;p&gt;After June that will all change. From July and onwards I will be working on Grafana and Grafana related things full time.&lt;/p&gt;
 
 &lt;p&gt;If you haven&amp;rsquo;t noticed there is now a &lt;a href="http://play.grafana.org"&gt;live playground and demo site&lt;/a&gt;&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Monitorama PDX.</title>
-    <link rel="alternate" href="http://grafana.org/blog/2014/05/01/monitorama.html"/>
-    <id>http://grafana.org/blog/2014/05/01/monitorama.html</id>
-    <published>2014-05-01T00:00:00Z</published>
-    <updated>2014-06-01T17:02:36+02:00</updated>
-    <author>
-      <name>Torkel Ödegaard</name>
-    </author>
-    <content type="html">&lt;p&gt;On Saturday I am flying to Portland for what I am hoping to be a great conference, &lt;a href="http://monitorama.com/"&gt;Monitorama PDX&lt;/a&gt;. The last day of the
-conference is full hackathon day with workshops and lightning talks. I will present a workshop on Grafana that I hope to fill with some project
-background, demos, tips and ticks, interesting ways to use graphite, questions and answers.&lt;/p&gt;
-
-&lt;p&gt;I was added kind of late to the speaker line up so it has
-been a busy week trying to get a publicly accessable demo and playground ready so everyone can try and play with Grafana.&lt;/p&gt;
-
-&lt;p&gt;After Portland I will fly to San Fransciso for a short 2 day visit. Incredibly excited for the coming week!.&lt;/p&gt;
-
-&lt;p&gt;I will bring many Grafana stickers and a few tshirts so be sure to seek my out or attend the workshop!&lt;/p&gt;
-
-&lt;div class="row"&gt;
-    &lt;img src="/assets/img/blog/stickers.jpg" class="medium-4 columns" /&gt;
-    &lt;img src="/assets/img/blog/tshirt.jpg" class="medium-8 columns" /&gt;
-&lt;/div&gt;
 </content>
   </entry>
 </feed>
