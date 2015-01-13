@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://grafana.org/blog/2015/01/12/grafana2-the-future-and-raintank.html"/>
     <id>http://grafana.org/blog/2015/01/12/grafana2-the-future-and-raintank.html</id>
     <published>2015-01-12T00:00:00Z</published>
-    <updated>2015-01-12T22:10:29+01:00</updated>
+    <updated>2015-01-13T10:13:10+01:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -92,7 +92,7 @@ so it never saw the light of day in 2014.&lt;/p&gt;
 
 &lt;p&gt;There are no longer any plans for a closed source or commercial version of Grafana. The backend powered version
 will be 100% open source. What is making this possible is Grafana’s sponsors and a company I am co-founding
-together with with Raj Dutt (founder of Voxel) and Anthony Woods. The company is called &lt;a href="http://raintank.io"&gt;Raintaink&lt;/a&gt; and
+together with Raj Dutt (founder of Voxel) and Anthony Woods. The company is called &lt;a href="http://raintank.io"&gt;Raintank&lt;/a&gt; and
 will focus on building and providing a SaaS platform around open source metric and monitoring solutions
 (Grafana is one among them). This SaaS platform will be completely open source.&lt;/p&gt;
 
