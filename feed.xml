@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://grafana.org/blog/2015/02/10/Grafana-2-Alpha-and-preview.html"/>
     <id>http://grafana.org/blog/2015/02/10/Grafana-2-Alpha-and-preview.html</id>
     <published>2015-02-10T00:00:00Z</published>
-    <updated>2015-02-10T18:07:48+01:00</updated>
+    <updated>2015-02-10T18:24:37+01:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -50,7 +50,7 @@ This preview is automatically updated after each successful commit &amp;amp; bui
 
 &lt;h2 id="the-backend"&gt;The backend&lt;/h2&gt;
 
-&lt;p&gt;The backend is written in Go and defaults to an embedded sqlite3 database so there is not dependency on
+&lt;p&gt;The backend is written in Go and defaults to an embedded sqlite3 database so there is no dependency on
 Elasticsearch for dashboards storage. If you are already using InfluxDB or Elasticsearch for dashboard
 storage there is an import feature under the account page where you can import your existing dashboards.&lt;/p&gt;
 
@@ -87,7 +87,7 @@ of sidebars and collapsable top top navbars.&lt;/p&gt;
 We will continue to refine and polish this solution. For more on the creative process and details
 on all the UI mockups and navigation alternatives we explored read this
 &lt;a href="https://blog.raintank.io/ux-the-long-road-to-the-shortest-path"&gt;blog post by Matt Toback&lt;/a&gt;. Matt is lead
-on customer experiance on at &lt;a href="http://raintank.io"&gt;Raintank&lt;/a&gt;.&lt;/p&gt;
+on customer experiance at &lt;a href="http://raintank.io"&gt;Raintank&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id="dashboard-list-panel"&gt;Dashboard list panel&lt;/h3&gt;
 
