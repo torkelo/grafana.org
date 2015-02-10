@@ -1,0 +1,109 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><title>Grafana - Grafana 2.0 Alpha & Preview</title><meta content="Torkel Ödegaard" name="author" /><meta content="width=device-width, initial-scale=1" name="viewport" /><meta content="Grafana, the graphite dashboard frontend, editor and graph composer" name="description" /><meta content="Grafana, Graphite, Dashboard, InfluxDB, OpenTSDB, Frontend, Metrics, Editor, Composer, Analytics, Graphana" name="keywords" /><link href="/assets/img/fav32.png" rel="icon" /><link href="/assets/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" /><link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" media="screen" rel="stylesheet" type="text/css" /><link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" media="screen" rel="stylesheet" type="text/css" /><script src="/assets/javascripts/all.js" type="text/javascript"></script><meta content="Grafana 2.0 Alpha & Preview" property="og:title" /><meta content="Grafana.org" property="og:site_name" /><meta content="website" property="og:type" /><meta content="http://grafana.org/assets/img/docs/nice_dashboard.png" property="og:image" /></head><body class="blog blog_temp blog_temp_temp"><section class="nav"><div class="row"><nav class="top-bar" data-topbar="1"><ul class="title-area"><li class="name"><a href="/"><img class="no-shadow" src="/assets/img/logo_transparent_200x75.png" width="150px" /></a></li><li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li></ul><section class="top-bar-section"><ul class="right"><li><a href="/features">Features</a></li><li><a href="/docs">Docs</a></li><li><a href="/community">Community</a></li><li><a href="/blog">Blog</a></li><li><a target="blank" href="http://play.grafana.org">Live demo</a></li><li><a href="https://github.com/grafana/grafana" target="_blank" title="Go to github repository"><i class="fa fa-github"></i></a</li><li class="has-form"><a class="button" href="/download" id="top-bar-button">Download</a></li></ul></section></nav></div></section><section class="main"><div class="row"><div class="large-12 columns"><h1 class="docs header">Grafana Blog</h1><hr /></div></div><div class="row padding-bottom-large"><div class="large-9 columns image-shadows"><h2>Grafana 2.0 Alpha & Preview</h2><div class="row"><div class="small-9 columns"><h5 class="subheader">February 10, 2015 by Torkel Ödegaard</h5></div><div class="small-3 columns"><p id="twitter"><a class="twitter-share-button" data-via="grafana" href="https://twitter.com/share"></a></p><script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div></div><p><img src="/assets/img/blog/Grafana2_Preview_1.png" /></p>
+
+<h2 id="code-&amp;-docker-image">Code &amp; Docker image</h2>
+
+<p>The Grafana 2.0 backend and frontend changes are now public in the <a href="https://github.com/grafana/grafana/tree/develop">develop</a>
+branch in the main grafana repository on Github. The readme on that branch contains instructions for how to build and run the
+new backend. You can also try it using docker with a single line like this:</p>
+<pre class="highlight text">docker run -i -p 3000:3000 grafana/grafana:develop
+</pre>
+<p>There are no offical binary packages yet as there is still some work that needs
+to be done before a beta release can be made. But before that anyone that has time to checkout
+what we have done so far please submit feedback and bug reports on github!</p>
+
+<p>There is no updated documentation for Granfana 2.0, that is one of the items we will work on
+in the run up to a beta release.</p>
+
+<p>You can also try out a preview build on <a href="http://play.grafana.org/v2">play.grafana.org/v2</a>, login with
+guest/guest or you can signup. If you signup you will be automatically added as a Viewer to the main account.
+This preview is automatically updated after each successful commit &amp; build of the develop branch.</p>
+
+<h2 id="the-backend">The backend</h2>
+
+<p>The backend is written in Go and defaults to an embedded sqlite3 database so there is not dependency on
+Elasticsearch for dashboards storage. If you are already using InfluxDB or Elasticsearch for dashboard
+storage there is an import feature under the account page where you can import your existing dashboards.</p>
+
+<h3 id="panel-rendering">Panel rendering</h3>
+
+<p>The backend supports rendering any panel to a PNG image, this will enable some slick integration
+in the future with services like Slack and Hipchat. When we eventually tackle alerting this feature
+should also come in handy as we could provide images of related graphs along with alert notifications.</p>
+
+<p>Currently the PNG rendering feature is a just a simple link in the share panel dialog.</p>
+
+<h3 id="user-&amp;-account-model">User &amp; Account model</h3>
+
+<p>To support SaaS and larger Grafana installations we have added a User and Account model similar to
+how Google Analytics has implemented this. Dashboards, data sources, etc are not tight to a specific user
+but to an Account, users are linked to accounts with a specific Role (Admin, Editor, Viewer).</p>
+
+<p>To simplify smaller Grafana setups you can configure Grafana to be in a single account mode where new user
+signups are automatically assigned to a specific account. And you can also enable anonymous access if you
+do not care about authentication or user managment at all.</p>
+
+<p>Currently users can signup and login with a specified email/password or via Github or Google OAuth integration.
+LDAP integration is in on the roadmap but not implemented yet.</p>
+
+<h2 id="ui-changes">UI Changes</h2>
+
+<p>It was a big challange to modify the existing Grafana UI to accomodate more views like Profile, Account,
+Datasources, Admin etc, without sacrificing the clean simple top navigation. We tried many alternatives
+of sidebars and collapsable top top navbars.</p>
+
+<p><img src="/assets/img/animated_gifs/grafana2_sidenav_gif1.gif" /></p>
+
+<p>The above animated gif shows the sidebar we ended up with, as well as the new dashboard search dropdown.
+We will continue to refine and polish this solution. For more on the creative process and details
+on all the UI mockups and navigation alternatives we explored read this
+<a href="https://blog.raintank.io/raintank-has-designs-on-capacity/">blog post by Matt Toback</a>.</p>
+
+<h3 id="dashboard-list-panel">Dashboard list panel</h3>
+
+<p>There is currently one new panel in Grafana 2.0 that can show the current users starred dashboards as well
+as a list of dashboards based on search query or dashboard tags.</p>
+
+<p><img src="/assets/img/blog/dashlist_panel_1.png" /></p>
+
+<p>There is a <a href="https://github.com/grafana/grafana/issues/1449">github issue</a> for this new panel where feedback
+would be greatly appreciated.</p>
+
+<h3 id="standalone-mode">Standalone mode</h3>
+
+<p>The frontend has been slighly changed to support a standalone mode where it can work mostly like Grafana has
+in the past, that is without any backend. This mode is currently broken in the develop branch but will
+be made functioning again before release. We belive that many Grafana users value the pure frontend (no backend)
+nature of Grafana and we would hate to abandon or dissapoint this user group so we will try to support
+a standalone mode and build as long as the interest is high and the complexity of supporting both is acceptable.
+But it is likely that long term this standalone mode will be removed, but this is all up to user feedback.</p>
+
+<h2 id="thanks-to-project-sponsors">Thanks to project sponsors</h2>
+
+<ul>
+<li><a href="http://www.squarespace.com">Squarespace</a></li>
+<li><a href="http://www.dreamhost.com">Dreamhost</a></li>
+<li><a href="http://www.demonware.net">Demonware</a></li>
+<li><a href="https://developer.mediamath.com/OpenSource">Mediamath</a></li>
+</ul>
+<hr style="margin-top:30px; margin-bottom:30px"/>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'grafanablog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div><div class="large-3 columns"><h4>Posts</h4><p><a href="/blog/2015/01/12/grafana2-the-future-and-raintank.html">Grafana 2.0, the future, and raintank</a></p><p><a href="/blog/2014/11/17/grafana-1-9-0-rc1-released.html">Grafana 1.9.0-rc1 Released!</a></p><p><a href="/blog/2014/09/11/grafana-1-8-0-rc1-released.html">Grafana 1.8.0-rc1 Released!</a></p><hr /><h4>About Grafana</h4><p>Grafana is an open source metrics dashboard and graph composer for Graphite and InfluxDB</p></div></div></section><div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls"><div class="slides"></div><h3 class="title"></h3><a class="prev">‹</a><a class="next">›</a><a class="close">×</a><a class="play-pause"></a><ol class="indicator"></ol></div><footer><section class="newsletter"><div class="row"><h3 class="text-center">Get notified of new releases!</h3></div><div class="row"><div class="large-6 columns push-3"><form action="http://grafana.us8.list-manage.com/subscribe/post?u=2aeb5711db2aececc990be536&amp;id=5585d37ecc" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" target="_blank"><div class="row collapse"><div class="medium-10 columns"><input class="email" id="mce-EMAIL" name="EMAIL" placeholder="email address" type="email" value="" /></div><div class="medium-2 columns"><input class="button postfix" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Subscribe" /></div></div></form></div></div></section><div class="row text-center"><ul class="footer-social"><li><i class="fa fa-github"></i><a href="https://github.com/grafana/grafana/issues">issue tracker</a> on GitHub</li><li><i class="fa fa-comment"></i><a href="irc://chat.freenode.net/#grafana">#grafana</a> on freenode</li><li><i class="fa fa-twitter"></i><a href="http://twitter.com/grafana">@grafana</a> on Twitter</li><li><i class="fa fa-envelope"></i><a href="mailto:torkel@grafana.org">email</a></li></ul></div><div class="row copyright text-center">&copy; 2013 Torkel Ödegaard &amp; Coding Instinct AB<iframe allowtransparency="true" class="github-btn" frameborder="false" height="20" scrolling="0" src="http://ghbtns.com/github-btn.html?user=grafana&amp;repo=grafana&amp;type=watch&amp;count=true" title="Star on GitHub" width="100"></iframe><iframe allowtransparency="true" class="github-btn" frameborder="false" height="20" scrolling="0" src="http://ghbtns.com/github-btn.html?user=grafana&amp;repo=grafana&amp;type=fork&amp;count=true" title="Fork on GitHub" width="80"></iframe></div></footer><script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-47280256-1', 'grafana.org');
+ga('send', 'pageview');</script></body></html>
