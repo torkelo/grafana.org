@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://grafana.org/blog/2015/02/10/Grafana-2-Alpha-and-preview.html"/>
     <id>http://grafana.org/blog/2015/02/10/Grafana-2-Alpha-and-preview.html</id>
     <published>2015-02-10T00:00:00Z</published>
-    <updated>2015-02-10T18:24:37+01:00</updated>
+    <updated>2015-02-10T18:28:03+01:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -38,7 +38,8 @@ new backend. You can also try it using docker with a single line like this:&lt;/
 &lt;pre class="highlight text"&gt;docker run -i -p 3000:3000 grafana/grafana:develop
 &lt;/pre&gt;
 &lt;p&gt;There are no offical binary packages yet as there is still some work that needs
-to be done before a beta release can be made. If you want to help please checkout out the develop branch
+to be done before a beta release can be made. Grafana 2.0 is not ready for
+production use yet. If you want to help please checkout out the develop branch
 or try the docker image and submit feedback and bug reports on github!&lt;/p&gt;
 
 &lt;p&gt;There is no updated documentation for Granfana 2.0, that is one of the items we will work on
