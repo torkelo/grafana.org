@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://grafana.org/blog/2015/02/10/Grafana-2-Alpha-and-preview.html"/>
     <id>http://grafana.org/blog/2015/02/10/Grafana-2-Alpha-and-preview.html</id>
     <published>2015-02-10T00:00:00Z</published>
-    <updated>2015-02-10T15:41:23+01:00</updated>
+    <updated>2015-02-10T18:07:48+01:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -86,7 +86,7 @@ of sidebars and collapsable top top navbars.&lt;/p&gt;
 &lt;p&gt;The above animated gif shows the sidebar we ended up with, as well as the new dashboard search dropdown.
 We will continue to refine and polish this solution. For more on the creative process and details
 on all the UI mockups and navigation alternatives we explored read this
-&lt;a href="https://blog.raintank.io/raintank-has-designs-on-capacity/"&gt;blog post by Matt Toback&lt;/a&gt;. Matt is lead
+&lt;a href="https://blog.raintank.io/ux-the-long-road-to-the-shortest-path"&gt;blog post by Matt Toback&lt;/a&gt;. Matt is lead
 on customer experiance on at &lt;a href="http://raintank.io"&gt;Raintank&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id="dashboard-list-panel"&gt;Dashboard list panel&lt;/h3&gt;
