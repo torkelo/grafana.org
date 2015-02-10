@@ -5,10 +5,119 @@
   <id>http://grafana.org/blog</id>
   <link href="http://grafana.org/blog"/>
   <link href="http://grafana.org/feed.xml" rel="self"/>
-  <updated>2015-01-12T00:00:00Z</updated>
+  <updated>2015-02-10T00:00:00Z</updated>
   <author>
     <name>Grafana</name>
   </author>
+  <entry>
+    <title>Grafana 2.0 Alpha &amp; Preview</title>
+    <link rel="alternate" href="http://grafana.org/blog/2015/02/10/Grafana-2-Alpha-and-preview.html"/>
+    <id>http://grafana.org/blog/2015/02/10/Grafana-2-Alpha-and-preview.html</id>
+    <published>2015-02-10T00:00:00Z</published>
+    <updated>2015-02-10T15:41:23+01:00</updated>
+    <author>
+      <name>Torkel Ödegaard</name>
+    </author>
+    <content type="html">&lt;p&gt;As some of you already know, at least those who read the previous blog post &lt;a href="http://grafana.org/blog/2015/01/12/grafana2-the-future-and-raintank.html"&gt;on the future of Grafana&lt;/a&gt;,
+we have been working on a backend for the Grafana 2.0 release. A backend is really essential if Grafana is to be able
+to expand its capabilities to support alerting, PNG rendering of panels, and of course user managment and authentication.
+A backend will also make it easier to install and get started with Grafana as you will no longer need to learn how to
+configure nginx or deal with complex CORS issues for Graphite or OpenTSDB. Something that
+many new users struggle with when setting up Grafana for the first time.&lt;/p&gt;
+
+&lt;p&gt;Grafana 2.0 has been long in the making but has seen accelerated progress in the last two months
+thanks to the great team at &lt;a href="http://raintank.io"&gt;Raintank&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/img/blog/Grafana2_Preview_1.png" /&gt;&lt;/p&gt;
+
+&lt;h2 id="code-&amp;amp;-docker-image"&gt;Code &amp;amp; Docker image&lt;/h2&gt;
+
+&lt;p&gt;The Grafana 2.0 backend and frontend changes are now public in the &lt;a href="https://github.com/grafana/grafana/tree/develop"&gt;develop&lt;/a&gt;
+branch in the main grafana repository on Github. The readme on that branch contains instructions for how to build and run the
+new backend. You can also try it using docker with a single line like this:&lt;/p&gt;
+&lt;pre class="highlight text"&gt;docker run -i -p 3000:3000 grafana/grafana:develop
+&lt;/pre&gt;
+&lt;p&gt;There are no offical binary packages yet as there is still some work that needs
+to be done before a beta release can be made. If you want to help please checkout out the develop branch
+or try the docker image and submit feedback and bug reports on github!&lt;/p&gt;
+
+&lt;p&gt;There is no updated documentation for Granfana 2.0, that is one of the items we will work on
+in the run up to a beta release.&lt;/p&gt;
+
+&lt;p&gt;You can also try out a preview build on &lt;a href="http://play.grafana.org/v2"&gt;play.grafana.org/v2&lt;/a&gt;, login with
+guest/guest or you can signup. If you signup you will be automatically added as a Viewer to the main account.
+This preview is automatically updated after each successful commit &amp;amp; build of the develop branch.&lt;/p&gt;
+
+&lt;h2 id="the-backend"&gt;The backend&lt;/h2&gt;
+
+&lt;p&gt;The backend is written in Go and defaults to an embedded sqlite3 database so there is not dependency on
+Elasticsearch for dashboards storage. If you are already using InfluxDB or Elasticsearch for dashboard
+storage there is an import feature under the account page where you can import your existing dashboards.&lt;/p&gt;
+
+&lt;h3 id="panel-rendering"&gt;Panel rendering&lt;/h3&gt;
+
+&lt;p&gt;The backend supports rendering any panel to a PNG image, this will enable some slick integration
+in the future with services like Slack and Hipchat. When we eventually tackle alerting this feature
+should also come in handy as we could provide images of related graphs along with alert notifications.&lt;/p&gt;
+
+&lt;p&gt;Currently the PNG rendering feature is a just a simple link in the share panel dialog.&lt;/p&gt;
+
+&lt;h3 id="user-&amp;amp;-account-model"&gt;User &amp;amp; Account model&lt;/h3&gt;
+
+&lt;p&gt;To support SaaS and larger Grafana installations we have added a User and Account model similar to
+how Google Analytics has implemented this. Dashboards, data sources, etc are not tied to a specific user
+but to an Account, users are linked to accounts with a specific Role (Admin, Editor, Viewer).&lt;/p&gt;
+
+&lt;p&gt;To simplify smaller Grafana setups you can configure Grafana to be in a single account mode where new user
+signups are automatically assigned to a specific account. And you can also enable anonymous access if you
+do not care about authentication or user managment at all.&lt;/p&gt;
+
+&lt;p&gt;Currently users can signup and login with a specified email/password or via Github or Google OAuth integration.
+LDAP integration is in on the roadmap but not implemented yet.&lt;/p&gt;
+
+&lt;h2 id="ui-changes"&gt;UI Changes&lt;/h2&gt;
+
+&lt;p&gt;It was a big challange to modify the existing Grafana UI to accomodate more views like Profile, Account,
+Datasources, Admin etc, without sacrificing the clean simple top navigation. We tried many alternatives
+of sidebars and collapsable top top navbars.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/img/animated_gifs/grafana2_sidenav_gif1.gif" /&gt;&lt;/p&gt;
+
+&lt;p&gt;The above animated gif shows the sidebar we ended up with, as well as the new dashboard search dropdown.
+We will continue to refine and polish this solution. For more on the creative process and details
+on all the UI mockups and navigation alternatives we explored read this
+&lt;a href="https://blog.raintank.io/raintank-has-designs-on-capacity/"&gt;blog post by Matt Toback&lt;/a&gt;. Matt is lead
+on customer experiance on at &lt;a href="http://raintank.io"&gt;Raintank&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id="dashboard-list-panel"&gt;Dashboard list panel&lt;/h3&gt;
+
+&lt;p&gt;There is currently one new panel in Grafana 2.0 that can show the current user&amp;rsquo;s starred dashboards as well
+as a list of dashboards based on search query or dashboard tags.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/img/blog/dashlist_panel_1.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;There is a &lt;a href="https://github.com/grafana/grafana/issues/1449"&gt;github issue&lt;/a&gt; for this new panel where feedback
+would be greatly appreciated.&lt;/p&gt;
+
+&lt;h3 id="standalone-mode"&gt;Standalone mode&lt;/h3&gt;
+
+&lt;p&gt;The frontend has been slighly changed to support a standalone mode where it can work mostly like Grafana has
+in the past, that is without any backend. This mode is currently broken in the develop branch but will
+be made functioning again before release. We belive that many Grafana users value the pure frontend (no backend)
+nature of Grafana and we would hate to abandon or dissapoint this user group so we will try to support
+a standalone mode and build as long as the interest is high and the complexity of supporting both is acceptable.
+But it is likely that long term this standalone mode will be removed, but this is all up to user feedback.&lt;/p&gt;
+
+&lt;h2 id="thanks-to-project-sponsors"&gt;Thanks to project sponsors&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.squarespace.com"&gt;Squarespace&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.dreamhost.com"&gt;Dreamhost&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.demonware.net"&gt;Demonware&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://developer.mediamath.com/OpenSource"&gt;Mediamath&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
   <entry>
     <title>Grafana 2.0, the future, and raintank</title>
     <link rel="alternate" href="http://grafana.org/blog/2015/01/12/grafana2-the-future-and-raintank.html"/>
@@ -547,38 +656,6 @@ on the plus icon and specifying a column to group by.&lt;/p&gt;
 
 &lt;p&gt;There are many more changes and improvements, checkout the complete changelog on the
 &lt;a href="/download"&gt;download&lt;/a&gt; page.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Video from Monitorama Grafana workshop and project status update</title>
-    <link rel="alternate" href="http://grafana.org/blog/2014/05/25/monitorama-video-and-update.html"/>
-    <id>http://grafana.org/blog/2014/05/25/monitorama-video-and-update.html</id>
-    <published>2014-05-25T00:00:00Z</published>
-    <updated>2014-06-01T17:02:36+02:00</updated>
-    <author>
-      <name>Torkel Ödegaard</name>
-    </author>
-    <content type="html">&lt;iframe src="//player.vimeo.com/video/95316672?portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="padding-bottom: 10px"&gt;
-
-&lt;/iframe&gt;
-
-&lt;p&gt;The Monitorama conference was a blast. If you did not get a chance to attend you can still checkout all the presentations
-at &lt;a href="http://vimeo.com/monitorama"&gt;vimeo.com/monitorama&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;In the end of the presentation I talk a little bit about the future for Grafana. Especially noteworthy is the fact that
-I will be working full time on Grafana and related things by the end of July.&lt;/p&gt;
-
-&lt;p&gt;I apologize for the slow progress on pull requests. The last 3-4 weeks has been busy with preparing conferences (and the US trip) as well
-as recovering from a pretty intense (no free/relax time) period as all work on Grafana is done in evenings and weekends. That should change in
-the coming weeks but especially after July!&lt;/p&gt;
-
-&lt;p&gt;There are currently &amp;gt;150 open github issues. Almost all are for small/large enhancements and general improvement ideas. So there is so much fun stuff that can really make a big difference
-in how we consume, visualize, share metrics. I am incredibly excited about the coming months.&lt;/p&gt;
-
-&lt;p&gt;If you are interested in Sponsoring Grafana development or collaborate in anyway please &lt;a href="mailto:torkel@grafana.org"&gt;let me know&lt;/a&gt;. After summer I will also be available for meetups, workshops and
-Graphite coaching.&lt;/p&gt;
-
-&lt;p&gt;PS. &lt;a href="http://influxdb.org"&gt;InfluxDB&lt;/a&gt; just launched a hosting service for InfluxDB and Grafana.&lt;/p&gt;
 </content>
   </entry>
 </feed>
