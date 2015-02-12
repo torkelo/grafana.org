@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://grafana.org/blog/2015/02/10/Grafana-2-Alpha-and-preview.html"/>
     <id>http://grafana.org/blog/2015/02/10/Grafana-2-Alpha-and-preview.html</id>
     <published>2015-02-10T00:00:00Z</published>
-    <updated>2015-02-10T18:28:03+01:00</updated>
+    <updated>2015-02-12T11:17:02+01:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -26,7 +26,8 @@ configure nginx or deal with complex CORS issues for Graphite or OpenTSDB. Somet
 many new users struggle with when setting up Grafana for the first time.&lt;/p&gt;
 
 &lt;p&gt;Grafana 2.0 has been long in the making but has seen accelerated progress in the last two months
-thanks to the great team at &lt;a href="http://raintank.io"&gt;Raintank&lt;/a&gt;.&lt;/p&gt;
+thanks to my collegues at &lt;a href="http://raintank.io"&gt;Raintank&lt;/a&gt;, where we are working on building a nextgen open source
+infrastructure monitoring platform.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src="/assets/img/blog/Grafana2_Preview_1.png" /&gt;&lt;/p&gt;
 
