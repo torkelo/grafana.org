@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://grafana.org/blog/2015/02/10/Grafana-2-Alpha-and-preview.html"/>
     <id>http://grafana.org/blog/2015/02/10/Grafana-2-Alpha-and-preview.html</id>
     <published>2015-02-10T00:00:00Z</published>
-    <updated>2015-02-12T11:17:02+01:00</updated>
+    <updated>2015-02-12T15:25:03+01:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -109,6 +109,24 @@ be made functioning again before release. We belive that many Grafana users valu
 nature of Grafana and we would hate to abandon or dissapoint this user group so we will try to support
 a standalone mode and build as long as the interest is high and the complexity of supporting both is acceptable.
 But it is likely that long term this standalone mode will be removed, but this is all up to user feedback.&lt;/p&gt;
+
+&lt;h3 id="beta"&gt;Beta&lt;/h3&gt;
+
+&lt;p&gt;So stay tuned for a beta sometime early or mid March (if this goes as we hope).
+Subscribe to newsletter to get notified.&lt;/p&gt;
+
+&lt;p&gt;&lt;section class="newsletter"&gt;
+  &lt;form action="http://grafana.us8.list-manage.com/subscribe/post?u=2aeb5711db2aececc990be536&amp;amp;id=5585d37ecc" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"&gt;
+    &lt;row class="collapse"&gt;
+      &lt;div class="medium-10 columns"&gt;
+        &lt;input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address"&gt;
+      &lt;/div&gt;
+      &lt;div class="medium-2 columns"&gt;
+        &lt;input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button postfix"&gt;
+      &lt;/div&gt;
+    &lt;/row&gt;
+  &lt;/form&gt;
+&lt;/section&gt;&lt;/p&gt;
 
 &lt;h2 id="thanks-to-project-sponsors"&gt;Thanks to project sponsors&lt;/h2&gt;
 
