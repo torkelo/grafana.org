@@ -3,13 +3,13 @@
 <p>On Ubuntu or Debian download the .deb file and execute this command</p>
 
 <p><code>
-  sudo dpkg -i grafana_[the version you downloaded].deb
+  sudo dpkg -i grafana_latest_amd64.deb
 </code></p>
 
 <p>On Redhat or Centos download the .rpm file and execute this command</p>
 
 <p><code>
-  sudo rpm -Uvh grafana_[the version you downloaded].rpm
+  sudo rpm -Uvh grafana-latest-1.x86_64.rpm
 </code></p>
 
 <p>The install will do the following</p>
@@ -18,7 +18,7 @@
 <li>Install binaries and frontend files under <code>/opt/grafana/versions/&lt;version&gt;</code></li>
 <li>Symlink dir <code>/opt/grafana/current</code> to <code>/opt/grafana/versions/&lt;version&gt;</code></li>
 <li>Symlink <code>/etc/init.d/grafana</code> to <code>/opt/grafana/current/scripts/init.sh</code></li>
-<li>Add config file to <code>/etc/opt/grafana/grafana.ini</code> , this is where you specify your config settings</li>
+<li>Add config file to <code>/etc/grafana/grafana.ini</code> , this is where you specify your config settings</li>
 <li>Default configuration is in <code>/opt/grafana/current/conf/defaults.ini</code>, do not modify that file</li>
 <li>The default configuration specifies log file at <code>/var/log/grafana/grafana.log</code></li>
 <li>The default configuration specifies sqlite3 db at <code>/opt/grafana/data/grafana.db</code></li>
