@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://grafana.org/blog/2015/03/30/Grafana-2-Beta1.html"/>
     <id>http://grafana.org/blog/2015/03/30/Grafana-2-Beta1.html</id>
     <published>2015-03-30T00:00:00Z</published>
-    <updated>2015-03-30T17:21:10+02:00</updated>
+    <updated>2015-03-30T17:31:47+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -28,7 +28,7 @@ more than for previous upgrades. Dashboards are 100% backward compatible.&lt;/p&
 guide.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="http://localhost:4567/download"&gt;Download&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://grafana.org/download"&gt;Download&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://docs.grafana.org/v2.0/installation/"&gt;Installation guide&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://docs.grafana.org/v2.0/installation/migrating_to2/"&gt;Migrating from 1.x to 2.x&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
