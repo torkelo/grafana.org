@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://grafana.org/blog/2015/03/30/Grafana-2-Beta1.html"/>
     <id>http://grafana.org/blog/2015/03/30/Grafana-2-Beta1.html</id>
     <published>2015-03-30T00:00:00Z</published>
-    <updated>2015-03-30T17:17:48+02:00</updated>
+    <updated>2015-03-30T17:21:10+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -184,19 +184,6 @@ per series permissions in Graphite, InfluxDB or OpenTSDB.&lt;/p&gt;
 
 &lt;p&gt;There are currently no permissions on individual dashboards.&lt;/p&gt;
 
-&lt;p&gt;&lt;section class="newsletter"&gt;
-  &lt;form action="http://grafana.us8.list-manage.com/subscribe/post?u=2aeb5711db2aececc990be536&amp;amp;id=5585d37ecc" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"&gt;
-    &lt;row class="collapse"&gt;
-      &lt;div class="medium-10 columns"&gt;
-        &lt;input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address"&gt;
-      &lt;/div&gt;
-      &lt;div class="medium-2 columns"&gt;
-        &lt;input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button postfix"&gt;
-      &lt;/div&gt;
-    &lt;/row&gt;
-  &lt;/form&gt;
-&lt;/section&gt;&lt;/p&gt;
-
 &lt;h2 id="documentation"&gt;Documentation&lt;/h2&gt;
 
 &lt;p&gt;The documentation site has been updated. You can still access v1.9 docs via the version selector. The documentation
@@ -217,6 +204,19 @@ the docs or want to improve it, do not hesitate to submit a PR.&lt;/p&gt;
 &lt;li&gt;&lt;a href="http://www.demonware.net"&gt;Demonware&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://developer.mediamath.com/OpenSource"&gt;Mediamath&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;section class="newsletter"&gt;
+  &lt;form action="http://grafana.us8.list-manage.com/subscribe/post?u=2aeb5711db2aececc990be536&amp;amp;id=5585d37ecc" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"&gt;
+    &lt;row class="collapse"&gt;
+      &lt;div class="medium-10 columns"&gt;
+        &lt;input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address"&gt;
+      &lt;/div&gt;
+      &lt;div class="medium-2 columns"&gt;
+        &lt;input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button postfix"&gt;
+      &lt;/div&gt;
+    &lt;/row&gt;
+  &lt;/form&gt;
+&lt;/section&gt;&lt;/p&gt;
 </content>
   </entry>
   <entry>
