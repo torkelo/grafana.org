@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://grafana.org/blog/2015/03/30/Grafana-2-Beta1.html"/>
     <id>http://grafana.org/blog/2015/03/30/Grafana-2-Beta1.html</id>
     <published>2015-03-30T00:00:00Z</published>
-    <updated>2015-03-30T17:31:47+02:00</updated>
+    <updated>2015-03-30T18:49:17+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -123,12 +123,12 @@ latency, network traffic or storage.&lt;/p&gt;
 &lt;p&gt;&lt;img src="http://docs.grafana.org/img/v2/dashlist_starred.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;There is one new panel in Grafana v2.0 and that is the &lt;code class="prettyprint"&gt;Dashboard list&lt;/code&gt; panel. This panel can show the current
-signed in user&amp;rsquo;s starred dashboards or dashboards based on a custom searchbased on search strings or tags.&lt;/p&gt;
+signed in user&amp;rsquo;s starred dashboards or dashboards based on a custom search (keyword or tags).&lt;/p&gt;
 
 &lt;h3 id="data-source-proxy-&amp;amp;-admin-views"&gt;Data Source proxy &amp;amp; admin views&lt;/h3&gt;
 
 &lt;p&gt;Data sources in Grafana v2.0 are NOT defined in a config file but added through the UI. The backend can also
-handle proxying data source metric requests which meens that it is a lot easier to get started using Grafana with
+handle proxying data source metric requests which means that it is a lot easier to get started using Grafana with
 Graphite or OpenTSDB without having to spend time with nginx CORS (Cross origin resource sharing) work arounds.&lt;/p&gt;
 
 &lt;blockquote&gt;
