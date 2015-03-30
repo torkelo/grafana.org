@@ -1,0 +1,219 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><title>Grafana - Grafana 2.0-Beta1 Released</title><meta content="Torkel Ödegaard" name="author" /><meta content="width=device-width, initial-scale=1" name="viewport" /><meta content="Grafana, the graphite dashboard frontend, editor and graph composer" name="description" /><meta content="Grafana, Graphite, Dashboard, InfluxDB, OpenTSDB, Frontend, Metrics, Editor, Composer, Analytics, Graphana" name="keywords" /><link href="/assets/img/fav32.png" rel="icon" /><link href="/assets/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" /><link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" media="screen" rel="stylesheet" type="text/css" /><link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" media="screen" rel="stylesheet" type="text/css" /><script src="/assets/javascripts/all.js" type="text/javascript"></script><meta content="Grafana 2.0-Beta1 Released" property="og:title" /><meta content="Grafana.org" property="og:site_name" /><meta content="website" property="og:type" /><meta content="http://grafana.org/assets/img/docs/nice_dashboard.png" property="og:image" /></head><body class="blog blog_2015 blog_2015_03 blog_2015_03_30 blog_2015_03_30_Grafana-2-Beta1"><section class="nav"><div class="row"><nav class="top-bar" data-topbar="1"><ul class="title-area"><li class="name"><a href="/"><img class="no-shadow" src="/assets/img/logo_transparent_200x75.png" width="150px" /></a></li><li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li></ul><section class="top-bar-section"><ul class="right"><li><a href="/features/">Features</a></li><li><a href="http://docs.grafana.org">Docs</a></li><li><a href="/community/">Community</a></li><li><a href="/blog/">Blog</a></li><li><a target="blank" href="http://play.grafana.org">Live demo</a></li><li><a href="https://github.com/grafana/grafana" target="_blank" title="Go to github repository"><i class="fa fa-fw fa-github"></i></a</li><li class="has-form"><a class="button" href="/download" id="top-bar-button">Download</a></li></ul></section></nav></div></section><section class="main"><div class="row padding-bottom-large"><div class="large-9 columns image-shadows"><h1>Grafana 2.0-Beta1 Released</h1><div class="row"><div class="small-9 columns"><h5 class="subheader">March 30, 2015 by Torkel Ödegaard</h5></div><div class="small-3 columns"><p id="twitter"><a class="twitter-share-button" data-via="grafana" href="https://twitter.com/share"></a></p><script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div></div><p>Today is an exciting day for the Grafana project, Grafana 2.0-beta1 is released! So much hard work
+during the last 5 months has gone in to making this release.</p>
+
+<p>Grafana 2.0 comes with its own backend server (written in Go). So upgrading requires a little
+more than for previous upgrades. Dashboards are 100% backward compatible.</p>
+
+<p>We provide <code class="prettyprint">deb</code>, <code class="prettyprint">rpm</code> and regular binary tar packages for download. If your platform is not included, check the <a href="http://docs.grafana.org/v2.0/project/building_from_source/">Building from source</a>
+guide.</p>
+
+<ul>
+<li><a href="http://localhost:4567/download">Download</a></li>
+<li><a href="http://docs.grafana.org/v2.0/installation/">Installation guide</a></li>
+<li><a href="http://docs.grafana.org/v2.0/installation/migrating_to2/">Migrating from 1.x to 2.x</a></li>
+</ul>
+
+<h2 id="what&#39;s-new-in-grafana-v2.0">What&rsquo;s New in Grafana v2.0</h2>
+
+<p>There are so many new features (as well as fixes) to talk about. Below is some of the highlights.</p>
+
+<h3 id="dashboard-snapshot-sharing">Dashboard Snapshot sharing</h3>
+
+<p>A dashboard snapshot is an instant way to share an interactive dashboard publicly. When created, we <strong>strip sensitive data</strong> like queries
+(metric, template and annotation) and panel links, leaving only the visible metric data and series names embedded into your dashboard. Dashboard
+snapshots can be accessed by anyone who has the link and can reach the URL.</p>
+
+<p><img src="http://docs.grafana.org/img/v2/dashboard_snapshot_dialog.png" /></p>
+
+<h4 id="publish-snapshots">Publish snapshots</h4>
+
+<p>You can publish snapshots to you local instance or to <a href="http://snapshot.raintank.io">snapshot.raintank.io</a>. The later is a free service
+that is provided by <a href="http://raintank.io">Raintank</a> that allows you to publish dashboard snapshots to an external grafana instance.
+The same rules still apply, anyone with the link can view it. You can set an expiration time if you want the snapshot to be removed
+after a certain time period.</p>
+
+<h3 id="panel-time-overrides-&amp;-timeshift">Panel time overrides &amp; timeshift</h3>
+
+<p>In Grafana v2.x you can now override the relative time range for individual panels. You can also add a
+time shift to individual panels. This allows you to show metrics from different time periods or days
+at the same time.</p>
+
+<p><img src="http://docs.grafana.org/img/v2/panel_time_override.jpg" /></p>
+
+<p>You control these overrides in panel editor mode and the new tab <code class="prettyprint">Time Range</code>.</p>
+
+<p><img src="http://docs.grafana.org/img/v2/time_range_tab.jpg" /></p>
+
+<p>Currently you can only override the dashboard time with relative time ranges, not absolute time ranges. When
+you zoom or change the dashboard time to a custom absolute time range the panel overrides will be disabled. The
+panel relative time override is only active when the dashboard time is also relative. The panel timeshift override
+however is always active, even when the dashboard time is absolute.</p>
+
+<p>The <code class="prettyprint">Hide time override info</code> option allows you to hide the the override info text that is by default shown in the
+upper right of a panel when overriden time range options.</p>
+
+<h2 id="panel-iframe-embedding">Panel IFrame embedding</h2>
+
+<p>You can embed a single panel on another web page using the panel share dialog. Below you should see an iframe
+with a graph panel (taken from dashoard snapshot at <a href="http://snapshot.raintank.io">snapshot.raintank.io</a>.</p>
+
+<iframe src="http://snapshot.raintank.io/dashboard/solo/snapshot/IQ7iZF00sHalq0Ffjv6OyclJSA1YHYV1?panelId=4&fullscreen" width="650" height="300" frameborder="0"></iframe>
+
+<h3 id="new-dashboard-top-header">New dashboard top header</h3>
+
+<p><img class="no-shadow" src="http://docs.grafana.org/img/v2/v2_top_nav_annotated.png"></p>
+
+<ol>
+<li>Side menu toggle</li>
+<li>Dashboard title &amp; Search dropdown (also includes access to New dashboard, Import &amp; Playlist)</li>
+<li>Star/unstar current dashboard</li>
+<li>Share current dashboard (Make sure the dashboard is saved before)</li>
+<li>Save current dashboard</li>
+<li>Settings dropdown (dashboard settings, annotations, templating, etc)</li>
+</ol>
+
+<blockquote>
+<p><strong>Note</strong> In Grafana v2.0 when you change the title of a dashboard and then save it it will no
+longer create a new dashboard. It will just change the name for the current dashboard.
+To change name and create a new dashboard use the <code class="prettyprint">Save As...</code> menu option</p>
+</blockquote>
+
+<h3 id="new-search-view-&amp;-starring-dashboards">New search view &amp; starring dashboards</h3>
+
+<p><img src="http://docs.grafana.org/img/v2/dashboard_search.jpg" /></p>
+
+<p>The dashboard search view has received a big UI update and polish. You can now see and filter by which dashboard
+you have personally starred.</p>
+
+<h3 id="logarithmic-scale">Logarithmic scale</h3>
+
+<p>The Graph panel now supports 3 logarithmic scales, <code class="prettyprint">log base 10</code>, <code class="prettyprint">log base 32</code>, <code class="prettyprint">log base 1024</code>. Logarithmic y-axis
+scales are very useful when rendering many series of different order of magnitude on the same scale. For example
+latency, network traffic or storage.</p>
+
+<p><img src="http://docs.grafana.org/img/v2/graph_logbase10_ms.png" /></p>
+
+<h3 id="dashlist-panel">Dashlist panel</h3>
+
+<p><img src="http://docs.grafana.org/img/v2/dashlist_starred.png" /></p>
+
+<p>There is one new panel in Grafana v2.0 and that is the <code class="prettyprint">dashlist</code> panel that allows you to show your personal
+starred dashboards as well as do custom searches based on search strings or tags.</p>
+
+<h3 id="data-source-proxy-&amp;-admin-views">Data Source proxy &amp; admin views</h3>
+
+<p>Data sources in Grafana v2.0 are NOT defined in a config file but added through the UI. The backend can also
+handle proxying data source metric requests which meens that it is a lot easier to get started using Grafana with
+Graphite or OpenTSDB without having to spend time with nginx CORS (Cross origin resource sharing) work arounds.</p>
+
+<blockquote>
+<p><strong>Note</strong> For InfluxDB users: The data source proxy feature will
+hide database user &amp; password details from the frontend / browser.</p>
+</blockquote>
+
+<h3 id="relative-time-now-delay">Relative time now delay</h3>
+
+<p>A problem that has plagued many is the fact that graphs tend to dip to zero by the end because metrics for
+the last interval has yet to be received by the time series database. You can now work around this by adding
+a now delay in <code class="prettyprint">Dashboard Settings</code> &gt; <code class="prettyprint">Time Picker</code> tab.</p>
+
+<p><img src="http://docs.grafana.org/img/v2/timepicker_now_delay.jpg" /></p>
+
+<h3 id="overwrite-protection">Overwrite protection</h3>
+
+<p>Grafana v2.0 will protect you and your other Grafana users from accidentally overwriting each others changes
+to the same dashboard. The same protection also applies if you try to create a new dashboard with a
+name that already exists.</p>
+
+<p><img src="http://docs.grafana.org/img/v2/overwrite_protection.jpg" /></p>
+
+<h3 id="user-preferences">User preferences</h3>
+
+<p>If you open side menu (by clicking on the Grafana icon in the top header) you can access your profile page.
+Here you can update your user details, UI Theme and change password.</p>
+
+<h3 id="png-rendering">PNG rendering</h3>
+
+<p>In the panel share dialog you now have access to a link that will render the panel to a PNG image.
+The panel is rendered on the backend via phantomjs (headless browser). This requires that your metric
+data source is accessible from your Grafana server host machine.</p>
+
+<p><img src="http://docs.grafana.org/img/v2/share_dialog_image_highlight.jpg" /></p>
+
+<h3 id="user-&amp;-organization-permissions">User &amp; Organization permissions</h3>
+
+<p>All dashboards and data sources are linked to an organization (not to a user). Users are linked to
+Organizations via a role. That role can be:</p>
+
+<ul>
+<li><code class="prettyprint">Viewer</code>: Can only view dashboards, not save / create them.</li>
+<li><code class="prettyprint">Editor</code>: Can view, update and create dashboards.</li>
+<li><code class="prettyprint">Admin</code>: Everything an Editor can plus edit and add data sources and organization users.</li>
+</ul>
+
+<blockquote>
+<p><strong>Note</strong> A <code class="prettyprint">Viewer</code> can still view all metrics exposed through a data source, not only
+the metrics used in already existing dashboards. That is because there are not
+per series permissions in Graphite, InfluxDB or OpenTSDB.</p>
+</blockquote>
+
+<p>There are currently no permissions on individual dashboards.</p>
+
+<p><section class="newsletter">
+  <form action="http://grafana.us8.list-manage.com/subscribe/post?u=2aeb5711db2aececc990be536&amp;id=5585d37ecc" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+    <row class="collapse">
+      <div class="medium-10 columns">
+        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address">
+      </div>
+      <div class="medium-2 columns">
+        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button postfix">
+      </div>
+    </row>
+  </form>
+</section></p>
+
+<h2 id="documentation">Documentation</h2>
+
+<p>The documentation site has been updated. You can still access v1.9 docs via the version selector. The documentation
+now live in the <a href="https://github.com/grafana/grafana/tree/master/docs">main grafana repository</a>. If you spot a mistake in
+the docs or feel like you want to improve it, do not hesitate to submit a PR.</p>
+
+<p>The documentation has partly been updated for 2.0, we will continuing to work on docs in the coming days and weeks.</p>
+
+<h3 id="feedback-and-bug-reports">Feedback and bug reports</h3>
+
+<p>Please report any issues you have on <a href="https://github.com/grafana/grafana/issues">github</a>.</p>
+
+<h2 id="thanks-to-project-sponsors">Thanks to project sponsors</h2>
+
+<ul>
+<li><a href="http://www.squarespace.com">Squarespace</a></li>
+<li><a href="http://www.dreamhost.com">Dreamhost</a></li>
+<li><a href="http://www.demonware.net">Demonware</a></li>
+<li><a href="https://developer.mediamath.com/OpenSource">Mediamath</a></li>
+</ul>
+<hr style="margin-top:30px; margin-bottom:30px"/>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'grafanablog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div><div class="large-3 columns"><br /><h4>Posts</h4><p><a href="/blog/2015/03/30/Grafana-2-Beta1.html">Grafana 2.0-Beta1 Released</a></p><p><a href="/blog/2015/02/10/Grafana-2-Alpha-and-preview.html">Grafana 2.0 Alpha & Preview</a></p><p><a href="/blog/2015/01/12/grafana2-the-future-and-raintank.html">Grafana 2.0, the future, and raintank</a></p><hr /><h4>About Grafana</h4><p>Grafana is an open source metrics dashboard and graph composer for Graphite and InfluxDB</p></div></div></section><div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls"><div class="slides"></div><h3 class="title"></h3><a class="prev">‹</a><a class="next">›</a><a class="close">×</a><a class="play-pause"></a><ol class="indicator"></ol></div><footer><section class="newsletter"><div class="row"><h3 class="text-center">Get notified of new releases!</h3></div><div class="row"><div class="large-6 columns push-3"><form action="http://grafana.us8.list-manage.com/subscribe/post?u=2aeb5711db2aececc990be536&amp;id=5585d37ecc" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" target="_blank"><div class="row collapse"><div class="medium-10 columns"><input class="email" id="mce-EMAIL" name="EMAIL" placeholder="email address" type="email" value="" /></div><div class="medium-2 columns"><input class="button postfix" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Subscribe" /></div></div></form></div></div></section><div class="row text-center"><ul class="footer-social"><li><i class="fa fa-github"></i><a href="https://github.com/grafana/grafana/issues">issue tracker</a> on GitHub</li><li><i class="fa fa-comment"></i><a href="irc://chat.freenode.net/#grafana">#grafana</a> on freenode</li><li><i class="fa fa-twitter"></i><a href="http://twitter.com/grafana">@grafana</a> on Twitter</li><li><i class="fa fa-envelope"></i><a href="mailto:torkel@grafana.org">email</a></li></ul></div><div class="row copyright text-center">&copy; 2013 Torkel Ödegaard &amp; Coding Instinct AB<iframe allowtransparency="true" class="github-btn" frameborder="false" height="20" scrolling="0" src="http://ghbtns.com/github-btn.html?user=grafana&amp;repo=grafana&amp;type=watch&amp;count=true" title="Star on GitHub" width="100"></iframe><iframe allowtransparency="true" class="github-btn" frameborder="false" height="20" scrolling="0" src="http://ghbtns.com/github-btn.html?user=grafana&amp;repo=grafana&amp;type=fork&amp;count=true" title="Fork on GitHub" width="80"></iframe></div></footer><script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-47280256-1', 'grafana.org');
+ga('require', 'linkid', 'linkid.js');
+ga('send', 'pageview', {
+ 'page': location.pathname + location.search  + location.hash,
+});</script></body></html>
