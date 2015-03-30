@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://grafana.org/blog/2015/03/30/Grafana-2-Beta1.html"/>
     <id>http://grafana.org/blog/2015/03/30/Grafana-2-Beta1.html</id>
     <published>2015-03-30T00:00:00Z</published>
-    <updated>2015-03-30T16:54:22+02:00</updated>
+    <updated>2015-03-30T17:17:48+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -201,7 +201,7 @@ per series permissions in Graphite, InfluxDB or OpenTSDB.&lt;/p&gt;
 
 &lt;p&gt;The documentation site has been updated. You can still access v1.9 docs via the version selector. The documentation
 now live in the &lt;a href="https://github.com/grafana/grafana/tree/master/docs"&gt;main grafana repository&lt;/a&gt;. If you spot a mistake in
-the docs or feel like you want to improve it, do not hesitate to submit a PR.&lt;/p&gt;
+the docs or want to improve it, do not hesitate to submit a PR.&lt;/p&gt;
 
 &lt;p&gt;The documentation has partly been updated for 2.0, we will continuing to work on docs in the coming days and weeks.&lt;/p&gt;
 
