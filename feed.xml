@@ -5,10 +5,32 @@
   <id>http://grafana.org/blog</id>
   <link href="http://grafana.org/blog"/>
   <link href="http://grafana.org/feed.xml" rel="self"/>
-  <updated>2015-03-30T00:00:00Z</updated>
+  <updated>2015-04-09T00:00:00Z</updated>
   <author>
     <name>Grafana</name>
   </author>
+  <entry>
+    <title>March 2015 User Survey</title>
+    <link rel="alternate" href="http://grafana.org/blog/2015/04/09/March15-Survery.html"/>
+    <id>http://grafana.org/blog/2015/04/09/March15-Survery.html</id>
+    <published>2015-04-09T00:00:00Z</published>
+    <updated>2015-04-09T17:22:52+02:00</updated>
+    <author>
+      <name>Torkel Ödegaard</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img src="/assets/img/blog/grafana_survey_results800.png" class="no-shadow"&gt;&lt;/p&gt;
+
+&lt;p&gt;On March 1st 2015, we asked the Grafana community for a favor. We published a public
+survey to solicit feedback on the current state of the product to better understand how
+Grafana is being used and to weigh in on some new features we were considering.&lt;/p&gt;
+
+&lt;p&gt;The number and the quality of responses exceeded our expectations. Lots of really useful
+feedback on what is missing and what could be better. There were also a lot of
+gratifying compliments about how much everyone appreciate Grafana.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://infogr.am/grafana_user_survey_mar2015"&gt;Check out the survey results&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Grafana 2.0-Beta1 Released</title>
     <link rel="alternate" href="http://grafana.org/blog/2015/03/30/Grafana-2-Beta1.html"/>
@@ -769,68 +791,6 @@ Torkel&lt;/p&gt;
 &lt;li&gt;&lt;a href="http://www.squarespace.com"&gt;Sponsored by Squarespace&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.dreamhost.com"&gt;Sponsored by Dreamhost&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Grafana 1.7.0-rc1 Released!</title>
-    <link rel="alternate" href="http://grafana.org/blog/2014/08/05/grafana-1-7-0-rc1-released.html"/>
-    <id>http://grafana.org/blog/2014/08/05/grafana-1-7-0-rc1-released.html</id>
-    <published>2014-08-05T00:00:00Z</published>
-    <updated>2014-08-05T15:55:34+02:00</updated>
-    <author>
-      <name>Torkel Ödegaard</name>
-    </author>
-    <content type="html">&lt;p&gt;New release today! v1.7.0-rc1 is now available for &lt;a href="/download"&gt;download&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;This is a big release with a many new features and improvements. There are also a large number
-of architectural changes (hence the release candidate status).&lt;/p&gt;
-
-&lt;h3 id="release-highlights"&gt;Release highlights&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;InfluxDB can now be used as dashboard storage&lt;/li&gt;
-&lt;li&gt;InfluxDB can be used as a data source for annotations&lt;/li&gt;
-&lt;li&gt;InfluxDB series aliasing improvements (alias patterns)&lt;/li&gt;
-&lt;li&gt;Elasticsearch can be used as an annotation data source&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;New &lt;strong&gt;graph legend&lt;/strong&gt; options: &lt;em&gt;Align as table&lt;/em&gt; and &lt;em&gt;Right side&lt;/em&gt;.
-Align as table will list series in vertical column, legend values will also align. Right side will place
-the legend to the right side of the graph.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/assets/img/docs/graph_legend_right_table.png" /&gt;&lt;/p&gt;
-
-&lt;h3 id="documentation"&gt;Documentation&lt;/h3&gt;
-
-&lt;p&gt;The documentation has also seen an overhaul with many improvements and additions. A new &lt;a href="/docs/features/intro"&gt;Getting started&lt;/a&gt; guide
-and a new &lt;a href="/docs/troubleshooting"&gt;Troubleshooting&lt;/a&gt; guide for example.&lt;/p&gt;
-
-&lt;h3 id="fixes-and-small-additions"&gt;Fixes and small additions&lt;/h3&gt;
-
-&lt;p&gt;There are also a number of small improvements and fixes in this release. It also has a number of architectural improvements
-that will make future features and additions easier to implement and manage. Check the changelog on the &lt;a href="/download"&gt;download page&lt;/a&gt;
-for a complete list.&lt;/p&gt;
-
-&lt;h2 id="grafana-&amp;amp;-full-time-development"&gt;Grafana &amp;amp; full time development&lt;/h2&gt;
-
-&lt;p&gt;The future for Grafana looks very bright. I am, since last week, working on it full time. I currently have no sponsor
-or income besides my company (Coding Instinct AB) savings. So any company that wants to sponsor development, can get
-their logo on the start page, mentions in release notes and emails. Please email me at &lt;a href="mailto:contact@grafana.org"&gt;torkel@grafana.org&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Another avenue that I am going to explore, if sponsoring does not pan out,
-is working on a paid premium version and a hosted version. There is so much more that can
-be done with Grafana in turns of future features, improvements and polish. There is also a a lot of time consuming
-maintainaince (library upgrades), support and documentation that needs to be done. So full time development is
-really needed. The question is how to finance it.&lt;/p&gt;
-
-&lt;h2 id="meetups,-conferences-&amp;amp;-company-talks/coaching"&gt;Meetups, Conferences &amp;amp; Company talks/coaching&lt;/h2&gt;
-
-&lt;p&gt;If you want me to come talk about Grafana, application metrics, build measure learn or Graphite.
-Please email me at &lt;a href="mailto:contact@grafana.org"&gt;torkel@grafana.org&lt;/a&gt;. I live in Stockholm Sweden so
-travel could be an issue, but I am flexible and available :)&lt;/p&gt;
-
-&lt;p&gt;Cheers &amp;amp; keep on graphing!&lt;br&gt;
-Torkel&lt;/p&gt;
 </content>
   </entry>
 </feed>
