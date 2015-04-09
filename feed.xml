@@ -14,11 +14,13 @@
     <link rel="alternate" href="http://grafana.org/blog/2015/04/09/March15-Survery.html"/>
     <id>http://grafana.org/blog/2015/04/09/March15-Survery.html</id>
     <published>2015-04-09T00:00:00Z</published>
-    <updated>2015-04-09T17:22:52+02:00</updated>
+    <updated>2015-04-09T17:30:56+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;img src="/assets/img/blog/grafana_survey_results800.png" class="no-shadow"&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href="https://infogr.am/grafana_user_survey_mar2015"&gt;
+  &lt;img src="/assets/img/blog/grafana_survey_results800.png" class="no-shadow"&gt;
+&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;On March 1st 2015, we asked the Grafana community for a favor. We published a public
 survey to solicit feedback on the current state of the product to better understand how
