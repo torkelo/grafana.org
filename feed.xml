@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://grafana.org/blog/2015/04/20/Grafana-2-Released.html"/>
     <id>http://grafana.org/blog/2015/04/20/Grafana-2-Released.html</id>
     <published>2015-04-20T00:00:00Z</published>
-    <updated>2015-04-20T16:31:47+02:00</updated>
+    <updated>2015-04-20T17:39:43+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -38,7 +38,7 @@ guide.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Read the &lt;a href="http://docs.grafana.org/guides/whats-new-in-v2/"&gt;What&amp;rsquo;s new In Grafana 2.0&lt;/a&gt; article&lt;/li&gt;
-&lt;li&gt;Try the updated &lt;a href="http//play.grafana.org"&gt;demo site&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Try the updated &lt;a href="http://play.grafana.org"&gt;demo site&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Watch the screencast &lt;a href="https://www.youtube.com/watch?v=FC13uhFRsVw&amp;amp;list=PLDGkOdUX1Ujo3wHw9-z5Vo12YLqXRjzg2&amp;amp;index=3"&gt;Whats new in Grafana 2.0&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
