@@ -5,10 +5,76 @@
   <id>http://grafana.org/blog</id>
   <link href="http://grafana.org/blog"/>
   <link href="http://grafana.org/feed.xml" rel="self"/>
-  <updated>2015-04-09T00:00:00Z</updated>
+  <updated>2015-04-20T00:00:00Z</updated>
   <author>
     <name>Grafana</name>
   </author>
+  <entry>
+    <title>Grafana 2.0 Released</title>
+    <link rel="alternate" href="http://grafana.org/blog/2015/04/20/Grafana-2-Released.html"/>
+    <id>http://grafana.org/blog/2015/04/20/Grafana-2-Released.html</id>
+    <published>2015-04-20T00:00:00Z</published>
+    <updated>2015-04-20T12:58:59+02:00</updated>
+    <author>
+      <name>Torkel Ödegaard</name>
+    </author>
+    <content type="html">&lt;p&gt;Grafana 2.0 stable is now released and available for download.&lt;/p&gt;
+
+&lt;p&gt;We provide &lt;code class="prettyprint"&gt;deb&lt;/code&gt;, &lt;code class="prettyprint"&gt;rpm&lt;/code&gt; and generic binary tar packages for download as well as APT and YUM
+repositories. If your platform is not included, check the &lt;a href="http://docs.grafana.org/v2.0/project/building_from_source/"&gt;Building from source&lt;/a&gt;
+guide.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/download"&gt;Download page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://docs.grafana.org/installation/debian/"&gt;Installing on Debian / Ubuntu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://docs.grafana.org/installation/rpm/"&gt;Installing on RPM-based Linux (CentOS, Fedora, OpenSuse, RedHat)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://docs.grafana.org/installation/docker/"&gt;Installing via Docker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://docs.grafana.org/v2.0/installation/migrating_to2/"&gt;Migrating from 1.x to 2.x&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="what&amp;#39;s-new-in-grafana-v2.0"&gt;What&amp;rsquo;s New in Grafana v2.0&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Read the &lt;a href="http://docs.grafana.org/guides/whats-new-in-v2/"&gt;What&amp;rsquo;s new In Grafana 2.0&lt;/a&gt; article&lt;/li&gt;
+&lt;li&gt;Try the updated &lt;a href="http//play.grafana.org"&gt;demo site&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Watch the screencast &lt;a href="https://www.youtube.com/watch?v=FC13uhFRsVw&amp;amp;list=PLDGkOdUX1Ujo3wHw9-z5Vo12YLqXRjzg2&amp;amp;index=3"&gt;Whats new in Grafana 2.0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="new-grafana-screencast-episodes"&gt;New Grafana screencast episodes&lt;/h2&gt;
+
+&lt;p&gt;To acompany this release there are now 5 new screencast episodes.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=FC13uhFRsVw&amp;amp;list=PLDGkOdUX1Ujo3wHw9-z5Vo12YLqXRjzg2&amp;amp;index=3"&gt;Episode 3 - What&amp;rsquo;s New In Grafana 2.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=JY22EBOR9hQ&amp;amp;list=PLDGkOdUX1Ujo3wHw9-z5Vo12YLqXRjzg2&amp;amp;index=4"&gt;Episode 4 - Installation &amp;amp; Configuration on Ubuntu / Debian&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=E-gMFv84FE8&amp;amp;index=5&amp;amp;list=PLDGkOdUX1Ujo3wHw9-z5Vo12YLqXRjzg2"&gt;Episode 5 - Installation &amp;amp; Configuration on Redhat / Centos&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=9ZCMVNxUf6s&amp;amp;index=6&amp;amp;list=PLDGkOdUX1Ujo3wHw9-z5Vo12YLqXRjzg20"&gt;Episode 6 - Adding data sources, users &amp;amp; organizations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=sKNZMtoSHN4&amp;amp;list=PLDGkOdUX1Ujo3wHw9-z5Vo12YLqXRjzg2&amp;amp;index=7"&gt;Episode 7 - Beginners guide to building dashboards&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="thanks-to-project-sponsors"&gt;Thanks to project sponsors&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.squarespace.com"&gt;Squarespace&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.dreamhost.com"&gt;Dreamhost&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.demonware.net"&gt;Demonware&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://developer.mediamath.com/OpenSource"&gt;Mediamath&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;section class="newsletter"&gt;
+  &lt;form action="http://grafana.us8.list-manage.com/subscribe/post?u=2aeb5711db2aececc990be536&amp;amp;id=5585d37ecc" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"&gt;
+    &lt;row class="collapse"&gt;
+      &lt;div class="medium-10 columns"&gt;
+        &lt;input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address"&gt;
+      &lt;/div&gt;
+      &lt;div class="medium-2 columns"&gt;
+        &lt;input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button postfix"&gt;
+      &lt;/div&gt;
+    &lt;/row&gt;
+  &lt;/form&gt;
+&lt;/section&gt;&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>March 2015 User Survey</title>
     <link rel="alternate" href="http://grafana.org/blog/2015/04/09/March15-Survery.html"/>
@@ -602,185 +668,6 @@ there open source time series system &lt;a href="http://blueflood.io/"&gt;Bluefl
 &lt;h3 id="meetups,-conferences-&amp;amp;-company-talks/coaching"&gt;Meetups, Conferences &amp;amp; Company talks/coaching&lt;/h3&gt;
 
 &lt;p&gt;If you want me to come and talk about Grafana, application metrics, build measure learn or Graphite.
-Please email me at &lt;a href="mailto:contact@grafana.org"&gt;torkel@grafana.org&lt;/a&gt;. I live in Stockholm Sweden so
-travel could be an issue, but I am flexible and available :)&lt;/p&gt;
-
-&lt;p&gt;Cheers &amp;amp; keep on graphing!&lt;br&gt;
-Torkel&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Big thanks to my sponsors&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.squarespace.com"&gt;Sponsored by Squarespace&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.dreamhost.com"&gt;Sponsored by Dreamhost&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Grafana 1.8.0-rc1 Released!</title>
-    <link rel="alternate" href="http://grafana.org/blog/2014/09/11/grafana-1-8-0-rc1-released.html"/>
-    <id>http://grafana.org/blog/2014/09/11/grafana-1-8-0-rc1-released.html</id>
-    <published>2014-09-11T00:00:00Z</published>
-    <updated>2014-09-12T16:24:17+02:00</updated>
-    <author>
-      <name>Torkel Ödegaard</name>
-    </author>
-    <content type="html">&lt;p&gt;New release today! v1.8.0-rc1 is now available for &lt;a href="/download"&gt;download&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;This is probably the biggest release since the first version was released. So many new features, enhancements and general UI improvements
-that this will likely be a very long blog post. &lt;a href="http://play.grafana.org"&gt;play.grafana.org&lt;/a&gt; is updated to
-run 1.8.0-rc1, now with InfluxDB demo dashboards. There is also a &lt;a href="http://play.grafana.org/#/dashboard/db/new-features-in-v18"&gt;New features in v1.8&lt;/a&gt;
-dashboard that highlights some of the new features.&lt;/p&gt;
-
-&lt;h3 id="release-highlights"&gt;Release highlights&lt;/h3&gt;
-
-&lt;h4 id="1)-mixed-graph-styling"&gt;1) Mixed graph styling&lt;/h4&gt;
-
-&lt;p&gt;You can override any display setting for a specific series using the series name or a regex pattern. Mix bars with lines, or disable
-stacking for the right y-axis or any combination you can think of!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/assets/img/blog/mixed_styles.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;You find these options under display styles.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/assets/img/blog/series_override_options.png" /&gt;&lt;/p&gt;
-
-&lt;h4 id="2)-improved-templating-system"&gt;2) Improved templating system&lt;/h4&gt;
-
-&lt;p&gt;The templating system has been completly rewritten. This feature was previously called filtering. From 1.8 it is renamed to templating.
-Templating allows you to create variables that you can use in metric queries, annotation queries and panel titles to create generic reusable
-dashboards. The new templating system uses a &lt;code class="prettyprint"&gt;$variable&lt;/code&gt; syntax, but the old &lt;code class="prettyprint"&gt;[[variable]]&lt;/code&gt; still works.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;New templating editor&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/assets/img/blog/template_variable_list.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;The new templating system now has full support for InfluxDB. You can extract parts of a metric name using a regex.
-You also have full control over how the &amp;ldquo;All&amp;rdquo; option should be formated so that it works for different
-data sources.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/assets/img/blog/template_editor_influxdb.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;InfluxDB users should use &lt;code class="prettyprint"&gt;regex wildcard&lt;/code&gt; or &lt;code class="prettyprint"&gt;regex values&lt;/code&gt; for the &lt;code class="prettyprint"&gt;All&lt;/code&gt; option format.
-Graphite users should use &lt;code class="prettyprint"&gt;glob&lt;/code&gt; or &lt;code class="prettyprint"&gt;wildcard&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Variables in Graphite function parameters&lt;/strong&gt;&lt;br&gt;
-You can now use template variables for function parameters. There is a special template variable type called &lt;code class="prettyprint"&gt;interval&lt;/code&gt; that includes
-and auto value, where the interval is calculated based on the time range.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/assets/img/blog/graphite_func_variables.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/assets/img/docs/template_variable_interval.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Template variable selection&lt;/strong&gt;&lt;br&gt;
-When selecting template variables you now get a text box and and auto complete dropdown. Useful when you have many posible values for
-a variable.&lt;/p&gt;
-
-&lt;h4 id="3)-ui-improvements"&gt;3) UI Improvements&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;No more modals&lt;/strong&gt;&lt;br&gt;
-All editors are now shown in an edit pane under the menu. This feels much more natural and faster.
-All editors have also been polished and generally look a little better.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/assets/img/blog/new_editor_look.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Improved search &amp;amp; tags&lt;/strong&gt;&lt;br&gt;
-The search results view has been given a makeover, now with colored tags.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/assets/img/blog/new_search_look.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;You can navigate the search results with your up/down keys. The first
-result is always highlighted. Hit enter to open the dashboard. You can add tags in the dashboard
-settings edit pane. You can hit the tab key, to focus the tags link, hit enter again to get
-an overview of all tags, click on the tag to filter by the tag.&lt;/p&gt;
-
-&lt;h4 id="4)-improved-graphite-query-editor"&gt;4) Improved Graphite Query editor&lt;/h4&gt;
-
-&lt;p&gt;Many graphite functions can take other series as arguments. This was something the old
-query editor could not handle. But the new improved query editor allows you to use
-other queries as function arguments. To refer to another query you use a letter, like &lt;code class="prettyprint"&gt;#A&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/assets/img/blog/graphite_complex_query1.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Or a shorter version of the same thing:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/assets/img/blog/graphite_complex_query2.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;This is very powerful as it allows you to reuse queries in complex expressions. For example
-plot a total and a percentage. If a query is only to be used in another query and not drawn
-simply hide it using the eye.&lt;/p&gt;
-
-&lt;h4 id="5)-influxdb-query-editor-enhancements"&gt;5) InfluxDB Query Editor enhancements&lt;/h4&gt;
-
-&lt;p&gt;The query editor for InfluxDB has been upgraded. There are now two rows for each query, so more space
-for potentially long series names. There is now an option to add &lt;code class="prettyprint"&gt;fill(null)&lt;/code&gt; or &lt;code class="prettyprint"&gt;fill(0)&lt;/code&gt;. These options
-are very important to understand and use because they solve some important scenarios that has troubled many
-InfluxDB users.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/assets/img/blog/influxdb_new_query_editor.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;A setting that is very important in combination with &lt;code class="prettyprint"&gt;fill(0)&lt;/code&gt; is the new group by time option below your
-queries. This option allows you to set a fixed group by time for all queries, but more importantly it allows
-you to set a lower limit for the auto group by time. When using &lt;code class="prettyprint"&gt;fill(0)&lt;/code&gt; you do not want to insert
-zeros between real measurements, so you group by time must never be below the rate of writes.&lt;/p&gt;
-
-&lt;p&gt;A low limit for the auto group by time is set using &lt;code class="prettyprint"&gt;&amp;gt;10s&lt;/code&gt; syntax. This feature together with &lt;code class="prettyprint"&gt;fill(0)&lt;/code&gt; is important when stacking multiple
-series to ensure that every series have values for every time point.&lt;/p&gt;
-
-&lt;h4 id="6)-influxdb-breaking-changes"&gt;6) InfluxDB breaking changes&lt;/h4&gt;
-
-&lt;p&gt;I am sorry to say that there are some breaking changes in 1.8 for InfluxDB users. All queries that used
-a where clause or raw queries needs to be updated.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Raw Queries&lt;/strong&gt;&lt;/p&gt;
-&lt;pre class="highlight sql"&gt;&lt;span class="k"&gt;select&lt;/span&gt; &lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;from&lt;/span&gt; &lt;span class="nv"&gt;&amp;quot;app.status&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;where&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;timeFilter&lt;/span&gt; &lt;span class="k"&gt;group&lt;/span&gt; &lt;span class="k"&gt;by&lt;/span&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;interval&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;fill&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;order&lt;/span&gt; &lt;span class="k"&gt;asc&lt;/span&gt;
-&lt;/pre&gt;
-&lt;p&gt;Raw queries are now required to include &lt;code class="prettyprint"&gt;$timeFilter&lt;/code&gt; variable for time range, and zoom to work. Before
-Grafana tried to parse and inject the time range filter in the right place, but this was fragile and could
-lead to double time where conditions if there already was one in the query. Raw queries can now use,
-optionally, a &lt;code class="prettyprint"&gt;$interval&lt;/code&gt; variable which will be replaced with the auto group by time interval.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Where condition&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;In 1.7.0 you could add a single where condition, using a dropdown to select column, operation, and value.
-This was overly complicated, and is now replaced with a single where condition text box where you
-can enter any number of where conditions. If you open a graph in edit mode the editor will try to
-patch the query (using the old model) to build the where condition for you. But you will have to
-enter edit mode for this &amp;ldquo;patch&amp;rdquo; process to work.&lt;/p&gt;
-
-&lt;h4 id="6)-misc-improvements"&gt;6) Misc improvements&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Url state for panel edit and fullscreen mode, copy url and you will be taken to edit or fullscreen for that panel&lt;/li&gt;
-&lt;li&gt;from and to date range filters can be passed via url, see &lt;a href="https://github.com/grafana/grafana/issues/787"&gt;Issue #787&lt;/a&gt;
-for more details&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;A full share feature, where you can share a panel or dashboard with the current time range did not
-make it for this release. But will be coming.&lt;/p&gt;
-
-&lt;h4 id="7)-documentation"&gt;7) Documentation&lt;/h4&gt;
-
-&lt;p&gt;The documentation for the new features and changes has yet to be done. That will be the focus for next
-week. In the mean time, this blog post and the demo dashboards on &lt;a href="http://play.grafana.org"&gt;play.grafana.org&lt;/a&gt;
-will have to suffice.&lt;/p&gt;
-
-&lt;h4 id="8)-download"&gt;8) Download&lt;/h4&gt;
-
-&lt;p&gt;Even though I have two project sponsors, it is not enough
-for me to work full time and long term on Grafana. So please &lt;a href="/donate"&gt;pay what you think it is worth&lt;/a&gt;, and head to the &lt;a href="/download"&gt;download&lt;/a&gt; page
-for download links and a complete changelog.&lt;/p&gt;
-
-&lt;h3 id="nyc-grafana-+-influxdb-meetup-on-oct-8th"&gt;NYC Grafana + InfluxDB Meetup on Oct 8th&lt;/h3&gt;
-
-&lt;p&gt;I will be flying to New York on Oct 5th and will stay for two weeks. My project sponsor
-&lt;a href="http://www.squarespace.com/"&gt;Squarespace&lt;/a&gt; will be hosting a meetup on Oct 8th where I
-and Paul Dix from InfluxDB will be speaking. &lt;a href="http://www.meetup.com/Monitoring-NYC/events/205947512/"&gt;Sign up&lt;/a&gt;
-for the meetup!&lt;/p&gt;
-
-&lt;h3 id="meetups,-conferences-&amp;amp;-company-talks/coaching"&gt;Meetups, Conferences &amp;amp; Company talks/coaching&lt;/h3&gt;
-
-&lt;p&gt;If you want me to come talk about Grafana, application metrics, build measure learn or Graphite.
 Please email me at &lt;a href="mailto:contact@grafana.org"&gt;torkel@grafana.org&lt;/a&gt;. I live in Stockholm Sweden so
 travel could be an issue, but I am flexible and available :)&lt;/p&gt;
 
