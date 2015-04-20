@@ -14,11 +14,13 @@
     <link rel="alternate" href="http://grafana.org/blog/2015/04/20/Grafana-2-Released.html"/>
     <id>http://grafana.org/blog/2015/04/20/Grafana-2-Released.html</id>
     <published>2015-04-20T00:00:00Z</published>
-    <updated>2015-04-20T12:58:59+02:00</updated>
+    <updated>2015-04-20T16:31:47+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
-    <content type="html">&lt;p&gt;Grafana 2.0 stable is now released and available for download.&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src="/assets/img/blog/grafana_2_stable_post.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Grafana 2.0 stable is now released and available for download.&lt;/p&gt;
 
 &lt;p&gt;We provide &lt;code class="prettyprint"&gt;deb&lt;/code&gt;, &lt;code class="prettyprint"&gt;rpm&lt;/code&gt; and generic binary tar packages for download as well as APT and YUM
 repositories. If your platform is not included, check the &lt;a href="http://docs.grafana.org/v2.0/project/building_from_source/"&gt;Building from source&lt;/a&gt;
@@ -42,7 +44,7 @@ guide.&lt;/p&gt;
 
 &lt;h2 id="new-grafana-screencast-episodes"&gt;New Grafana screencast episodes&lt;/h2&gt;
 
-&lt;p&gt;To acompany this release there are now 5 new screencast episodes.&lt;/p&gt;
+&lt;p&gt;To accompany this release there are now 5 new screencast episodes.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=FC13uhFRsVw&amp;amp;list=PLDGkOdUX1Ujo3wHw9-z5Vo12YLqXRjzg2&amp;amp;index=3"&gt;Episode 3 - What&amp;rsquo;s New In Grafana 2.0&lt;/a&gt;&lt;/li&gt;
