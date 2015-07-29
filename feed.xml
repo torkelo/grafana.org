@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://grafana.org/blog/2015/04/20/Grafana-2-Released.html"/>
     <id>http://grafana.org/blog/2015/04/20/Grafana-2-Released.html</id>
     <published>2015-04-20T00:00:00Z</published>
-    <updated>2015-04-20T17:39:43+02:00</updated>
+    <updated>2015-07-29T09:36:23+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -82,7 +82,7 @@ guide.&lt;/p&gt;
     <link rel="alternate" href="http://grafana.org/blog/2015/04/09/March15-Survery.html"/>
     <id>http://grafana.org/blog/2015/04/09/March15-Survery.html</id>
     <published>2015-04-09T00:00:00Z</published>
-    <updated>2015-04-09T17:30:56+02:00</updated>
+    <updated>2015-07-29T09:36:23+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -106,7 +106,7 @@ gratifying compliments about how much everyone appreciate Grafana.&lt;/p&gt;
     <link rel="alternate" href="http://grafana.org/blog/2015/03/30/Grafana-2-Beta1.html"/>
     <id>http://grafana.org/blog/2015/03/30/Grafana-2-Beta1.html</id>
     <published>2015-03-30T00:00:00Z</published>
-    <updated>2015-07-21T15:43:20+02:00</updated>
+    <updated>2015-07-29T09:36:23+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -316,7 +316,7 @@ the docs or want to improve it, do not hesitate to submit a PR.&lt;/p&gt;
     <link rel="alternate" href="http://grafana.org/blog/2015/02/10/Grafana-2-Alpha-and-preview.html"/>
     <id>http://grafana.org/blog/2015/02/10/Grafana-2-Alpha-and-preview.html</id>
     <published>2015-02-10T00:00:00Z</published>
-    <updated>2015-03-05T15:21:55+01:00</updated>
+    <updated>2015-07-29T09:36:23+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -445,7 +445,7 @@ Subscribe to newsletter to get notified.&lt;/p&gt;
     <link rel="alternate" href="http://grafana.org/blog/2015/01/12/grafana2-the-future-and-raintank.html"/>
     <id>http://grafana.org/blog/2015/01/12/grafana2-the-future-and-raintank.html</id>
     <published>2015-01-12T00:00:00Z</published>
-    <updated>2015-01-13T10:13:10+01:00</updated>
+    <updated>2015-07-29T09:36:23+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -581,7 +581,7 @@ for an Atlas datasource (the Netflix metrics db).&lt;/li&gt;
     <link rel="alternate" href="http://grafana.org/blog/2014/11/17/grafana-1-9-0-rc1-released.html"/>
     <id>http://grafana.org/blog/2014/11/17/grafana-1-9-0-rc1-released.html</id>
     <published>2014-11-17T00:00:00Z</published>
-    <updated>2014-11-17T16:29:17+01:00</updated>
+    <updated>2014-12-02T23:20:30+01:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>

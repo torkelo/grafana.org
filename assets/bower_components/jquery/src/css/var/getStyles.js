@@ -1,1 +1,1 @@
-define(function(){return function(n){return n.ownerDocument.defaultView.getComputedStyle(n,null)}});
+define(function(){return function(t){return t.ownerDocument.defaultView.getComputedStyle(t,null)}});
