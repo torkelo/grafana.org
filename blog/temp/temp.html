@@ -19,16 +19,16 @@ The 2.1 release brings numerous improvements that make dashboards more dynamic t
 
 <h3 id="multi-value-template-variables">Multi-Value Template Variables</h3>
 
-<p>A template variable with Multi-Value enabled allows for the selection of multiple values selected at the
-same time. These variables can then be used in any Panel to make them more dynamic, and to give you the perfect view of
-your data. Multi-Value variables is also enabling the new Row repeat and Panel repeat feature described below.</p>
+<p>A template variable with Multi-Value enabled allows for the selection of multiple values at the same time.
+These variables can then be used in any panel to make them more dynamic, and to give you the perfect view of your data.
+Multi-Value variables is also enabling the new <code class="prettyprint">row repeat</code> and <code class="prettyprint">panel repeat</code> feature described below.</p>
 
 <p><img title="Multi-Value Select" alt="Multi-Value Select" src="/assets/img/blog/multi-select.gif" />
 <br/><br/></p>
 
 <h3 id="repeating-rows-and-panels">Repeating Rows and Panels</h3>
 
-<p>It’s now possible to create a Dashboard that automatically adds (or removes) both Rows and Panels based
+<p>It’s now possible to create a Dashboard that automatically adds (or removes) both rows and panels based
 on selected variable values. Any row or any panel can be configured to repeat (duplicate itself) based
 on a multi-value template variable.</p></p>
 
@@ -37,16 +37,22 @@ on a multi-value template variable.</p></p>
 
 <h3 id="dashboard-links-&amp;-navigation">Dashboard Links &amp; Navigation</h3>
 
-<p>To support better navigation between Dashboarads, it&rsquo;s now possible to create custom and dynamic links from individual
-Panels to appropriate Dashboards. You also have the ability to create flexible top-level links on any
+<p>To support better navigation between dashboards, it&rsquo;s now possible to create custom and dynamic links from individual
+panels to appropriate Dashboards. You also have the ability to create flexible top-level links on any
 given Dashboard thanks to the new Dashboard navigation bar feature.</p>
 
-<p><img title="Dashboard Links" alt="Dashboard Links" src="/assets/img/blog/panel-link.png" />
-<br/><br/></p>
+<p><img title="Dashboard Links" alt="Dashboard Links" src="/assets/img/blog/dash_links.png" /></p>
+
+<p>Dashboard links can be added under dashboard settings. Either defined as static URLs with a custom icon or as dynamic
+dashboard links or dropdowns based on custom dashboard search query. These links appear in the same
+row under the top menu where template variables appear.</p>
+
+<hr>
 
 <h3 id="better-local-dashboard-support">Better local Dashboard support</h3>
 
-<p>Grafana can now index Dashboards saved locally as JSON from a given directory.</p>
+<p>Grafana can now index Dashboards saved locally as JSON from a given directory. These file based dashboards
+will appear in the regular dashboard search along regular DB dashboards.</p>
 
 <blockquote>
 <p><strong><em>Note:</em></strong> Saving local dashboards back the folder is not supported; this feature is meant for statically generated JSON dashboards.</p>
@@ -56,8 +62,7 @@ given Dashboard thanks to the new Dashboard navigation bar feature.</p>
 
 <h2 id="new-authentication-options">New Authentication Options</h2>
 
-<p>New authentication methods add numerous options to manage users, roles and organizations.
-Grafana 2.1 also includes a &ldquo;Read-only Editor&rdquo; role.</p>
+<p>New authentication methods add numerous options to manage users, roles and organizations.</p>
 
 <h3 id="ldap-support">LDAP support</h3>
 
@@ -84,7 +89,7 @@ to utilize the API without having to create an API key.</p>
 <h3 id="new-“read-only-editor”-user-role">New “Read-only Editor” User Role</h3>
 
 <p>There is a new User role available in this version of Grafana: “Read-only Editor”. This role behaves just
-like the Viewer role does in Grafana 2.0.  That is you can edit graphs and queries but no save dashboards.
+like the Viewer role does in Grafana 2.0.  That is you can edit graphs and queries but not save dashboards.
 The Viewer role has been modified in Grafana 2.1 so that users assigned this role can no longer edit panels.</p>
 
 <hr>
@@ -93,11 +98,12 @@ The Viewer role has been modified in Grafana 2.1 so that users assigned this rol
 
 <h3 id="influxdb-0.9-support">InfluxDB 0.9 Support</h3>
 
-<p>Grafana 2.1 now comes with full support for InfluxDB 0.9. There is a new query editor designed from the start
+<p>Grafana 2.1 now comes with full support for InfluxDB 0.9. There is a new query editor designed from scratch
 for the new features InfluxDB 0.9 enables.</p>
 
-<p><img title="InfluxDB Support" alt="InfluxDB Support" src="/assets/img/blog/influx-query.gif" />
-<br/><br/></p>
+<p><img title="InfluxDB Editor" alt="InfluxDB Editor" src="/assets/img/blog/influx_09_editor_anim.gif" /></p>
+
+<p><br/></p>
 
 <h3 id="opentsdb-data-source-improvements">OpenTSDB Data Source improvements</h3>
 
@@ -124,17 +130,26 @@ and allowing string values will help you better understand your data at a glance
 
 <h3 id="graph-panel">Graph Panel</h3>
 
-<p>Define series color using regex rule
-<img title="Define series color using regex rule  " alt="Define series color using regex rule  " src="/assets/img/blog/regex_color.gif" /></p>
+<p>Define series color using regex rule. This is useful when you have templated graphs with series names
+that change depending selected template variables. Using a regex style override rule you could
+for example make all series that contain the word <strong>CPU</strong> <code class="prettyprint">red</code> and assigned to the second y axis.</p>
 
-<p>New series style override, negative-y transform and stack groups
-<img title="Negative-y Transform" alt="Negative-y Transform" src="/assets/img/blog/negative-y.png" /></p>
+<p><img title="Define series color using regex rule" alt="Define series color using regex rule" src="/assets/img/blog/regex_color_override.png" /></p>
+
+<p>New series style override, negative-y transform and stack groups. Negative y tranform is
+very useful if you want to plot a series on the negative y scale without affecting the legend values like min or max or
+the values shown in the hover tooltip.</p>
+
+<p><img title="Negative-y Transform" alt="Negative-y Transform" src="/assets/img/blog/negative-y.png" /></p>
 
 <p><img title="Negative-y Transform" alt="Negative-y Transform" src="/assets/img/blog/negative-y-form.png" /></p>
 
 <h3 id="singlestat-panel">Singlestat Panel</h3>
 
-<p>Now support string values - read more about <a href="../reference/singlestat.md">Singlestat Panels</a>- - -</p>
+<p>Now support string values. Useful for time series database like InfluxDB that supports
+string values.</p>
+
+<hr>
 
 <h3 id="download-grafana-2.1-now"><a href="http://grafana.org/download">Download Grafana 2.1 now</a></h3>
 
