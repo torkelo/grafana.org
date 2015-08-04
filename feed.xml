@@ -5,10 +5,209 @@
   <id>http://grafana.org/blog</id>
   <link href="http://grafana.org/blog"/>
   <link href="http://grafana.org/feed.xml" rel="self"/>
-  <updated>2015-04-20T00:00:00Z</updated>
+  <updated>2015-08-04T00:00:00Z</updated>
   <author>
     <name>Grafana</name>
   </author>
+  <entry>
+    <title>Grafana 2.1 Released</title>
+    <link rel="alternate" href="http://grafana.org/blog/2015/08/04/Grafana-2-1-Released.html"/>
+    <id>http://grafana.org/blog/2015/08/04/Grafana-2-1-Released.html</id>
+    <published>2015-08-04T00:00:00Z</published>
+    <updated>2015-08-04T17:02:23+02:00</updated>
+    <author>
+      <name>Torkel Ödegaard</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img class="no-shadow" src="/assets/img/blog/new-in-grafana-v2-1.png" alt="what's new in Grafana 2.1"/&gt;&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;ve been working to implement many of the features you&amp;rsquo;ve requested since the release of 2.0, and are
+excited to announce the release of Grafana 2.1 today. We recommend that all Grafana users upgrade to this release.
+Grafana 2.1 brings improvements in three core areas: dashboarding, authentication, and data sources.
+As with every Grafana release, there is a whole slew of new features, enhancements, and bug fixes.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://grafana.org/download/" target="_blank"&gt;Download Grafana 2.1 now&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;re excited about this release, and want to share some of the highlights:&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id="more-dynamic-dashboards"&gt;More Dynamic Dashboards&lt;/h2&gt;
+
+&lt;p&gt;The Templating system is one of the most powerful and well-used features of Grafana.
+The 2.1 release brings numerous improvements that make dashboards more dynamic than ever before.&lt;/p&gt;
+
+&lt;h3 id="multi-value-template-variables"&gt;Multi-Value Template Variables&lt;/h3&gt;
+
+&lt;p&gt;A template variable with Multi-Value enabled allows for the selection of multiple values at the same time.
+These variables can then be used in any panel to make them more dynamic, and to give you the perfect view of your data.
+Multi-Value variables is also enabling the new &lt;code class="prettyprint"&gt;row repeat&lt;/code&gt; and &lt;code class="prettyprint"&gt;panel repeat&lt;/code&gt; feature described below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img title="Multi-Value Select" alt="Multi-Value Select" src="/assets/img/blog/multi-select.gif" /&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h3 id="repeating-rows-and-panels"&gt;Repeating Rows and Panels&lt;/h3&gt;
+
+&lt;p&gt;It’s now possible to create a Dashboard that automatically adds (or removes) both rows and panels based
+on selected variable values. Any row or any panel can be configured to repeat (duplicate itself) based
+on a multi-value template variable.&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img title="Repeating Rows and Panels" alt="Repeating Rows and Panels" src="/assets/img/blog/panel-row-repeat.gif" /&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h3 id="dashboard-links-&amp;amp;-navigation"&gt;Dashboard Links &amp;amp; Navigation&lt;/h3&gt;
+
+&lt;p&gt;To support better navigation between dashboards, it&amp;rsquo;s now possible to create custom and dynamic links from individual
+panels to appropriate Dashboards. You also have the ability to create flexible top-level links on any
+given Dashboard thanks to the new Dashboard navigation bar feature.&lt;/p&gt;
+
+&lt;p&gt;&lt;img title="Dashboard Links" alt="Dashboard Links" src="/assets/img/blog/dash_links.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Dashboard links can be added under dashboard settings. Either defined as static URLs with a custom icon or as dynamic
+dashboard links or dropdowns based on custom dashboard search query. These links appear in the same
+row under the top menu where template variables appear.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="better-local-dashboard-support"&gt;Better local Dashboard support&lt;/h3&gt;
+
+&lt;p&gt;Grafana can now index Dashboards saved locally as JSON from a given directory. These file based dashboards
+will appear in the regular dashboard search along regular DB dashboards.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt; Saving local dashboards back the folder is not supported; this feature is meant for statically generated JSON dashboards.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id="new-authentication-options"&gt;New Authentication Options&lt;/h2&gt;
+
+&lt;p&gt;New authentication methods add numerous options to manage users, roles and organizations.&lt;/p&gt;
+
+&lt;h3 id="ldap-support"&gt;LDAP support&lt;/h3&gt;
+
+&lt;p&gt;This highly requested feature now allows your Grafana users to login with their LDAP credentials.
+You can also specify mappings between LDAP group memberships and Grafana Organization user roles.&lt;/p&gt;
+
+&lt;h3 id="basic-auth-support"&gt;Basic Auth Support&lt;/h3&gt;
+
+&lt;p&gt;You can now authenticate against the Grafana API utilizing a simple username and password with basic HTTP authentication.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt; This can be useful for provisioning and config management systems that need
+to utilize the API without having to create an API key.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id="auth-proxy-support"&gt;Auth Proxy Support&lt;/h3&gt;
+
+&lt;p&gt;You can now authenticate utilizing a header (eg. X-Authenticated-User, or X-WEBAUTH-USER)&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt; this can be useful in situations with reverse proxies.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id="new-“read-only-editor”-user-role"&gt;New “Read-only Editor” User Role&lt;/h3&gt;
+
+&lt;p&gt;There is a new User role available in this version of Grafana: “Read-only Editor”. This role behaves just
+like the Viewer role does in Grafana 2.0.  That is you can edit graphs and queries but not save dashboards.
+The Viewer role has been modified in Grafana 2.1 so that users assigned this role can no longer edit panels.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id="data-source-improvements"&gt;Data source Improvements&lt;/h2&gt;
+
+&lt;h3 id="influxdb-0.9-support"&gt;InfluxDB 0.9 Support&lt;/h3&gt;
+
+&lt;p&gt;Grafana 2.1 now comes with full support for InfluxDB 0.9. There is a new query editor designed from scratch
+for the new features InfluxDB 0.9 enables.&lt;/p&gt;
+
+&lt;p&gt;&lt;img title="InfluxDB Editor" alt="InfluxDB Editor" src="/assets/img/blog/influx_09_editor_anim.gif" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h3 id="opentsdb-improvements"&gt;OpenTSDB Improvements&lt;/h3&gt;
+
+&lt;p&gt;Grafana OpenTSDB data source now supports template variable values queries. This means you can create
+template variables that fetches the values from OpenTSDB (for example metric names, tag names, or tag values).
+The query editor is also enhanced to limiting tags by metric.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt; OpenTSDB config option tsd.core.meta.enable_realtime_ts must enabled for OpenTSDB lookup api)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id="new-data-source:-kairosdb"&gt;New Data Source: KairosDB&lt;/h3&gt;
+
+&lt;p&gt;The Cassandra backed time series database KairosDB is now supported in Grafana out of the box. Thank you to
+&lt;a href="https://github.com/masaori335" target="_blank"&gt;masaori335&lt;/a&gt; for his hard work in getting it to this point.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id="panel-improvements"&gt;Panel Improvements&lt;/h2&gt;
+
+&lt;p&gt;Grafana 2.1 gives you even more flexibility customizing how individual panels render.
+Overriding the colors of specific series using regular expressions, changing how series stack,
+and allowing string values will help you better understand your data at a glance.&lt;/p&gt;
+
+&lt;h3 id="graph-panel"&gt;Graph Panel&lt;/h3&gt;
+
+&lt;p&gt;Define series color using regex rule. This is useful when you have templated graphs with series names
+that change depending selected template variables. Using a regex style override rule you could
+for example make all series that contain the word &lt;strong&gt;CPU&lt;/strong&gt; &lt;code class="prettyprint"&gt;red&lt;/code&gt; and assigned to the second y axis.&lt;/p&gt;
+
+&lt;p&gt;&lt;img title="Define series color using regex rule" alt="Define series color using regex rule" src="/assets/img/blog/regex_color_override.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;New series style override, negative-y transform and stack groups. Negative y tranform is
+very useful if you want to plot a series on the negative y scale without affecting the legend values like min or max or
+the values shown in the hover tooltip.&lt;/p&gt;
+
+&lt;p&gt;&lt;img title="Negative-y Transform" alt="Negative-y Transform" src="/assets/img/blog/negative-y.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img title="Negative-y Transform" alt="Negative-y Transform" src="/assets/img/blog/negative-y-form.png" /&gt;&lt;/p&gt;
+
+&lt;h3 id="singlestat-panel"&gt;Singlestat Panel&lt;/h3&gt;
+
+&lt;p&gt;Now support string values. Useful for time series database like InfluxDB that supports
+string values.&lt;/p&gt;
+
+&lt;h3 id="changelog"&gt;Changelog&lt;/h3&gt;
+
+&lt;p&gt;For a detailed list and link to github issues for everything included in the 2.1 release please
+view the &lt;a href="&amp;quot;https://github.com/grafana/grafana/blob/master/CHANGELOG.md&amp;quot;"&gt;CHANGELOG.md&lt;/a&gt; file.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="download-grafana-2.1-now"&gt;&lt;a href="http://grafana.org/download"&gt;Download Grafana 2.1 now&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id="demo-dashboard-for-grafana-2.1-features"&gt;&lt;a href="http://play.grafana.org/dashboard/db/new-features-in-v2-1"&gt;Demo dashboard for Grafana 2.1 features&lt;/a&gt;&lt;/h3&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+
+&lt;h2 id="thanks-to-project-sponsors"&gt;Thanks to project sponsors&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.squarespace.com"&gt;Squarespace&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.dreamhost.com"&gt;Dreamhost&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.demonware.net"&gt;Demonware&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://developer.mediamath.com/OpenSource"&gt;Mediamath&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="subscribe-to-project-updates"&gt;Subscribe to project updates&lt;/h2&gt;
+
+&lt;p&gt;&lt;section class="newsletter"&gt;
+  &lt;form action="http://grafana.us8.list-manage.com/subscribe/post?u=2aeb5711db2aececc990be536&amp;amp;id=5585d37ecc" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"&gt;
+    &lt;row class="collapse"&gt;
+      &lt;div class="medium-10 columns"&gt;
+        &lt;input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address"&gt;
+      &lt;/div&gt;
+      &lt;div class="medium-2 columns"&gt;
+        &lt;input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button postfix"&gt;
+      &lt;/div&gt;
+    &lt;/row&gt;
+  &lt;/form&gt;
+&lt;/section&gt;&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Grafana 2.0 Released</title>
     <link rel="alternate" href="http://grafana.org/blog/2015/04/20/Grafana-2-Released.html"/>
@@ -573,114 +772,6 @@ be made public shorty, hopefully within 2-3 weeks.&lt;/p&gt;
 &lt;li&gt;Graphite 0.9.13-pre1 has been released! &lt;a href="http://graphite.readthedocs.org/en/latest/releases/0_9_13.html"&gt;Read the release notes&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;The &lt;a href="https://github.com/grafana/grafana-plugins"&gt;Grafana plugins&lt;/a&gt; repository has seen some activity lately with updates for the KairosDB datasource and a basic implementation
 for an Atlas datasource (the Netflix metrics db).&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Grafana 1.9.0-rc1 Released!</title>
-    <link rel="alternate" href="http://grafana.org/blog/2014/11/17/grafana-1-9-0-rc1-released.html"/>
-    <id>http://grafana.org/blog/2014/11/17/grafana-1-9-0-rc1-released.html</id>
-    <published>2014-11-17T00:00:00Z</published>
-    <updated>2014-12-02T23:20:30+01:00</updated>
-    <author>
-      <name>Torkel Ödegaard</name>
-    </author>
-    <content type="html">&lt;p&gt;New release today! v1.9.0-rc1 is now available for &lt;a href="/download"&gt;download&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://play.grafana.org"&gt;play.grafana.org&lt;/a&gt; is updated to run 1.9.0-rc1.
-There is also a &lt;a href="http://play.grafana.org/#/dashboard/db/new-features-in-v19"&gt;New features in v1.9&lt;/a&gt;
-dashboard that highlights some of the new features.&lt;/p&gt;
-
-&lt;p&gt;No breaking changes, so update should be problem free. But this is a release candidate so
-there could be some bugs.&lt;/p&gt;
-
-&lt;h3 id="release-highlights"&gt;Release highlights&lt;/h3&gt;
-
-&lt;h4 id="1)-singlestat-panel"&gt;1) Singlestat panel&lt;/h4&gt;
-
-&lt;p&gt;This release marks the introduction of a new panel!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/assets/img/docs/singlestat_panel_1.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;A multitude of options makes this panel pretty flexible.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Add sparkline to the bottom of the panel&lt;/li&gt;
-&lt;li&gt;Add text before/after the value&lt;/li&gt;
-&lt;li&gt;Add color thresholds for the value or the panel background&lt;/li&gt;
-&lt;li&gt;Control font size&lt;/li&gt;
-&lt;li&gt;Adding a panel link makes the whole panel act as a link to another dashboard&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id="2)-share-panel-feature"&gt;2) Share panel feature&lt;/h4&gt;
-
-&lt;p&gt;Click on panel title area (anywhere works, does not need to be the title text) to open the
-new panel menu. Click on the &lt;code class="prettyprint"&gt;share&lt;/code&gt; button to open the new share dialog. In this dialog
-you get a URL to that panel with the current time range and any template variables
-embedded in the URL.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/assets/img/blog/panel_menu.png" /&gt;&lt;/p&gt;
-
-&lt;h4 id="3)-fill-below-to"&gt;3) Fill below to&lt;/h4&gt;
-
-&lt;p&gt;An new series specific style has been added in this release that is very
-useful when visualizing max/min as shadow behind an average.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/assets/img/docs/fillbelow_to.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;This display style is specified by adding a series override rule for the series
-above (ex. max). The value of the option is the series name to fill to (ex min).&lt;/p&gt;
-
-&lt;p&gt;Example:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/assets/img/blog/fillbelow_to_option.png" /&gt;&lt;/p&gt;
-
-&lt;h4 id="4)-other-graph-features-&amp;amp;-enhancements"&gt;4) Other graph features &amp;amp; enhancements&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Shared tooltip option, shows every series when hovering&lt;/li&gt;
-&lt;li&gt;Toggle legend from panel menu&lt;/li&gt;
-&lt;li&gt;Improved legend table mode look&lt;/li&gt;
-&lt;li&gt;Sort legend series (only works in table mode)&lt;/li&gt;
-&lt;li&gt;Multi graph crosshair line (shows a vertical red line where you hover on all graphs)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src="/assets/img/animated_gifs/legend_features.gif" /&gt;&lt;/p&gt;
-
-&lt;h4 id="5)-panel-links"&gt;5) Panel links&lt;/h4&gt;
-
-&lt;p&gt;In the General tab you can now add links to other dashboards or absolute links
-to other web apps. These links can then be accessed from the panel menu. Links
-to other dashboards will preserve the current time range.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="/assets/img/docs/drilldown_links.png" /&gt;&lt;/p&gt;
-
-&lt;p&gt;You access these links from the panel menu dropdown. The whole singlestat panel
-will act as link if a drilldown / detail link is added to the panel.&lt;/p&gt;
-
-&lt;h3 id="metrics-meetup-in-san-francisco,-december-3rd"&gt;Metrics meetup in San Francisco, December 3rd&lt;/h3&gt;
-
-&lt;p&gt;I will be flying to San Francisco on November 28th and will stay for one week.
-Rackspace will be hosting a metrics meetup on December 3rd at their office on 620
-Folsom St. I will be speaking about Grafana (showing new and upcoming stuff) and Rackspace will be speaking about
-there open source time series system &lt;a href="http://blueflood.io/"&gt;Blueflood&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://www.meetup.com/San-Francisco-Metrics-Meetup/events/218611974/"&gt;Sign up for the meetup&lt;/a&gt;!&lt;/p&gt;
-
-&lt;h3 id="meetups,-conferences-&amp;amp;-company-talks/coaching"&gt;Meetups, Conferences &amp;amp; Company talks/coaching&lt;/h3&gt;
-
-&lt;p&gt;If you want me to come and talk about Grafana, application metrics, build measure learn or Graphite.
-Please email me at &lt;a href="mailto:contact@grafana.org"&gt;torkel@grafana.org&lt;/a&gt;. I live in Stockholm Sweden so
-travel could be an issue, but I am flexible and available :)&lt;/p&gt;
-
-&lt;p&gt;Cheers &amp;amp; keep on graphing!&lt;br&gt;
-Torkel&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Big thanks to my sponsors&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.squarespace.com"&gt;Sponsored by Squarespace&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.dreamhost.com"&gt;Sponsored by Dreamhost&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
   </entry>
