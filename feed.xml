@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://grafana.org/blog/2015/08/04/Grafana-2-1-Released.html"/>
     <id>http://grafana.org/blog/2015/08/04/Grafana-2-1-Released.html</id>
     <published>2015-08-04T00:00:00Z</published>
-    <updated>2015-08-04T17:02:23+02:00</updated>
+    <updated>2015-08-05T18:28:11+02:00</updated>
     <author>
       <name>Torkel Ödegaard</name>
     </author>
@@ -137,7 +137,8 @@ The query editor is also enhanced to limiting tags by metric.&lt;/p&gt;
 &lt;h3 id="new-data-source:-kairosdb"&gt;New Data Source: KairosDB&lt;/h3&gt;
 
 &lt;p&gt;The Cassandra backed time series database KairosDB is now supported in Grafana out of the box. Thank you to
-&lt;a href="https://github.com/masaori335" target="_blank"&gt;masaori335&lt;/a&gt; for his hard work in getting it to this point.&lt;/p&gt;
+&lt;a href="https://github.com/masaori335" target="_blank"&gt;masaori335&lt;/a&gt; for his hard work in getting it to this point. Also thanks
+to &lt;a href="https://github.com/rdettai"&gt;Remi Dettai&lt;/a&gt; for the initial implementation of the KairosDB data source plugin.&lt;/p&gt;
 
 &lt;hr&gt;
 
