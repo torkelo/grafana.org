@@ -1,0 +1,236 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" /><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><title>Grafana - Graphite-api + Grafana + StatsD - Stack Setup Guide</title><meta content="Torkel Ödegaard" name="author" /><meta content="width=device-width, initial-scale=1" name="viewport" /><meta content="Grafana, the graphite dashboard frontend, editor and graph composer" name="description" /><meta content="Grafana, Graphite, Dashboard, InfluxDB, OpenTSDB, Frontend, Metrics, Editor, Composer, Analytics, Graphana" name="keywords" /><link href="/assets/img/fav32.png" rel="icon" /><link href="/assets/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" /><link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" media="screen" rel="stylesheet" type="text/css" /><link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" media="screen" rel="stylesheet" type="text/css" /><script src="/assets/javascripts/all.js" type="text/javascript"></script><meta content="Graphite-api + Grafana + StatsD - Stack Setup Guide" property="og:title" /><meta content="Grafana.org" property="og:site_name" /><meta content="website" property="og:type" /><meta content="http://grafana.org/assets/img/docs/nice_dashboard.png" property="og:image" /></head><body class="blog blog_temp blog_temp_graphite-api"><section class="nav"><div class="row"><nav class="top-bar" data-topbar="1"><ul class="title-area"><li class="name"><a href="/"><img class="no-shadow" src="/assets/img/logo_transparent_200x75.png" width="150px" /></a></li><li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li></ul><section class="top-bar-section"><ul class="right"><li><a href="/features/">Features</a></li><li><a href="http://docs.grafana.org">Docs</a></li><li><a href="/community/">Community</a></li><li><a href="/blog/">Blog</a></li><li><a target="blank" href="http://play.grafana.org">Live demo</a></li><li><a href="https://github.com/grafana/grafana" target="_blank" title="Go to github repository"><i class="fa fa-fw fa-github"></i></a</li><li class="has-form"><a class="button" href="/download" id="top-bar-button">Download</a></li></ul></section></nav></div></section><section class="main"><div class="row padding-bottom-large"><div class="large-9 columns image-shadows"><h1>Graphite-api + Grafana + StatsD - Stack Setup Guide</h1><div class="row"><div class="small-9 columns"><h5 class="subheader">April 20, 2015 by Torkel Ödegaard</h5></div><div class="small-3 columns"><p id="twitter"><a class="twitter-share-button" data-via="grafana" href="https://twitter.com/share"></a></p><script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div></div><p>This lengthy article will guide you through install, configuration and getting started for the amazing metric
+stack that is composed of <a href="https://github.com/brutasse/graphite-api/">Graphite-api</a>, Grafana and StatsD.</p>
+
+<h1 id="about">About</h1>
+
+<p>Graphite is still king when it comes to time series databases due to its simple data model, ingestion
+with integrated aggregation &amp; rollups, amazing query features and speed. No other time series
+database has yet to match Graphite&rsquo;s query flexibility and analytics potential.</p>
+
+<p>Graphite has a reputation for being tricky to install and scale. This guide aims to show
+that is not really the case, or, at least, that it is a lot better than you expect.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>This guides will require you to install 4 components.</p>
+
+<ul>
+<li>Carbon is the graphite ingestion deamon responsible for
+receiving metrics and storing them.</li>
+<li>Graphite-api is light weight version of graphite-web with only the HTTP api and is
+responsible for executing metric queries.</li>
+<li>StatsD is a metrics aggregation daemon that makes it easy for apps on
+many machines to send measurements like timings and counters and have them aggregated or percentiles calculated.</li>
+<li>Grafana as the frontend to visualize metrics and the tool to help you build metric
+queries that will make the most out of your collected metrics.</li>
+</ul>
+
+<h3 id="carbon">Carbon</h3>
+<pre class="highlight text">apt-get install \
+    git \
+    build-essential \
+    libffi-dev libcairo2-dev \
+    python-django \
+    python-django-tagging \
+    python-simplejson \
+    python-memcache \
+    python-ldap \
+    python-cairo \
+    python-twisted \
+    python-pysqlite2 \
+    python-support \
+    python-dev \
+    python-pip
+
+cd /usr/local/src
+git clone https://github.com/graphite-project/carbon.git
+git clone https://github.com/graphite-project/whisper.git
+
+cd whisper &amp;&amp; python setup.py install &amp;&amp; cd ..
+cd carbon &amp;&amp; python setup.py install &amp;&amp; cd ..
+</pre>
+<h3 id="configure-carbon.conf">Configure carbon.conf</h3>
+
+<p>Copy example carbon config:
+<code class="prettyprint">
+cp /opt/graphite/conf/carbon.conf.example /opt/graphite/conf/carbon.conf
+</code></p>
+
+<p>Edit the config file <code class="prettyprint">/opt/graphite/conf/carbon.conf</code>, find line <code class="prettyprint">ENABLE_UPD_LISTENER</code> and
+change this setting to <code class="prettyprint">True</code>.</p>
+
+<h3 id="configure-storage-schemas.conf">Configure storage-schemas.conf</h3>
+
+<p>Create a new file at <code class="prettyprint">/opt/graphite/conf/storage-schemas.conf</code> with the following content:</p>
+<pre class="highlight text">[carbon]
+pattern = ^carbon\..*
+retentions = 1m:30d,10m:1y,1h:5y
+
+[default]
+pattern = .*
+retentions = 10s:1d,1m:7d,10m:1y
+</pre>
+<p>This config specifies the resolution of metrics and the retention periods. For example for all metrics begining with the word <code class="prettyprint">carbon</code> receive metrics every minute and store for 30 days, then
+roll them up into 10 minute buckets and store those for 1 year, then roll those up into 1 hour buckets and store those for 5 years. For all other metrics
+the default rule will be applied with other retention periods.</p>
+
+<p>This configuration is very important, as the lowest retention period must match the rate of which you send metrics. The default rule has a lowest resolution of 10 seconds
+so when configuring StatsD we should configure it to send metrics every 10 seconds.</p>
+
+<h3 id="configure-storage-aggregation.conf">Configure storage-aggregation.conf</h3>
+
+<p>Copy the default config and open it in an editor.
+<code class="prettyprint">
+cp /opt/graphite/conf/storage-aggregation.conf.example /opt/graphite/conf/storage-aggregation.conf
+</code></p>
+
+<p>Example config:
+&ldquo;`
+[min]
+pattern = .min$
+xFilesFactor = 0.1
+aggregationMethod = min</p>
+
+<p>[max]
+pattern = .max$
+xFilesFactor = 0.1
+aggregationMethod = max</p>
+
+<p>[sum]
+pattern = .count$
+xFilesFactor = 0
+aggregationMethod = sum</p>
+
+<p>[default_average]
+pattern = .*
+xFilesFactor = 0.5
+aggregationMethod = average
+&rdquo;`</p>
+
+<p>You do not really need to change the default config, but is very important to understand what the config controls and what implications that it has. Graphite does rollups as part of the metric ingestion
+according to the rules defined in <code class="prettyprint">storage-schemas.conf</code>. For example, given storage schema rule <code class="prettyprint">10s:1d,1m:7d</code>, when aggregating 6 values (each representing 10 seconds) into a 1min bucket graphite
+will use an <code class="prettyprint">aggregationMethod</code> like for example <code class="prettyprint">average</code>. What method to use will be determined by the rules specified in <code class="prettyprint">storage-aggregation.conf</code>.</p>
+
+<p>The default rules all look at the metric path ending. Does it end with <code class="prettyprint">.count</code> then use <code class="prettyprint">sum</code> when doing rollups, does it end with <code class="prettyprint">max</code> then use <code class="prettyprint">max</code> function, and if it does not
+end with max, min or count then use average. This means that naming metrics is very important! But don&rsquo;t worry if you use StatsD it will send the correct names to graphite.</p>
+
+<h3 id="start-carbon">Start carbon</h3>
+
+<p>Lets install supervisord and let it start carbon.</p>
+
+<p><code class="prettyprint">apt-get install supervisor</code></p>
+
+<p>Create a new file in <code class="prettyprint">/etc/supervisor/conf.d/carbon.conf</code> with the following:</p>
+<pre class="highlight text">[program:carbon-cache]
+command = /opt/graphite/bin/carbon-cache.py --debug start
+stdout_logfile = /var/log/supervisor/%(program_name)s.log
+stderr_logfile = /var/log/supervisor/%(program_name)s.log
+autorestart = true
+stopsignal = QUIT
+</pre><pre class="highlight text">supervisorctl reload
+supervisorctl start carbon-cache
+</pre>
+<h3 id="graphite-api">Graphite-api</h3>
+
+<p>Graphite api is a light weight version of graphite-web with only the api component (no web ui). It is dead simple
+to install.</p>
+<pre class="highlight text">pip install gunicorn graphite-api
+</pre>
+<p>You should now have a graphite-api daemon running with an open HTTP api port of 8888.</p>
+
+<h4 id="configuring-graphite-api">Configuring Graphite-api</h4>
+
+<p>Create a file <code class="prettyprint">/etc/graphite-api.yaml</code> with an editor and set it&rsquo;s content to:</p>
+<pre class="highlight text">search_index: /opt/graphite/storage/index
+finders:
+  - graphite_api.finders.whisper.WhisperFinder
+functions:
+  - graphite_api.functions.SeriesFunctions
+  - graphite_api.functions.PieFunctions
+whisper:
+  directories:
+    - /opt/graphite/storage/whisper
+time_zone: UTC
+</pre>
+<p>Lets create a supervisor file for graphite-api at <code class="prettyprint">/etc/supervisor/graphite-api.conf</code></p>
+<pre class="highlight text">[program:graphite-api]
+command = gunicorn -b 0.0.0.0:8888 -w 2 --log-level info graphite_api.app:app
+stdout_logfile = /var/log/supervisor/%(program_name)s.log
+stderr_logfile = /var/log/supervisor/%(program_name)s.log
+autorestart = true
+stopsignal = QUIT
+</pre>
+<p>Reload supervisor</p>
+<pre class="highlight text">supervisorctl reload
+</pre>
+<p>A carbon-cache deamon and graphite-api should now be running. Type <code class="prettyprint">supervisorctl status</code> to verify that they are running. You can
+also open <code class="prettyprint">http://your_server_ip:8888/metrics/find?query?*</code> in your browser. You should see a json snippet.</p>
+
+<h3 id="install-grafana">Install Grafana</h3>
+<pre class="highlight text">cd /tmp/
+wget https://grafanarel.s3.amazonaws.com/builds/grafana_2.1.1_amd64.deb
+sudo dpkg -i grafana_2.1.1_amd64.deb
+sudo service grafana-server start
+</pre>
+<p>Grafana should now be running with default config on port 3000.</p>
+
+<h3 id="add-data-source">Add data source</h3>
+
+<p>Open http://your_server_ip:3000 in your browser and login with the default user and password (<code class="prettyprint">admin/admin</code>).</p>
+
+<ul>
+<li>Click on <code class="prettyprint">Data Sources</code> on the side menu.</li>
+<li>Click on <code class="prettyprint">Add new</code> in the top menu</li>
+<li>Specify name <code class="prettyprint">graphite</code> and check the <code class="prettyprint">Default</code> checkbox</li>
+<li>Specify Url <code class="prettyprint">http://localhost:8888</code> and Access <code class="prettyprint">proxy</code></li>
+<li>Click <code class="prettyprint">Add</code> button</li>
+</ul>
+
+<h2 id="your-first-dashboard">Your first dashboard</h2>
+
+<ul>
+<li>Click on <code class="prettyprint">Dashboards</code></li>
+<li>Click on <code class="prettyprint">Home</code> button in the top menu, this should open the dashboard search dropdown</li>
+<li>Click on <code class="prettyprint">New</code> button in the bottom of this dropdown</li>
+</ul>
+
+<h3 id="add-a-graph">Add a graph</h3>
+
+<ul>
+<li>Click on the green icon to the left to open the row menu</li>
+<li>Select <code class="prettyprint">Add Panel</code> &gt; <code class="prettyprint">Graph</code> from the row menu</li>
+<li>An empty graph panel should appear with title <code class="prettyprint">no title (click here)</code>. Click on this title and then <code class="prettyprint">Edit</code></li>
+<li>This will open the graph in edit mode and take you to the metrics tab.</li>
+<li>There is one query already added (asigned letter A) but it is empty.</li>
+<li>Click on <code class="prettyprint">select metric</code> to pick the first graphite metric node. A new <code class="prettyprint">select metric</code> link will appear until you reached a leaf node.</li>
+<li>Try picking the metric paths for <code class="prettyprint">carbon.agents.&lt;server name&gt;.cpuUsage</code>, you should now see a line appear in the graph!</li>
+</ul>
+
+<h3 id="installing-statsd">Installing StatsD</h3>
+
+<h3 id="inserting-metrics">Inserting metrics</h3>
+<hr style="margin-top:30px; margin-bottom:30px"/>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'grafanablog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div><div class="large-3 columns"><br /><h4>Posts</h4><p><a href="/blog/2015/08/04/Grafana-2-1-Released.html">Grafana 2.1 Released</a></p><p><a href="/blog/2015/04/20/Grafana-2-Released.html">Grafana 2.0 Released</a></p><p><a href="/blog/2015/04/09/March15-Survery.html">March 2015 User Survey</a></p><hr /><h4>About Grafana</h4><p>Grafana is an open source metrics dashboard and graph composer for Graphite and InfluxDB</p></div></div></section><div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls"><div class="slides"></div><h3 class="title"></h3><a class="prev">‹</a><a class="next">›</a><a class="close">×</a><a class="play-pause"></a><ol class="indicator"></ol></div><footer><section class="newsletter"><div class="row"><h3 class="text-center">Get notified of new releases!</h3></div><div class="row"><div class="large-6 columns push-3"><form action="http://grafana.us8.list-manage.com/subscribe/post?u=2aeb5711db2aececc990be536&amp;id=5585d37ecc" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" target="_blank"><div class="row collapse"><div class="medium-10 columns"><input class="email" id="mce-EMAIL" name="EMAIL" placeholder="email address" type="email" value="" /></div><div class="medium-2 columns"><input class="button postfix" id="mc-embedded-subscribe" name="subscribe" type="submit" value="Subscribe" /></div></div></form></div></div></section><div class="row text-center"><ul class="footer-social"><li><i class="fa fa-github"></i><a href="https://github.com/grafana/grafana/issues">issue tracker</a> on GitHub</li><li><i class="fa fa-comment"></i><a href="irc://chat.freenode.net/#grafana">#grafana</a> on freenode</li><li><i class="fa fa-twitter"></i><a href="http://twitter.com/grafana">@grafana</a> on Twitter</li><li><i class="fa fa-envelope"></i><a href="mailto:torkel@grafana.org">email</a></li></ul></div><div class="row copyright text-center">&copy; 2013 Torkel Ödegaard &amp; Coding Instinct AB<iframe allowtransparency="true" class="github-btn" frameborder="false" height="20" scrolling="0" src="http://ghbtns.com/github-btn.html?user=grafana&amp;repo=grafana&amp;type=watch&amp;count=true" title="Star on GitHub" width="100"></iframe><iframe allowtransparency="true" class="github-btn" frameborder="false" height="20" scrolling="0" src="http://ghbtns.com/github-btn.html?user=grafana&amp;repo=grafana&amp;type=fork&amp;count=true" title="Fork on GitHub" width="80"></iframe></div></footer><script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-47280256-1', 'grafana.org');
+ga('require', 'linkid', 'linkid.js');
+ga('send', 'pageview', {
+ 'page': location.pathname + location.search  + location.hash,
+});</script></body></html>
