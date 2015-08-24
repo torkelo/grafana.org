@@ -1,1 +1,1 @@
-define(["../core","../event"],function(t){t.each(["ajaxStart","ajaxStop","ajaxComplete","ajaxError","ajaxSuccess","ajaxSend"],function(e,i){t.fn[i]=function(t){return this.on(i,t)}})});
+define(["../core","../event"],function(t){t.each(["ajaxStart","ajaxStop","ajaxComplete","ajaxError","ajaxSuccess","ajaxSend"],function(e,n){t.fn[n]=function(t){return this.on(n,t)}})});
