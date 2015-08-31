@@ -1,1 +1,1 @@
-!function(){var e=new Image;e.onerror=function(){Modernizr.addTest("datauri",function(){return!1})},e.onload=function(){Modernizr.addTest("datauri",function(){return 1==e.width&&1==e.height})},e.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}();
+!function(){var n=new Image;n.onerror=function(){Modernizr.addTest("datauri",function(){return!1})},n.onload=function(){Modernizr.addTest("datauri",function(){return 1==n.width&&1==n.height})},n.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}();
