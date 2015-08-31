@@ -42,7 +42,7 @@ The 2.1 release brings numerous improvements that make dashboards more dynamic t
 These variables can then be used in any panel to make them more dynamic, and to give you the perfect view of your data.
 Multi-Value variables is also enabling the new &lt;code class="prettyprint"&gt;row repeat&lt;/code&gt; and &lt;code class="prettyprint"&gt;panel repeat&lt;/code&gt; feature described below.&lt;/p&gt;
 
-&lt;p&gt;&lt;img title="Multi-Value Select" alt="Multi-Value Select" src="../../../../assets/img/blog/multi-select.gif" /&gt;
+&lt;p&gt;&lt;img title="Multi-Value Select" alt="Multi-Value Select" src="/assets/img/blog/multi-select.gif" /&gt;
 &lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
 
 &lt;h3 id="repeating-rows-and-panels"&gt;Repeating Rows and Panels&lt;/h3&gt;
@@ -51,7 +51,7 @@ Multi-Value variables is also enabling the new &lt;code class="prettyprint"&gt;r
 on selected variable values. Any row or any panel can be configured to repeat (duplicate itself) based
 on a multi-value template variable.&lt;/p&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img title="Repeating Rows and Panels" alt="Repeating Rows and Panels" src="../../../../assets/img/blog/panel-row-repeat.gif" /&gt;
+&lt;p&gt;&lt;img title="Repeating Rows and Panels" alt="Repeating Rows and Panels" src="/assets/img/blog/panel-row-repeat.gif" /&gt;
 &lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
 
 &lt;h3 id="dashboard-links-&amp;amp;-navigation"&gt;Dashboard Links &amp;amp; Navigation&lt;/h3&gt;
@@ -60,7 +60,7 @@ on a multi-value template variable.&lt;/p&gt;&lt;/p&gt;
 panels to appropriate Dashboards. You also have the ability to create flexible top-level links on any
 given Dashboard thanks to the new Dashboard navigation bar feature.&lt;/p&gt;
 
-&lt;p&gt;&lt;img title="Dashboard Links" alt="Dashboard Links" src="../../../../assets/img/blog/dash_links.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img title="Dashboard Links" alt="Dashboard Links" src="/assets/img/blog/dash_links.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Dashboard links can be added under dashboard settings. Either defined as static URLs with a custom icon or as dynamic
 dashboard links or dropdowns based on custom dashboard search query. These links appear in the same
@@ -120,7 +120,7 @@ The Viewer role has been modified in Grafana 2.1 so that users assigned this rol
 &lt;p&gt;Grafana 2.1 now comes with full support for InfluxDB 0.9. There is a new query editor designed from scratch
 for the new features InfluxDB 0.9 enables.&lt;/p&gt;
 
-&lt;p&gt;&lt;img title="InfluxDB Editor" alt="InfluxDB Editor" src="../../../../assets/img/blog/influx_09_editor_anim.gif" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img title="InfluxDB Editor" alt="InfluxDB Editor" src="/assets/img/blog/influx_09_editor_anim.gif" /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
 
@@ -154,15 +154,15 @@ and allowing string values will help you better understand your data at a glance
 that change depending selected template variables. Using a regex style override rule you could
 for example make all series that contain the word &lt;strong&gt;CPU&lt;/strong&gt; &lt;code class="prettyprint"&gt;red&lt;/code&gt; and assigned to the second y axis.&lt;/p&gt;
 
-&lt;p&gt;&lt;img title="Define series color using regex rule" alt="Define series color using regex rule" src="../../../../assets/img/blog/regex_color_override.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img title="Define series color using regex rule" alt="Define series color using regex rule" src="/assets/img/blog/regex_color_override.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;New series style override, negative-y transform and stack groups. Negative y tranform is
 very useful if you want to plot a series on the negative y scale without affecting the legend values like min or max or
 the values shown in the hover tooltip.&lt;/p&gt;
 
-&lt;p&gt;&lt;img title="Negative-y Transform" alt="Negative-y Transform" src="../../../../assets/img/blog/negative-y.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img title="Negative-y Transform" alt="Negative-y Transform" src="/assets/img/blog/negative-y.png" /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img title="Negative-y Transform" alt="Negative-y Transform" src="../../../../assets/img/blog/negative-y-form.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img title="Negative-y Transform" alt="Negative-y Transform" src="/assets/img/blog/negative-y-form.png" /&gt;&lt;/p&gt;
 
 &lt;h3 id="singlestat-panel"&gt;Singlestat Panel&lt;/h3&gt;
 
@@ -218,7 +218,7 @@ view the &lt;a href="&amp;quot;https://github.com/grafana/grafana/blob/master/CH
     <author>
       <name>Torkel Ödegaard</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;img src="../../../../assets/img/blog/grafana_2_stable_post.png" /&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src="/assets/img/blog/grafana_2_stable_post.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Grafana 2.0 stable is now released and available for download.&lt;/p&gt;
 
@@ -531,7 +531,7 @@ many new users struggle with when setting up Grafana for the first time.&lt;/p&g
 thanks to my collegues at &lt;a href="http://raintank.io"&gt;Raintank&lt;/a&gt;, where we are working on building a nextgen open source
 infrastructure monitoring platform.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="../../../../assets/img/blog/Grafana2_Preview_1.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/assets/img/blog/Grafana2_Preview_1.png" /&gt;&lt;/p&gt;
 
 &lt;h2 id="code-&amp;amp;-docker-image"&gt;Code &amp;amp; Docker image&lt;/h2&gt;
 
@@ -585,7 +585,7 @@ LDAP integration is in on the roadmap but not implemented yet.&lt;/p&gt;
 Datasources, Admin etc, without sacrificing the clean simple top navigation. We tried many alternatives
 of sidebars and collapsable top top navbars.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="../../../../assets/img/animated_gifs/grafana2_sidenav_gif1.gif" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/assets/img/animated_gifs/grafana2_sidenav_gif1.gif" /&gt;&lt;/p&gt;
 
 &lt;p&gt;The above animated gif shows the sidebar we ended up with, as well as the new dashboard search dropdown.
 We will continue to refine and polish this solution. For more on the creative process and details
@@ -598,7 +598,7 @@ on customer experiance at &lt;a href="http://raintank.io"&gt;Raintank&lt;/a&gt;.
 &lt;p&gt;There is currently one new panel in Grafana 2.0 that can show the current user&amp;rsquo;s starred dashboards as well
 as a list of dashboards based on search query or dashboard tags.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="../../../../assets/img/blog/dashlist_panel_1.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/assets/img/blog/dashlist_panel_1.png" /&gt;&lt;/p&gt;
 
 &lt;p&gt;There is a &lt;a href="https://github.com/grafana/grafana/issues/1449"&gt;github issue&lt;/a&gt; for this new panel where feedback
 would be greatly appreciated.&lt;/p&gt;
