@@ -1,1 +1,1 @@
-Modernizr.addTest("cssvhunit",function(){var e;return Modernizr.testStyles("#modernizr { height: 50vh; }",function(t){var n=parseInt(window.innerHeight/2,10),r=parseInt((window.getComputedStyle?getComputedStyle(t,null):t.currentStyle).height,10);e=r==n}),e});
+Modernizr.addTest("cssvhunit",function(){var t;return Modernizr.testStyles("#modernizr { height: 50vh; }",function(n){var e=parseInt(window.innerHeight/2,10),r=parseInt((window.getComputedStyle?getComputedStyle(n,null):n.currentStyle).height,10);t=r==e}),t});
