@@ -11,4 +11,4 @@
   "polyfills": ["pmxdr", "ppx", "flxhr"]
 }
 !*/
-define(["Modernizr"],function(t){t.addTest("cors","XMLHttpRequest"in window&&"withCredentials"in new XMLHttpRequest)});
+define(["Modernizr"],function(e){e.addTest("cors","XMLHttpRequest"in window&&"withCredentials"in new XMLHttpRequest)});
