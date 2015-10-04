@@ -1,1 +1,161 @@
-define(["../core","./support","../core/init"],function(e,t){var n=/\r/g;e.fn.extend({val:function(t){var r,i,o,a=this[0];{if(arguments.length)return o=e.isFunction(t),this.each(function(n){var i;1===this.nodeType&&(i=o?t.call(this,n,e(this).val()):t,null==i?i="":"number"==typeof i?i+="":e.isArray(i)&&(i=e.map(i,function(e){return null==e?"":e+""})),r=e.valHooks[this.type]||e.valHooks[this.nodeName.toLowerCase()],r&&"set"in r&&void 0!==r.set(this,i,"value")||(this.value=i))});if(a)return r=e.valHooks[a.type]||e.valHooks[a.nodeName.toLowerCase()],r&&"get"in r&&void 0!==(i=r.get(a,"value"))?i:(i=a.value,"string"==typeof i?i.replace(n,""):null==i?"":i)}}}),e.extend({valHooks:{option:{get:function(t){var n=e.find.attr(t,"value");return null!=n?n:e.trim(e.text(t))}},select:{get:function(n){for(var r,i,o=n.options,a=n.selectedIndex,s="select-one"===n.type||0>a,u=s?null:[],l=s?a+1:o.length,c=0>a?l:s?a:0;l>c;c++)if(i=o[c],!(!i.selected&&c!==a||(t.optDisabled?i.disabled:null!==i.getAttribute("disabled"))||i.parentNode.disabled&&e.nodeName(i.parentNode,"optgroup"))){if(r=e(i).val(),s)return r;u.push(r)}return u},set:function(t,n){for(var r,i,o=t.options,a=e.makeArray(n),s=o.length;s--;)i=o[s],(i.selected=e.inArray(i.value,a)>=0)&&(r=!0);return r||(t.selectedIndex=-1),a}}}}),e.each(["radio","checkbox"],function(){e.valHooks[this]={set:function(t,n){return e.isArray(n)?t.checked=e.inArray(e(t).val(),n)>=0:void 0}},t.checkOn||(e.valHooks[this].get=function(e){return null===e.getAttribute("value")?"on":e.value})})});
+define([
+	"../core",
+	"./support",
+	"../core/init"
+], function( jQuery, support ) {
+
+var rreturn = /\r/g;
+
+jQuery.fn.extend({
+	val: function( value ) {
+		var hooks, ret, isFunction,
+			elem = this[0];
+
+		if ( !arguments.length ) {
+			if ( elem ) {
+				hooks = jQuery.valHooks[ elem.type ] || jQuery.valHooks[ elem.nodeName.toLowerCase() ];
+
+				if ( hooks && "get" in hooks && (ret = hooks.get( elem, "value" )) !== undefined ) {
+					return ret;
+				}
+
+				ret = elem.value;
+
+				return typeof ret === "string" ?
+					// Handle most common string cases
+					ret.replace(rreturn, "") :
+					// Handle cases where value is null/undef or number
+					ret == null ? "" : ret;
+			}
+
+			return;
+		}
+
+		isFunction = jQuery.isFunction( value );
+
+		return this.each(function( i ) {
+			var val;
+
+			if ( this.nodeType !== 1 ) {
+				return;
+			}
+
+			if ( isFunction ) {
+				val = value.call( this, i, jQuery( this ).val() );
+			} else {
+				val = value;
+			}
+
+			// Treat null/undefined as ""; convert numbers to string
+			if ( val == null ) {
+				val = "";
+
+			} else if ( typeof val === "number" ) {
+				val += "";
+
+			} else if ( jQuery.isArray( val ) ) {
+				val = jQuery.map( val, function( value ) {
+					return value == null ? "" : value + "";
+				});
+			}
+
+			hooks = jQuery.valHooks[ this.type ] || jQuery.valHooks[ this.nodeName.toLowerCase() ];
+
+			// If set returns undefined, fall back to normal setting
+			if ( !hooks || !("set" in hooks) || hooks.set( this, val, "value" ) === undefined ) {
+				this.value = val;
+			}
+		});
+	}
+});
+
+jQuery.extend({
+	valHooks: {
+		option: {
+			get: function( elem ) {
+				var val = jQuery.find.attr( elem, "value" );
+				return val != null ?
+					val :
+					// Support: IE10-11+
+					// option.text throws exceptions (#14686, #14858)
+					jQuery.trim( jQuery.text( elem ) );
+			}
+		},
+		select: {
+			get: function( elem ) {
+				var value, option,
+					options = elem.options,
+					index = elem.selectedIndex,
+					one = elem.type === "select-one" || index < 0,
+					values = one ? null : [],
+					max = one ? index + 1 : options.length,
+					i = index < 0 ?
+						max :
+						one ? index : 0;
+
+				// Loop through all the selected options
+				for ( ; i < max; i++ ) {
+					option = options[ i ];
+
+					// IE6-9 doesn't update selected after form reset (#2551)
+					if ( ( option.selected || i === index ) &&
+							// Don't return options that are disabled or in a disabled optgroup
+							( support.optDisabled ? !option.disabled : option.getAttribute( "disabled" ) === null ) &&
+							( !option.parentNode.disabled || !jQuery.nodeName( option.parentNode, "optgroup" ) ) ) {
+
+						// Get the specific value for the option
+						value = jQuery( option ).val();
+
+						// We don't need an array for one selects
+						if ( one ) {
+							return value;
+						}
+
+						// Multi-Selects return an array
+						values.push( value );
+					}
+				}
+
+				return values;
+			},
+
+			set: function( elem, value ) {
+				var optionSet, option,
+					options = elem.options,
+					values = jQuery.makeArray( value ),
+					i = options.length;
+
+				while ( i-- ) {
+					option = options[ i ];
+					if ( (option.selected = jQuery.inArray( option.value, values ) >= 0) ) {
+						optionSet = true;
+					}
+				}
+
+				// Force browsers to behave consistently when non-matching value is set
+				if ( !optionSet ) {
+					elem.selectedIndex = -1;
+				}
+				return values;
+			}
+		}
+	}
+});
+
+// Radios and checkboxes getter/setter
+jQuery.each([ "radio", "checkbox" ], function() {
+	jQuery.valHooks[ this ] = {
+		set: function( elem, value ) {
+			if ( jQuery.isArray( value ) ) {
+				return ( elem.checked = jQuery.inArray( jQuery(elem).val(), value ) >= 0 );
+			}
+		}
+	};
+	if ( !support.checkOn ) {
+		jQuery.valHooks[ this ].get = function( elem ) {
+			return elem.getAttribute("value") === null ? "on" : elem.value;
+		};
+	}
+});
+
+});

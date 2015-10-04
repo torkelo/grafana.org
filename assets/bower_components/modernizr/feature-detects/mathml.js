@@ -1,1 +1,33 @@
-Modernizr.addTest("mathml",function(){var t=!1;if(document.createElementNS){var e="http://www.w3.org/1998/Math/MathML",n=document.createElement("div");n.style.position="absolute";var r=n.appendChild(document.createElementNS(e,"math")).appendChild(document.createElementNS(e,"mfrac"));r.appendChild(document.createElementNS(e,"mi")).appendChild(document.createTextNode("xx")),r.appendChild(document.createElementNS(e,"mi")).appendChild(document.createTextNode("yy")),document.body.appendChild(n),t=n.offsetHeight>n.offsetWidth}return t});
+/*!
+{
+  "name": "MathML",
+  "property": "mathml",
+  "caniuse": "mathml",
+  "authors": ["Addy Osmani", "Davide P. Cervone", "David Carlisle"],
+  "knownBugs": ["Firefox < 4 will likely return a false, however it does support MathML inside XHTML documents"],
+  "notes": [{
+    "name": "W3C spec",
+    "href": "http://www.w3.org/Math/"
+  }],
+  "polyfills": ["mathjax"]
+}
+!*/
+/* DOC
+Detects support for MathML, for mathematic equations in web pages.
+*/
+define(['Modernizr', 'testStyles'], function(Modernizr, testStyles) {
+  // Based on work by Davide (@dpvc) and David (@davidcarlisle)
+  // in https://github.com/mathjax/MathJax/issues/182
+
+  Modernizr.addTest('mathml', function() {
+    var ret;
+
+    testStyles('#modernizr{position:absolute;display:inline-block}', function(node) {
+      node.innerHTML += '<math><mfrac><mi>xx</mi><mi>yy</mi></mfrac></math>';
+
+      ret = node.offsetHeight > node.offsetWidth;
+    });
+
+    return ret;
+  });
+});

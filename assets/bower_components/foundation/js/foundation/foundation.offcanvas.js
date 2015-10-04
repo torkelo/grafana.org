@@ -1,1 +1,152 @@
-!function(t){"use strict";Foundation.libs.offcanvas={name:"offcanvas",version:"5.4.7",settings:{open_method:"move",close_on_click:!1},init:function(t,e,n){this.bindings(e,n)},events:function(){var e=this,n=e.S,i="",r="",o="";"move"===this.settings.open_method?(i="move-",r="right",o="left"):"overlap_single"===this.settings.open_method?(i="offcanvas-overlap-",r="right",o="left"):"overlap"===this.settings.open_method&&(i="offcanvas-overlap"),n(this.scope).off(".offcanvas").on("click.fndtn.offcanvas",".left-off-canvas-toggle",function(o){e.click_toggle_class(o,i+r),"overlap"!==e.settings.open_method&&n(".left-submenu").removeClass(i+r),t(".left-off-canvas-toggle").attr("aria-expanded","true")}).on("click.fndtn.offcanvas",".left-off-canvas-menu a",function(o){var a=e.get_settings(o),s=n(this).parent();!a.close_on_click||s.hasClass("has-submenu")||s.hasClass("back")?n(this).parent().hasClass("has-submenu")?(o.preventDefault(),n(this).siblings(".left-submenu").toggleClass(i+r)):s.hasClass("back")&&(o.preventDefault(),s.parent().removeClass(i+r)):(e.hide.call(e,i+r,e.get_wrapper(o)),s.parent().removeClass(i+r)),t(".left-off-canvas-toggle").attr("aria-expanded","true")}).on("click.fndtn.offcanvas",".right-off-canvas-toggle",function(r){e.click_toggle_class(r,i+o),"overlap"!==e.settings.open_method&&n(".right-submenu").removeClass(i+o),t(".right-off-canvas-toggle").attr("aria-expanded","true")}).on("click.fndtn.offcanvas",".right-off-canvas-menu a",function(r){var a=e.get_settings(r),s=n(this).parent();!a.close_on_click||s.hasClass("has-submenu")||s.hasClass("back")?n(this).parent().hasClass("has-submenu")?(r.preventDefault(),n(this).siblings(".right-submenu").toggleClass(i+o)):s.hasClass("back")&&(r.preventDefault(),s.parent().removeClass(i+o)):(e.hide.call(e,i+o,e.get_wrapper(r)),s.parent().removeClass(i+o)),t(".right-off-canvas-toggle").attr("aria-expanded","true")}).on("click.fndtn.offcanvas",".exit-off-canvas",function(a){e.click_remove_class(a,i+o),n(".right-submenu").removeClass(i+o),r&&(e.click_remove_class(a,i+r),n(".left-submenu").removeClass(i+o)),t(".right-off-canvas-toggle").attr("aria-expanded","true")}).on("click.fndtn.offcanvas",".exit-off-canvas",function(n){e.click_remove_class(n,i+o),t(".left-off-canvas-toggle").attr("aria-expanded","false"),r&&(e.click_remove_class(n,i+r),t(".right-off-canvas-toggle").attr("aria-expanded","false"))})},toggle:function(t,e){e=e||this.get_wrapper(),e.is("."+t)?this.hide(t,e):this.show(t,e)},show:function(t,e){e=e||this.get_wrapper(),e.trigger("open").trigger("open.fndtn.offcanvas"),e.addClass(t)},hide:function(t,e){e=e||this.get_wrapper(),e.trigger("close").trigger("close.fndtn.offcanvas"),e.removeClass(t)},click_toggle_class:function(t,e){t.preventDefault();var n=this.get_wrapper(t);this.toggle(e,n)},click_remove_class:function(t,e){t.preventDefault();var n=this.get_wrapper(t);this.hide(e,n)},get_settings:function(t){var e=this.S(t.target).closest("["+this.attr_name()+"]");return e.data(this.attr_name(!0)+"-init")||this.settings},get_wrapper:function(t){var e=this.S(t?t.target:this.scope).closest(".off-canvas-wrap");return 0===e.length&&(e=this.S(".off-canvas-wrap")),e},reflow:function(){}}}(jQuery,window,window.document);
+;(function ($, window, document, undefined) {
+  'use strict';
+
+  Foundation.libs.offcanvas = {
+    name : 'offcanvas',
+
+    version : '5.4.7',
+
+    settings : {
+      open_method: 'move',
+      close_on_click: false
+    },
+
+    init : function (scope, method, options) {
+      this.bindings(method, options);
+    },
+
+    events : function () {
+      var self = this,
+          S = self.S,
+          move_class = '',
+          right_postfix = '',
+          left_postfix = '';
+
+      if (this.settings.open_method === 'move') {
+        move_class = 'move-';
+        right_postfix = 'right';
+        left_postfix = 'left';
+      } else if (this.settings.open_method === 'overlap_single') {
+        move_class = 'offcanvas-overlap-';
+        right_postfix = 'right';
+        left_postfix = 'left';
+      } else if (this.settings.open_method === 'overlap') {
+        move_class = 'offcanvas-overlap';
+      }
+
+      S(this.scope).off('.offcanvas')
+        .on('click.fndtn.offcanvas', '.left-off-canvas-toggle', function (e) {
+          self.click_toggle_class(e, move_class + right_postfix);
+          if (self.settings.open_method !== 'overlap'){
+            S(".left-submenu").removeClass(move_class + right_postfix);
+          }
+          $('.left-off-canvas-toggle').attr('aria-expanded', 'true');
+        })
+        .on('click.fndtn.offcanvas', '.left-off-canvas-menu a', function (e) {
+          var settings = self.get_settings(e);
+          var parent = S(this).parent();
+
+          if(settings.close_on_click && !parent.hasClass("has-submenu") && !parent.hasClass("back")){
+            self.hide.call(self, move_class + right_postfix, self.get_wrapper(e));
+            parent.parent().removeClass(move_class + right_postfix);
+          }else if(S(this).parent().hasClass("has-submenu")){
+            e.preventDefault();
+            S(this).siblings(".left-submenu").toggleClass(move_class + right_postfix);
+          }else if(parent.hasClass("back")){
+            e.preventDefault();
+            parent.parent().removeClass(move_class + right_postfix);
+          }
+          $('.left-off-canvas-toggle').attr('aria-expanded', 'true');
+        })
+        .on('click.fndtn.offcanvas', '.right-off-canvas-toggle', function (e) {
+          self.click_toggle_class(e, move_class + left_postfix);
+          if (self.settings.open_method !== 'overlap'){
+            S(".right-submenu").removeClass(move_class + left_postfix);
+          }
+          $('.right-off-canvas-toggle').attr('aria-expanded', 'true');
+        })
+        .on('click.fndtn.offcanvas', '.right-off-canvas-menu a', function (e) {
+          var settings = self.get_settings(e);
+          var parent = S(this).parent();
+
+          if(settings.close_on_click && !parent.hasClass("has-submenu") && !parent.hasClass("back")){
+            self.hide.call(self, move_class + left_postfix, self.get_wrapper(e));
+            parent.parent().removeClass(move_class + left_postfix);
+          }else if(S(this).parent().hasClass("has-submenu")){
+            e.preventDefault();
+            S(this).siblings(".right-submenu").toggleClass(move_class + left_postfix);
+          }else if(parent.hasClass("back")){
+            e.preventDefault();
+            parent.parent().removeClass(move_class + left_postfix);
+          }
+          $('.right-off-canvas-toggle').attr('aria-expanded', 'true');
+        })
+        .on('click.fndtn.offcanvas', '.exit-off-canvas', function (e) {
+          self.click_remove_class(e, move_class + left_postfix);
+          S(".right-submenu").removeClass(move_class + left_postfix);
+          if (right_postfix){
+            self.click_remove_class(e, move_class + right_postfix);
+            S(".left-submenu").removeClass(move_class + left_postfix);
+          }
+          $('.right-off-canvas-toggle').attr('aria-expanded', 'true');
+        })
+        .on('click.fndtn.offcanvas', '.exit-off-canvas', function (e) {
+          self.click_remove_class(e, move_class + left_postfix);
+          $('.left-off-canvas-toggle').attr('aria-expanded', 'false');
+          if (right_postfix) {
+            self.click_remove_class(e, move_class + right_postfix);
+            $('.right-off-canvas-toggle').attr('aria-expanded', "false");
+          }
+        });
+    },
+
+    toggle: function(class_name, $off_canvas) {
+      $off_canvas = $off_canvas || this.get_wrapper();
+      if ($off_canvas.is('.' + class_name)) {
+        this.hide(class_name, $off_canvas);
+      } else {
+        this.show(class_name, $off_canvas);
+      }
+    },
+
+    show: function(class_name, $off_canvas) {
+      $off_canvas = $off_canvas || this.get_wrapper();
+      $off_canvas.trigger('open').trigger('open.fndtn.offcanvas');
+      $off_canvas.addClass(class_name);
+    },
+
+    hide: function(class_name, $off_canvas) {
+      $off_canvas = $off_canvas || this.get_wrapper();
+      $off_canvas.trigger('close').trigger('close.fndtn.offcanvas');
+      $off_canvas.removeClass(class_name);
+    },
+
+    click_toggle_class: function(e, class_name) {
+      e.preventDefault();
+      var $off_canvas = this.get_wrapper(e);
+      this.toggle(class_name, $off_canvas);
+    },
+
+    click_remove_class: function(e, class_name) {
+      e.preventDefault();
+      var $off_canvas = this.get_wrapper(e);
+      this.hide(class_name, $off_canvas);
+    },
+
+    get_settings: function(e) {
+      var offcanvas  = this.S(e.target).closest('[' + this.attr_name() + ']');
+      return offcanvas.data(this.attr_name(true) + '-init') || this.settings;
+    },
+
+    get_wrapper: function(e) {
+      var $off_canvas = this.S(e ? e.target : this.scope).closest('.off-canvas-wrap');
+
+      if ($off_canvas.length === 0) {
+        $off_canvas = this.S('.off-canvas-wrap');
+      }
+      return $off_canvas;
+    },
+
+    reflow : function () {}
+  };
+}(jQuery, window, window.document));

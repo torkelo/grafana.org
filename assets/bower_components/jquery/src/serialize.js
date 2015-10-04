@@ -1,1 +1,111 @@
-define(["./core","./manipulation/var/rcheckableType","./core/init","./traversing","./attributes/prop"],function(t,e){function n(e,r,o,a){var s;if(t.isArray(r))t.each(r,function(t,r){o||i.test(e)?a(e,r):n(e+"["+("object"==typeof r?t:"")+"]",r,o,a)});else if(o||"object"!==t.type(r))a(e,r);else for(s in r)n(e+"["+s+"]",r[s],o,a)}var r=/%20/g,i=/\[\]$/,o=/\r?\n/g,a=/^(?:submit|button|image|reset|file)$/i,s=/^(?:input|select|textarea|keygen)/i;return t.param=function(e,i){var o,a=[],s=function(e,n){n=t.isFunction(n)?n():null==n?"":n,a[a.length]=encodeURIComponent(e)+"="+encodeURIComponent(n)};if(void 0===i&&(i=t.ajaxSettings&&t.ajaxSettings.traditional),t.isArray(e)||e.jquery&&!t.isPlainObject(e))t.each(e,function(){s(this.name,this.value)});else for(o in e)n(o,e[o],i,s);return a.join("&").replace(r,"+")},t.fn.extend({serialize:function(){return t.param(this.serializeArray())},serializeArray:function(){return this.map(function(){var e=t.prop(this,"elements");return e?t.makeArray(e):this}).filter(function(){var n=this.type;return this.name&&!t(this).is(":disabled")&&s.test(this.nodeName)&&!a.test(n)&&(this.checked||!e.test(n))}).map(function(e,n){var r=t(this).val();return null==r?null:t.isArray(r)?t.map(r,function(t){return{name:n.name,value:t.replace(o,"\r\n")}}):{name:n.name,value:r.replace(o,"\r\n")}}).get()}}),t});
+define([
+	"./core",
+	"./manipulation/var/rcheckableType",
+	"./core/init",
+	"./traversing", // filter
+	"./attributes/prop"
+], function( jQuery, rcheckableType ) {
+
+var r20 = /%20/g,
+	rbracket = /\[\]$/,
+	rCRLF = /\r?\n/g,
+	rsubmitterTypes = /^(?:submit|button|image|reset|file)$/i,
+	rsubmittable = /^(?:input|select|textarea|keygen)/i;
+
+function buildParams( prefix, obj, traditional, add ) {
+	var name;
+
+	if ( jQuery.isArray( obj ) ) {
+		// Serialize array item.
+		jQuery.each( obj, function( i, v ) {
+			if ( traditional || rbracket.test( prefix ) ) {
+				// Treat each array item as a scalar.
+				add( prefix, v );
+
+			} else {
+				// Item is non-scalar (array or object), encode its numeric index.
+				buildParams( prefix + "[" + ( typeof v === "object" ? i : "" ) + "]", v, traditional, add );
+			}
+		});
+
+	} else if ( !traditional && jQuery.type( obj ) === "object" ) {
+		// Serialize object item.
+		for ( name in obj ) {
+			buildParams( prefix + "[" + name + "]", obj[ name ], traditional, add );
+		}
+
+	} else {
+		// Serialize scalar item.
+		add( prefix, obj );
+	}
+}
+
+// Serialize an array of form elements or a set of
+// key/values into a query string
+jQuery.param = function( a, traditional ) {
+	var prefix,
+		s = [],
+		add = function( key, value ) {
+			// If value is a function, invoke it and return its value
+			value = jQuery.isFunction( value ) ? value() : ( value == null ? "" : value );
+			s[ s.length ] = encodeURIComponent( key ) + "=" + encodeURIComponent( value );
+		};
+
+	// Set traditional to true for jQuery <= 1.3.2 behavior.
+	if ( traditional === undefined ) {
+		traditional = jQuery.ajaxSettings && jQuery.ajaxSettings.traditional;
+	}
+
+	// If an array was passed in, assume that it is an array of form elements.
+	if ( jQuery.isArray( a ) || ( a.jquery && !jQuery.isPlainObject( a ) ) ) {
+		// Serialize the form elements
+		jQuery.each( a, function() {
+			add( this.name, this.value );
+		});
+
+	} else {
+		// If traditional, encode the "old" way (the way 1.3.2 or older
+		// did it), otherwise encode params recursively.
+		for ( prefix in a ) {
+			buildParams( prefix, a[ prefix ], traditional, add );
+		}
+	}
+
+	// Return the resulting serialization
+	return s.join( "&" ).replace( r20, "+" );
+};
+
+jQuery.fn.extend({
+	serialize: function() {
+		return jQuery.param( this.serializeArray() );
+	},
+	serializeArray: function() {
+		return this.map(function() {
+			// Can add propHook for "elements" to filter or add form elements
+			var elements = jQuery.prop( this, "elements" );
+			return elements ? jQuery.makeArray( elements ) : this;
+		})
+		.filter(function() {
+			var type = this.type;
+
+			// Use .is( ":disabled" ) so that fieldset[disabled] works
+			return this.name && !jQuery( this ).is( ":disabled" ) &&
+				rsubmittable.test( this.nodeName ) && !rsubmitterTypes.test( type ) &&
+				( this.checked || !rcheckableType.test( type ) );
+		})
+		.map(function( i, elem ) {
+			var val = jQuery( this ).val();
+
+			return val == null ?
+				null :
+				jQuery.isArray( val ) ?
+					jQuery.map( val, function( val ) {
+						return { name: elem.name, value: val.replace( rCRLF, "\r\n" ) };
+					}) :
+					{ name: elem.name, value: val.replace( rCRLF, "\r\n" ) };
+		}).get();
+	}
+});
+
+return jQuery;
+});

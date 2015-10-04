@@ -1,1 +1,20 @@
-Modernizr.addTest("fullscreen",function(){for(var e=0;e<Modernizr._domPrefixes.length;e++)if(document[Modernizr._domPrefixes[e].toLowerCase()+"CancelFullScreen"])return!0;return!!document.cancelFullScreen||!1});
+/*!
+{
+  "name": "Fullscreen API",
+  "property": "fullscreen",
+  "caniuse": "fullscreen",
+  "notes": [{
+    "name": "MDN documentation",
+    "href": "https://developer.mozilla.org/en/API/Fullscreen"
+  }],
+  "polyfills": ["screenfulljs"],
+  "builderAliases": ["fullscreen_api"]
+}
+!*/
+/* DOC
+Detects support for the ability to make the current website take over the user's entire screen
+*/
+define(['Modernizr', 'domPrefixes', 'prefixed'], function(Modernizr, domPrefixes, prefixed) {
+  // github.com/Modernizr/Modernizr/issues/739
+  Modernizr.addTest('fullscreen', !!(prefixed('exitFullscreen', document, false) || prefixed('cancelFullScreen', document, false)));
+});

@@ -1,1 +1,5 @@
-define(["./class2type"],function(t){return t.toString});
+define([
+	"./class2type"
+], function( class2type ) {
+	return class2type.toString;
+});

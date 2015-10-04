@@ -1,1 +1,217 @@
-!function(t,e,n,i){"use strict";Foundation.libs.tab={name:"tab",version:"5.4.7",settings:{active_class:"active",callback:function(){},deep_linking:!1,scroll_to_content:!0,is_hover:!1},default_tab_hashes:[],init:function(t,e,n){var i=this,r=this.S;this.bindings(e,n),this.handle_location_hash_change(),r("["+this.attr_name()+"] > .active > a",this.scope).each(function(){i.default_tab_hashes.push(this.hash)})},events:function(){var t=this,n=this.S,i=function(e){var i=n(this).closest("["+t.attr_name()+"]").data(t.attr_name(!0)+"-init");(!i.is_hover||Modernizr.touch)&&(e.preventDefault(),e.stopPropagation(),t.toggle_active_tab(n(this).parent()))};n(this.scope).off(".tab").on("focus.fndtn.tab","["+this.attr_name()+"] > * > a",i).on("click.fndtn.tab","["+this.attr_name()+"] > * > a",i).on("mouseenter.fndtn.tab","["+this.attr_name()+"] > * > a",function(){var e=n(this).closest("["+t.attr_name()+"]").data(t.attr_name(!0)+"-init");e.is_hover&&t.toggle_active_tab(n(this).parent())}),n(e).on("hashchange.fndtn.tab",function(e){e.preventDefault(),t.handle_location_hash_change()})},handle_location_hash_change:function(){var e=this,n=this.S;n("["+this.attr_name()+"]",this.scope).each(function(){var r=n(this).data(e.attr_name(!0)+"-init");if(r.deep_linking){var o;if(o=r.scroll_to_content?e.scope.location.hash:e.scope.location.hash.replace("fndtn-",""),""!=o){var a=n(o);if(a.hasClass("content")&&a.parent().hasClass("tabs-content"))e.toggle_active_tab(t("["+e.attr_name()+"] > * > a[href="+o+"]").parent());else{var s=a.closest(".content").attr("id");s!=i&&e.toggle_active_tab(t("["+e.attr_name()+"] > * > a[href=#"+s+"]").parent(),o)}}else for(var u=0;u<e.default_tab_hashes.length;u++)e.toggle_active_tab(t("["+e.attr_name()+"] > * > a[href="+e.default_tab_hashes[u]+"]").parent())}})},toggle_active_tab:function(r,o){var a=this.S,s=r.closest("["+this.attr_name()+"]"),u=r.find("a"),l=r.children("a").first(),c="#"+l.attr("href").split("#")[1],d=a(c),f=r.siblings(),p=s.data(this.attr_name(!0)+"-init"),h=function(e){var i,r=t(this),o=t(this).parents("li").prev().children('[role="tab"]'),a=t(this).parents("li").next().children('[role="tab"]');switch(e.keyCode){case 37:i=o;break;case 39:i=a;break;default:i=!1}i.length&&(r.attr({tabindex:"-1","aria-selected":null}),i.attr({tabindex:"0","aria-selected":!0}).focus()),t('[role="tabpanel"]').attr("aria-hidden","true"),t("#"+t(n.activeElement).attr("href").substring(1)).attr("aria-hidden",null)};a(this).data(this.data_attr("tab-content"))&&(c="#"+a(this).data(this.data_attr("tab-content")).split("#")[1],d=a(c)),p.deep_linking&&(p.scroll_to_content?(e.location.hash=o||c,o==i||o==c?r.parent()[0].scrollIntoView():a(c)[0].scrollIntoView()):e.location.hash=o!=i?"fndtn-"+o.replace("#",""):"fndtn-"+c.replace("#","")),r.addClass(p.active_class).triggerHandler("opened"),u.attr({"aria-selected":"true",tabindex:0}),f.removeClass(p.active_class),f.find("a").attr({"aria-selected":"false",tabindex:-1}),d.siblings().removeClass(p.active_class).attr({"aria-hidden":"true",tabindex:-1}),d.addClass(p.active_class).attr("aria-hidden","false").removeAttr("tabindex"),p.callback(r),d.triggerHandler("toggled",[r]),s.triggerHandler("toggled",[d]),u.off("keydown").on("keydown",h)},data_attr:function(t){return this.namespace.length>0?this.namespace+"-"+t:t},off:function(){},reflow:function(){}}}(jQuery,window,window.document);
+;(function ($, window, document, undefined) {
+  'use strict';
+
+  Foundation.libs.tab = {
+    name : 'tab',
+
+    version : '5.4.7',
+
+    settings : {
+      active_class: 'active',
+      callback : function () {},
+      deep_linking: false,
+      scroll_to_content: true,
+      is_hover: false
+    },
+
+    default_tab_hashes: [],
+
+    init : function (scope, method, options) {
+      var self = this,
+          S = this.S;
+
+      this.bindings(method, options);
+      this.handle_location_hash_change();
+
+      // Store the default active tabs which will be referenced when the
+      // location hash is absent, as in the case of navigating the tabs and
+      // returning to the first viewing via the browser Back button.
+      S('[' + this.attr_name() + '] > .active > a', this.scope).each(function () {
+        self.default_tab_hashes.push(this.hash);
+      });
+    },
+
+    events : function () {
+      var self = this,
+          S = this.S;
+
+      var usual_tab_behavior =  function (e) {
+          var settings = S(this).closest('[' + self.attr_name() +']').data(self.attr_name(true) + '-init');
+          if (!settings.is_hover || Modernizr.touch) {
+            e.preventDefault();
+            e.stopPropagation();
+            self.toggle_active_tab(S(this).parent());
+          }
+        };
+
+      S(this.scope)
+        .off('.tab')
+        // Click event: tab title
+        .on('focus.fndtn.tab', '[' + this.attr_name() + '] > * > a', usual_tab_behavior )
+        .on('click.fndtn.tab', '[' + this.attr_name() + '] > * > a', usual_tab_behavior )
+        // Hover event: tab title
+        .on('mouseenter.fndtn.tab', '[' + this.attr_name() + '] > * > a', function (e) {
+          var settings = S(this).closest('[' + self.attr_name() +']').data(self.attr_name(true) + '-init');
+          if (settings.is_hover) self.toggle_active_tab(S(this).parent());
+        });
+
+      // Location hash change event
+      S(window).on('hashchange.fndtn.tab', function (e) {
+        e.preventDefault();
+        self.handle_location_hash_change();
+      });
+    },
+
+    handle_location_hash_change : function () {
+
+      var self = this,
+          S = this.S;
+
+      S('[' + this.attr_name() + ']', this.scope).each(function () {
+        var settings = S(this).data(self.attr_name(true) + '-init');
+        if (settings.deep_linking) {
+          // Match the location hash to a label
+          var hash;
+          if (settings.scroll_to_content) {
+            hash = self.scope.location.hash;
+          } else {
+            // prefix the hash to prevent anchor scrolling
+            hash = self.scope.location.hash.replace('fndtn-', '');
+          }
+          if (hash != '') {
+            // Check whether the location hash references a tab content div or
+            // another element on the page (inside or outside the tab content div)
+            var hash_element = S(hash);
+            if (hash_element.hasClass('content') && hash_element.parent().hasClass('tabs-content')) {
+              // Tab content div
+              self.toggle_active_tab($('[' + self.attr_name() + '] > * > a[href=' + hash + ']').parent());
+            } else {
+              // Not the tab content div. If inside the tab content, find the
+              // containing tab and toggle it as active.
+              var hash_tab_container_id = hash_element.closest('.content').attr('id');
+              if (hash_tab_container_id != undefined) {
+                self.toggle_active_tab($('[' + self.attr_name() + '] > * > a[href=#' + hash_tab_container_id + ']').parent(), hash);
+              }
+            }
+          } else {
+            // Reference the default tab hashes which were initialized in the init function
+            for (var ind = 0; ind < self.default_tab_hashes.length; ind++) {
+              self.toggle_active_tab($('[' + self.attr_name() + '] > * > a[href=' + self.default_tab_hashes[ind] + ']').parent());
+            }
+          }
+        }
+       });
+     },
+
+    toggle_active_tab: function (tab, location_hash) {
+      var S = this.S,
+          tabs = tab.closest('[' + this.attr_name() + ']'),
+          tab_link = tab.find('a'),
+          anchor = tab.children('a').first(),
+          target_hash = '#' + anchor.attr('href').split('#')[1],
+          target = S(target_hash),
+          siblings = tab.siblings(),
+          settings = tabs.data(this.attr_name(true) + '-init'),
+          interpret_keyup_action = function(e) {
+            // Light modification of Heydon Pickering's Practical ARIA Examples: http://heydonworks.com/practical_aria_examples/js/a11y.js
+
+            // define current, previous and next (possible) tabs
+
+            var $original = $(this);
+            var $prev = $(this).parents('li').prev().children('[role="tab"]');
+            var $next = $(this).parents('li').next().children('[role="tab"]');
+            var $target;
+
+            // find the direction (prev or next)
+
+            switch (e.keyCode) {
+              case 37:
+                $target = $prev;
+                break;
+              case 39:
+                $target = $next;
+                break;
+              default:
+                $target = false
+                  break;
+            }
+
+            if ($target.length) {
+              $original.attr({
+                'tabindex' : '-1',
+                'aria-selected' : null
+              });
+              $target.attr({
+                'tabindex' : '0',
+                'aria-selected' : true
+              }).focus();
+            }
+
+            // Hide panels
+
+            $('[role="tabpanel"]')
+              .attr('aria-hidden', 'true');
+
+            // Show panel which corresponds to target
+
+            $('#' + $(document.activeElement).attr('href').substring(1))
+              .attr('aria-hidden', null);
+
+          };
+
+      // allow usage of data-tab-content attribute instead of href
+      if (S(this).data(this.data_attr('tab-content'))) {
+        target_hash = '#' + S(this).data(this.data_attr('tab-content')).split('#')[1];
+        target = S(target_hash);
+      }
+
+      if (settings.deep_linking) {
+
+        if (settings.scroll_to_content) {
+          // retain current hash to scroll to content
+          window.location.hash = location_hash || target_hash;
+          if (location_hash == undefined || location_hash == target_hash) {
+            tab.parent()[0].scrollIntoView();
+          } else {
+            S(target_hash)[0].scrollIntoView();
+          }
+        } else {
+          // prefix the hashes so that the browser doesn't scroll down
+          if (location_hash != undefined) {
+            window.location.hash = 'fndtn-' + location_hash.replace('#', '');
+          } else {
+            window.location.hash = 'fndtn-' + target_hash.replace('#', '');
+          }
+        }
+      }
+
+      // WARNING: The activation and deactivation of the tab content must
+      // occur after the deep linking in order to properly refresh the browser
+      // window (notably in Chrome).
+      // Clean up multiple attr instances to done once
+      tab.addClass(settings.active_class).triggerHandler('opened');
+      tab_link.attr({"aria-selected": "true",  tabindex: 0});
+      siblings.removeClass(settings.active_class)
+      siblings.find('a').attr({"aria-selected": "false",  tabindex: -1});
+      target.siblings().removeClass(settings.active_class).attr({"aria-hidden": "true",  tabindex: -1});
+      target.addClass(settings.active_class).attr('aria-hidden', 'false').removeAttr("tabindex");
+      settings.callback(tab);
+      target.triggerHandler('toggled', [tab]);
+      tabs.triggerHandler('toggled', [target]);
+
+      tab_link.off('keydown').on('keydown', interpret_keyup_action );
+    },
+
+    data_attr: function (str) {
+      if (this.namespace.length > 0) {
+        return this.namespace + '-' + str;
+      }
+
+      return str;
+    },
+
+    off : function () {},
+
+    reflow : function () {}
+  };
+}(jQuery, window, window.document));
