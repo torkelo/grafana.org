@@ -11,4 +11,4 @@
   "knownBugs": ["Some blackberry devices report false positive for input.multiple"]
 }
 !*/
-define(["Modernizr","createElement","inputElem"],function(e,t,n){var i="autocomplete autofocus list placeholder max min multiple pattern required step".split(" "),r={};e.input=function(e){for(var i=0,o=e.length;o>i;i++)r[e[i]]=!!(e[i]in n);return r.list&&(r.list=!(!t("datalist")||!window.HTMLDataListElement)),r}(i)});
+define(["Modernizr","createElement","inputElem"],function(e,t,n){var i="autocomplete autofocus list placeholder max min multiple pattern required step".split(" "),o={};e.input=function(e){for(var i=0,r=e.length;r>i;i++)o[e[i]]=!!(e[i]in n);return o.list&&(o.list=!(!t("datalist")||!window.HTMLDataListElement)),o}(i)});

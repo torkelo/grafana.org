@@ -7,4 +7,4 @@
   "polyfills": ["flashcanvas", "excanvas", "slcanvas", "fxcanvas"]
 }
 !*/
-define(["Modernizr","createElement"],function(t,e){t.addTest("canvas",function(){var t=e("canvas");return!(!t.getContext||!t.getContext("2d"))})});
+define(["Modernizr","createElement"],function(e,t){e.addTest("canvas",function(){var e=t("canvas");return!(!e.getContext||!e.getContext("2d"))})});

@@ -15,4 +15,4 @@
   "polyfills": []
 }
 !*/
-define(["Modernizr","prefixed"],function(e,n){e.addTest("gamepads",!!n("getGamepads",navigator))});
+define(["Modernizr","prefixed"],function(t,e){t.addTest("gamepads",!!e("getGamepads",navigator))});
