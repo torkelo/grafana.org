@@ -18,24 +18,4 @@
   }]
 }
 !*/
-/* DOC
-Check if browser implements ECMAScript 6 Promises per specification.
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('promises', function() {
-    return 'Promise' in window &&
-    // Some of these methods are missing from
-    // Firefox/Chrome experimental implementations
-    'resolve' in window.Promise &&
-    'reject' in window.Promise &&
-    'all' in window.Promise &&
-    'race' in window.Promise &&
-    // Older version of the spec had a resolver object
-    // as the arg rather than a function
-    (function() {
-      var resolve;
-      new window.Promise(function(r) { resolve = r; });
-      return typeof resolve === 'function';
-    }());
-  });
-});
+define(["Modernizr"],function(e){e.addTest("promises",function(){return"Promise"in window&&"resolve"in window.Promise&&"reject"in window.Promise&&"all"in window.Promise&&"race"in window.Promise&&function(){var e;return new window.Promise(function(t){e=t}),"function"==typeof e}()})});

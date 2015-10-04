@@ -14,35 +14,4 @@
   "knownBugs": ["Only ever returns true if the browser/OS is configured to use comma as a decimal separator. This is probably fine for most use cases."]
 }
 !*/
-/* DOC
-Detects whether input type="number" is capable of receiving and displaying localized numbers, e.g. with comma separator.
-*/
-define(['Modernizr', 'createElement', 'docElement', 'getBody', 'test/inputtypes', 'test/forms/validation'], function(Modernizr, createElement, docElement, getBody) {
-  Modernizr.addTest('localizednumber', function() {
-    // this extends our testing of input[type=number], so bomb out if that's missing
-    if (!Modernizr.inputtypes.number) { return false; }
-    // we rely on checkValidity later, so bomb out early if we don't have it
-    if (!Modernizr.formvalidation) { return false; }
-
-    var el = createElement('div');
-    var diff;
-    var body = getBody();
-
-    var root = (function() {
-      return docElement.insertBefore(body, docElement.firstElementChild || docElement.firstChild);
-    }());
-    el.innerHTML = '<input type="number" value="1.0" step="0.1"/>';
-    var input = el.childNodes[0];
-    root.appendChild(el);
-    input.focus();
-    try {
-      document.execCommand('InsertText', false, '1,1');
-    } catch (e) { // prevent warnings in IE
-    }
-    diff = input.type === 'number' && input.valueAsNumber === 1.1 && input.checkValidity();
-    root.removeChild(el);
-    body.fake && root.parentNode.removeChild(root);
-    return diff;
-  });
-
-});
+define(["Modernizr","createElement","docElement","getBody","test/inputtypes","test/forms/validation"],function(e,t,n,i){e.addTest("localizednumber",function(){if(!e.inputtypes.number)return!1;if(!e.formvalidation)return!1;var r,o=t("div"),s=i(),a=function(){return n.insertBefore(s,n.firstElementChild||n.firstChild)}();o.innerHTML='<input type="number" value="1.0" step="0.1"/>';var c=o.childNodes[0];a.appendChild(o),c.focus();try{document.execCommand("InsertText",!1,"1,1")}catch(l){}return r="number"===c.type&&1.1===c.valueAsNumber&&c.checkValidity(),a.removeChild(o),s.fake&&a.parentNode.removeChild(a),r})});

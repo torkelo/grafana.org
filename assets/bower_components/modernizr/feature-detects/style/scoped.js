@@ -13,9 +13,4 @@
   "polyfills": ["scoped-styles"]
 }
 !*/
-/* DOC
-Support for the `scoped` attribute of the `<style>` element.
-*/
-define(['Modernizr', 'createElement'], function(Modernizr, createElement) {
-  Modernizr.addTest('stylescoped', 'scoped' in createElement('style'));
-});
+define(["Modernizr","createElement"],function(e,t){e.addTest("stylescoped","scoped"in t("style"))});

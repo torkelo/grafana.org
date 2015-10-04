@@ -16,43 +16,4 @@
   "tags": ["event"]
 }
 !*/
-/* DOC
-`oninput` tests if the browser is able to detect the input event
-*/
-define(['Modernizr', 'docElement', 'createElement', 'testStyles', 'hasEvent'], function(Modernizr, docElement, createElement, testStyles, hasEvent) {
-
-  Modernizr.addTest('oninput', function() {
-    var input = createElement('input');
-    var supportsOnInput;
-    input.setAttribute('oninput', 'return');
-
-    if (hasEvent('oninput', docElement) || typeof input.oninput == 'function') {
-      return true;
-    }
-
-    // IE doesn't support onInput, so we wrap up the non IE APIs
-    // (createEvent, addEventListener) in a try catch, rather than test for
-    // their trident equivalent.
-    try {
-      // Older Firefox didn't map oninput attribute to oninput property
-      var testEvent  = document.createEvent('KeyboardEvent');
-      supportsOnInput = false;
-      var handler = function(e) {
-        supportsOnInput = true;
-        e.preventDefault();
-        e.stopPropagation();
-      };
-
-      testEvent.initKeyEvent('keypress', true, true, window, false, false, false, false, 0, 'e'.charCodeAt(0));
-      docElement.appendChild(input);
-      input.addEventListener('input', handler, false);
-      input.focus();
-      input.dispatchEvent(testEvent);
-      input.removeEventListener('input', handler, false);
-      docElement.removeChild(input);
-    } catch (e) {
-      supportsOnInput = false;
-    }
-      return supportsOnInput;
-  });
-});
+define(["Modernizr","docElement","createElement","testStyles","hasEvent"],function(e,t,n,o,r){e.addTest("oninput",function(){var e,o=n("input");if(o.setAttribute("oninput","return"),r("oninput",t)||"function"==typeof o.oninput)return!0;try{var i=document.createEvent("KeyboardEvent");e=!1;var u=function(t){e=!0,t.preventDefault(),t.stopPropagation()};i.initKeyEvent("keypress",!0,!0,window,!1,!1,!1,!1,0,"e".charCodeAt(0)),t.appendChild(o),o.addEventListener("input",u,!1),o.focus(),o.dispatchEvent(i),o.removeEventListener("input",u,!1),t.removeChild(o)}catch(c){e=!1}return e})});

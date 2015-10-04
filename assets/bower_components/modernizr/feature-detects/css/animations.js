@@ -12,9 +12,4 @@
   }]
 }
 !*/
-/* DOC
-Detects whether or not elements can be animated using CSS
-*/
-define(['Modernizr', 'testAllProps'], function(Modernizr, testAllProps) {
-  Modernizr.addTest('cssanimations', testAllProps('animationName', 'a', true));
-});
+define(["Modernizr","testAllProps"],function(e,t){e.addTest("cssanimations",t("animationName","a",!0))});

@@ -9,9 +9,4 @@
   "builderAliases": ["lists_reversed"]
 }
 !*/
-/* DOC
-Detects support for the `reversed` attribute on the `<ol>` element.
-*/
-define(['Modernizr', 'createElement'], function(Modernizr, createElement) {
-  Modernizr.addTest('olreversed', 'reversed' in createElement('ol'));
-});
+define(["Modernizr","createElement"],function(e,t){e.addTest("olreversed","reversed"in t("ol"))});

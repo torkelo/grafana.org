@@ -18,24 +18,4 @@
   "warnings": ["Known false negative in Safari 3.1 and Safari 3.2.2"]
 }
 !*/
-/* DOC
-Detects support for the ':nth-child()' CSS pseudo-selector.
-*/
-define(['Modernizr', 'testStyles'], function(Modernizr, testStyles) {
-  // 5 `<div>` elements with `1px` width are created.
-  // Then every other element has its `width` set to `2px`.
-  // A Javascript loop then tests if the `<div>`s have the expected width
-  // using the modulus operator.
-  testStyles('#modernizr div {width:1px} #modernizr div:nth-child(2n) {width:2px;}', function(elem) {
-    Modernizr.addTest('nthchild', function() {
-      var elems = elem.getElementsByTagName('div'),
-      test = true;
-
-      for (var i = 0; i < 5; i++) {
-        test = test && elems[i].offsetWidth === i % 2 + 1;
-      }
-
-      return test;
-    });
-  }, 5);
-});
+define(["Modernizr","testStyles"],function(e,t){t("#modernizr div {width:1px} #modernizr div:nth-child(2n) {width:2px;}",function(t){e.addTest("nthchild",function(){for(var e=t.getElementsByTagName("div"),n=!0,i=0;5>i;i++)n=n&&e[i].offsetWidth===i%2+1;return n})},5)});

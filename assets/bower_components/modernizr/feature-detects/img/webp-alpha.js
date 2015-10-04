@@ -18,21 +18,4 @@
   }]
 }
 !*/
-/* DOC
-Tests for transparent webp support.
-*/
-define(['Modernizr', 'addTest'], function(Modernizr, addTest) {
-  Modernizr.addAsyncTest(function() {
-    var image = new Image();
-
-    image.onerror = function() {
-      addTest('webpalpha', false, {aliases: ['webp-alpha']});
-    };
-
-    image.onload = function() {
-      addTest('webpalpha', image.width == 1, {aliases: ['webp-alpha']});
-    };
-
-    image.src = 'data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==';
-  });
-});
+define(["Modernizr","addTest"],function(e,t){e.addAsyncTest(function(){var e=new Image;e.onerror=function(){t("webpalpha",!1,{aliases:["webp-alpha"]})},e.onload=function(){t("webpalpha",1==e.width,{aliases:["webp-alpha"]})},e.src="data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA=="})});

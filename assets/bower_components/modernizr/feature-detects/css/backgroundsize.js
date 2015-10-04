@@ -10,6 +10,4 @@
   }]
 }
 !*/
-define(['Modernizr', 'testAllProps'], function(Modernizr, testAllProps) {
-  Modernizr.addTest('backgroundsize', testAllProps('backgroundSize', '100%', true));
-});
+define(["Modernizr","testAllProps"],function(e,n){e.addTest("backgroundsize",n("backgroundSize","100%",!0))});

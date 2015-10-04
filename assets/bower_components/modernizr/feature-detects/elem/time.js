@@ -10,6 +10,4 @@
   }]
 }
 !*/
-define(['Modernizr', 'createElement'], function(Modernizr, createElement) {
-  Modernizr.addTest('time', 'valueAsDate' in createElement('time'));
-});
+define(["Modernizr","createElement"],function(e,t){e.addTest("time","valueAsDate"in t("time"))});

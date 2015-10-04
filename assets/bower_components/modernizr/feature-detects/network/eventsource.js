@@ -10,9 +10,4 @@
   }]
 }
 !*/
-/* DOC
-Tests for server sent events aka eventsource.
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('eventsource', 'EventSource' in window);
-});
+define(["Modernizr"],function(e){e.addTest("eventsource","EventSource"in window)});

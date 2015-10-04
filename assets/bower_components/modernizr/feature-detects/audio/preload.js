@@ -5,9 +5,4 @@
   "tags": ["audio", "media"]
 }
 !*/
-/* DOC
-Detects if audio can be downloaded in the background before it starts playing in the `<audio>` element
-*/
-define(['Modernizr', 'createElement'], function(Modernizr, createElement) {
-  Modernizr.addTest('audiopreload', 'preload' in createElement('audio'));
-});
+define(["Modernizr","createElement"],function(e,n){e.addTest("audiopreload","preload"in n("audio"))});

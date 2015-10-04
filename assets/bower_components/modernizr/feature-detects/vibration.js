@@ -11,9 +11,4 @@
   }]
 }
 !*/
-/* DOC
-Detects support for the API that provides access to the vibration mechanism of the hosting device, to provide tactile feedback.
-*/
-define(['Modernizr', 'prefixed'], function(Modernizr, prefixed) {
-  Modernizr.addTest('vibrate', !!prefixed('vibrate', navigator));
-});
+define(["Modernizr","prefixed"],function(e,t){e.addTest("vibrate",!!t("vibrate",navigator))});

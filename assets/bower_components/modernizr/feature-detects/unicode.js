@@ -8,34 +8,4 @@
   ]
 }
 !*/
-/* DOC
-Detects if unicode characters are supported in the current document.
-*/
-define(['Modernizr', 'createElement', 'testStyles', 'isSVG'], function(Modernizr, createElement, testStyles, isSVG) {
-  /**
-   * Unicode special character support
-   *
-   * Detection is made by testing missing glyph box rendering against star character
-   * If widths are the same, this "probably" means the browser didn't support the star character and rendered a glyph box instead
-   * Just need to ensure the font characters have different widths
-   */
-  Modernizr.addTest('unicode', function() {
-    var bool;
-    var missingGlyph = createElement('span');
-    var star = createElement('span');
-
-    testStyles('#modernizr{font-family:Arial,sans;font-size:300em;}', function(node) {
-
-      missingGlyph.innerHTML = isSVG ? '\u5987' : '&#5987';
-      star.innerHTML = isSVG ? '\u2606' : '&#9734';
-
-      node.appendChild(missingGlyph);
-      node.appendChild(star);
-
-      bool = 'offsetWidth' in missingGlyph && missingGlyph.offsetWidth !== star.offsetWidth;
-    });
-
-    return bool;
-
-  });
-});
+define(["Modernizr","createElement","testStyles","isSVG"],function(e,t,n,i){e.addTest("unicode",function(){var e,r=t("span"),o=t("span");return n("#modernizr{font-family:Arial,sans;font-size:300em;}",function(t){r.innerHTML=i?"\u5987":"&#5987",o.innerHTML=i?"\u2606":"&#9734",t.appendChild(r),t.appendChild(o),e="offsetWidth"in r&&r.offsetWidth!==o.offsetWidth}),e})});

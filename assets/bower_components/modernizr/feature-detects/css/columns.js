@@ -7,39 +7,4 @@
   "tags": ["css"]
 }
 !*/
-define(['Modernizr', 'testAllProps'], function(Modernizr, testAllProps) {
-
-  (function() {
-
-    /* jshint -W053 */
-    Modernizr.addTest('csscolumns', function() {
-      var bool = false;
-      var test = testAllProps('columnCount');
-      try {
-        if (bool = !!test) {
-          bool = new Boolean(bool);
-        }
-      } catch (e) {}
-
-      return bool;
-    });
-
-    var props = ['Width', 'Span', 'Fill', 'Gap', 'Rule', 'RuleColor', 'RuleStyle', 'RuleWidth', 'BreakBefore', 'BreakAfter', 'BreakInside'];
-    var name, test;
-
-    for (var i = 0; i < props.length; i++) {
-      name = props[i].toLowerCase();
-      test = testAllProps('column' + props[i]);
-
-      // break-before, break-after & break-inside are not "column"-prefixed in spec
-      if (name === 'breakbefore' || name === 'breakafter' || name == 'breakinside') {
-        test = test || testAllProps(props[i]);
-      }
-
-      Modernizr.addTest('csscolumns.' + name, test);
-    }
-
-
-  })();
-
-});
+define(["Modernizr","testAllProps"],function(e,t){!function(){e.addTest("csscolumns",function(){var e=!1,n=t("columnCount");try{(e=!!n)&&(e=new Boolean(e))}catch(i){}return e});for(var n,i,o=["Width","Span","Fill","Gap","Rule","RuleColor","RuleStyle","RuleWidth","BreakBefore","BreakAfter","BreakInside"],r=0;r<o.length;r++)n=o[r].toLowerCase(),i=t("column"+o[r]),("breakbefore"===n||"breakafter"===n||"breakinside"==n)&&(i=i||t(o[r])),e.addTest("csscolumns."+n,i)}()});

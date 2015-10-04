@@ -13,9 +13,4 @@
   "polyfills": ["raf"]
 }
 !*/
-/* DOC
-Detects support for the `window.requestAnimationFrame` API, for offloading animation repainting to the browser for optimized performance.
-*/
-define(['Modernizr', 'prefixed'], function(Modernizr, prefixed) {
-  Modernizr.addTest('requestanimationframe', !!prefixed('requestAnimationFrame', window), {aliases: ['raf']});
-});
+define(["Modernizr","prefixed"],function(e,t){e.addTest("requestanimationframe",!!t("requestAnimationFrame",window),{aliases:["raf"]})});

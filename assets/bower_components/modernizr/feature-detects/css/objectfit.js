@@ -11,6 +11,4 @@
   }]
 }
 !*/
-define(['Modernizr', 'prefixed'], function(Modernizr, prefixed) {
-  Modernizr.addTest('objectfit', !!prefixed('objectFit'), {aliases: ['object-fit']});
-});
+define(["Modernizr","prefixed"],function(e,t){e.addTest("objectfit",!!t("objectFit"),{aliases:["object-fit"]})});

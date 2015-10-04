@@ -15,21 +15,4 @@
   }]
 }
 !*/
-/* DOC
-Tests for animated webp support.
-*/
-define(['Modernizr', 'addTest'], function(Modernizr, addTest) {
-  Modernizr.addAsyncTest(function() {
-    var image = new Image();
-
-    image.onerror = function() {
-      addTest('webpanimation', false, {aliases: ['webp-animation']});
-    };
-
-    image.onload = function() {
-      addTest('webpanimation', image.width == 1, {aliases: ['webp-animation']});
-    };
-
-    image.src = 'data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA';
-  });
-});
+define(["Modernizr","addTest"],function(e,t){e.addAsyncTest(function(){var e=new Image;e.onerror=function(){t("webpanimation",!1,{aliases:["webp-animation"]})},e.onload=function(){t("webpanimation",1==e.width,{aliases:["webp-animation"]})},e.src="data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA"})});

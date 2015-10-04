@@ -12,16 +12,4 @@
   }]
 }
 !*/
-/* DOC
-`display: table` and `table-cell` test. (both are tested under one name `table-cell` )
-*/
-define(['Modernizr', 'testStyles'], function(Modernizr, testStyles) {
-  // If a document is in rtl mode this test will fail so we force ltr mode on the injeced
-  // element https://github.com/Modernizr/Modernizr/issues/716
-  testStyles('#modernizr{display: table; direction: ltr}#modernizr div{display: table-cell; padding: 10px}', function(elem) {
-    var ret;
-    var child = elem.childNodes;
-    ret = child[0].offsetLeft < child[1].offsetLeft;
-    Modernizr.addTest('displaytable', ret, {aliases: ['display-table']});
-  }, 2);
-});
+define(["Modernizr","testStyles"],function(e,t){t("#modernizr{display: table; direction: ltr}#modernizr div{display: table-cell; padding: 10px}",function(t){var n,i=t.childNodes;n=i[0].offsetLeft<i[1].offsetLeft,e.addTest("displaytable",n,{aliases:["display-table"]})},2)});

@@ -11,6 +11,4 @@
   }]
 }
 !*/
-define(['Modernizr', 'docElement'], function(Modernizr, docElement) {
-  Modernizr.addTest('classlist', 'classList' in docElement);
-});
+define(["Modernizr","docElement"],function(e,t){e.addTest("classlist","classList"in t)});

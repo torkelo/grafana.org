@@ -11,14 +11,4 @@
   }]
 }
 !*/
-define(['Modernizr', 'createElement'], function(Modernizr, createElement) {
-  Modernizr.addTest('createelementattrs', function() {
-    try {
-      return createElement('<input name="test" />').getAttribute('name') == 'test';
-    } catch (e) {
-      return false;
-    }
-  }, {
-    aliases: ['createelement-attrs']
-  });
-});
+define(["Modernizr","createElement"],function(e,t){e.addTest("createelementattrs",function(){try{return"test"==t('<input name="test" />').getAttribute("name")}catch(e){return!1}},{aliases:["createelement-attrs"]})});

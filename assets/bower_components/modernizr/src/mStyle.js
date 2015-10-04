@@ -1,13 +1,1 @@
-define(['Modernizr', 'modElem'], function(Modernizr, modElem) {
-  var mStyle = {
-    style : modElem.elem.style
-  };
-
-  // kill ref for gc, must happen before mod.elem is removed, so we unshift on to
-  // the front of the queue.
-  Modernizr._q.unshift(function() {
-    delete mStyle.style;
-  });
-
-  return mStyle;
-});
+define(["Modernizr","modElem"],function(e,t){var n={style:t.elem.style};return e._q.unshift(function(){delete n.style}),n});

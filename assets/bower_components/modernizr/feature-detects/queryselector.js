@@ -12,9 +12,4 @@
   "polyfills": ["css-selector-engine"]
 }
 !*/
-/* DOC
-Detects support for querySelector.
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('queryselector', 'querySelector' in document && 'querySelectorAll' in document);
-});
+define(["Modernizr"],function(e){e.addTest("queryselector","querySelector"in document&&"querySelectorAll"in document)});

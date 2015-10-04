@@ -11,11 +11,4 @@
   "authors": ["Ron Waldon (@jokeyrhyme)"]
 }
 !*/
-/* DOC
-Detects support for creating Blob URLs
-*/
-define(['Modernizr', 'prefixed'], function(Modernizr, prefixed) {
-  var url = prefixed('URL', window, false);
-  url = url && window[url];
-  Modernizr.addTest('bloburls', url && 'revokeObjectURL' in url && 'createObjectURL' in url);
-});
+define(["Modernizr","prefixed"],function(e,t){var n=t("URL",window,!1);n=n&&window[n],e.addTest("bloburls",n&&"revokeObjectURL"in n&&"createObjectURL"in n)});

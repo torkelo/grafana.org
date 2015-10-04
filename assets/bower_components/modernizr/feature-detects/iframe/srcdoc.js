@@ -10,9 +10,4 @@
   }]
 }
 !*/
-/* DOC
-Test for `srcdoc` attribute in iframes.
-*/
-define(['Modernizr', 'createElement'], function(Modernizr, createElement) {
-  Modernizr.addTest('srcdoc', 'srcdoc' in createElement('iframe'));
-});
+define(["Modernizr","createElement"],function(e,t){e.addTest("srcdoc","srcdoc"in t("iframe"))});

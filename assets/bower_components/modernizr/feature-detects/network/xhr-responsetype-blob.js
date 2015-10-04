@@ -9,9 +9,4 @@
   }]
 }
 !*/
-/* DOC
-Tests for XMLHttpRequest xhr.responseType='blob'.
-*/
-define(['Modernizr', 'testXhrType'], function(Modernizr, testXhrType) {
-  Modernizr.addTest('xhrresponsetypeblob', testXhrType('blob'));
-});
+define(["Modernizr","testXhrType"],function(e,t){e.addTest("xhrresponsetypeblob",t("blob"))});

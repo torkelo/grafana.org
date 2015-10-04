@@ -12,9 +12,4 @@
   "knownBugs": [ "False-positive on Firefox < 29" ]
 }
 !*/
-/* DOC
-Test for `sandbox` attribute in iframes.
-*/
-define(['Modernizr', 'createElement'], function(Modernizr, createElement) {
-  Modernizr.addTest('sandbox', 'sandbox' in createElement('iframe'));
-});
+define(["Modernizr","createElement"],function(e,t){e.addTest("sandbox","sandbox"in t("iframe"))});

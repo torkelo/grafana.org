@@ -12,17 +12,4 @@
   "polyfills": ["blobjs"]
 }
 !*/
-/* DOC
-Detects support for the Blob constructor, for creating file-like objects of immutable, raw data.
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('blobconstructor', function() {
-    try {
-      return !!new Blob();
-    } catch (e) {
-      return false;
-    }
-  }, {
-    aliases: ['blob-constructor']
-  });
-});
+define(["Modernizr"],function(e){e.addTest("blobconstructor",function(){try{return!!new Blob}catch(e){return!1}},{aliases:["blob-constructor"]})});

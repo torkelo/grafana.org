@@ -9,9 +9,4 @@
   }]
 }
 !*/
-/* DOC
-Tests for XMLHttpRequest xhr.responseType='text'.
-*/
-define(['Modernizr', 'testXhrType'], function(Modernizr, testXhrType) {
-  Modernizr.addTest('xhrresponsetypetext', testXhrType('text'));
-});
+define(["Modernizr","testXhrType"],function(e,t){e.addTest("xhrresponsetypetext",t("text"))});

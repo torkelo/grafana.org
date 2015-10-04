@@ -11,9 +11,4 @@
   "polyfills": ["jdataview"]
 }
 !*/
-/* DOC
-Detects support for the DataView interface for reading data from an ArrayBuffer as part of the Typed Array spec.
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('dataview', (typeof DataView !== 'undefined' && 'getFloat64' in DataView.prototype));
-});
+define(["Modernizr"],function(e){e.addTest("dataview","undefined"!=typeof DataView&&"getFloat64"in DataView.prototype)});

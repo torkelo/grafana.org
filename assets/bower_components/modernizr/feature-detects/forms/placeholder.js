@@ -6,9 +6,4 @@
   "builderAliases": ["forms_placeholder"]
 }
 !*/
-/* DOC
-Tests for placeholder attribute in inputs and textareas
-*/
-define(['Modernizr', 'createElement'], function(Modernizr, createElement) {
-  Modernizr.addTest('placeholder', ('placeholder' in createElement('input') && 'placeholder' in createElement('textarea')));
-});
+define(["Modernizr","createElement"],function(e,t){e.addTest("placeholder","placeholder"in t("input")&&"placeholder"in t("textarea"))});

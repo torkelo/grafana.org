@@ -11,22 +11,4 @@
   "tags": ["es5"]
 }
 !*/
-/* DOC
-Check if browser implements ECMAScript 5 Date per specification.
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('es5date', function() {
-    var isoDate = '2013-04-12T06:06:37.307Z',
-      canParseISODate = false;
-    try {
-      canParseISODate = !!Date.parse(isoDate);
-    } catch (e) {
-      // no ISO date parsing yet
-    }
-    return !!(Date.now &&
-      Date.prototype &&
-      Date.prototype.toISOString &&
-      Date.prototype.toJSON &&
-      canParseISODate);
-  });
-});
+define(["Modernizr"],function(e){e.addTest("es5date",function(){var e="2013-04-12T06:06:37.307Z",t=!1;try{t=!!Date.parse(e)}catch(n){}return!!(Date.now&&Date.prototype&&Date.prototype.toISOString&&Date.prototype.toJSON&&t)})});

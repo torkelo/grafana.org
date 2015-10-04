@@ -14,19 +14,4 @@
   }]
 }
 !*/
-define(['Modernizr', 'docElement', 'testStyles', 'roundedEquals'], function(Modernizr, docElement, testStyles, roundedEquals) {
-  testStyles('#modernizr1{width: 50vm;width:50vmin}#modernizr2{width:50px;height:50px;overflow:scroll}', function(node) {
-    var elem = node.childNodes[1];
-    var scroller = node.childNodes[0];
-    var scrollbarWidth = parseInt((scroller.offsetWidth - scroller.clientWidth) / 2, 10);
-
-    var one_vw = docElement.clientWidth / 100;
-    var one_vh = docElement.clientHeight / 100;
-    var expectedWidth = parseInt(Math.min(one_vw, one_vh) * 50, 10);
-    var compWidth = parseInt((window.getComputedStyle ?
-                          getComputedStyle(elem, null) :
-                          elem.currentStyle)['width'], 10);
-
-    Modernizr.addTest('cssvminunit', roundedEquals(expectedWidth, compWidth) || roundedEquals(expectedWidth, compWidth - scrollbarWidth));
-  }, 2);
-});
+define(["Modernizr","docElement","testStyles","roundedEquals"],function(e,t,n,i){n("#modernizr1{width: 50vm;width:50vmin}#modernizr2{width:50px;height:50px;overflow:scroll}",function(n){var o=n.childNodes[1],r=n.childNodes[0],d=parseInt((r.offsetWidth-r.clientWidth)/2,10),s=t.clientWidth/100,a=t.clientHeight/100,l=parseInt(50*Math.min(s,a),10),c=parseInt((window.getComputedStyle?getComputedStyle(o,null):o.currentStyle).width,10);e.addTest("cssvminunit",i(l,c)||i(l,c-d))},2)});

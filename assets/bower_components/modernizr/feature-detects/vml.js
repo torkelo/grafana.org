@@ -14,22 +14,4 @@
   }]
 }
 !*/
-/* DOC
-Detects support for VML.
-*/
-define(['Modernizr', 'createElement', 'isSVG'], function(Modernizr, createElement, isSVG) {
-  Modernizr.addTest('vml', function() {
-    var containerDiv = createElement('div');
-    var supports = false;
-    var shape;
-
-    if (!isSVG) {
-      containerDiv.innerHTML = '<v:shape id="vml_flag1" adj="1" />';
-      shape = containerDiv.firstChild;
-      shape.style.behavior = 'url(#default#VML)';
-      supports = shape ? typeof shape.adj == 'object' : true;
-    }
-
-    return supports;
-  });
-});
+define(["Modernizr","createElement","isSVG"],function(e,t,n){e.addTest("vml",function(){var e,i=t("div"),r=!1;return n||(i.innerHTML='<v:shape id="vml_flag1" adj="1" />',e=i.firstChild,e.style.behavior="url(#default#VML)",r=e?"object"==typeof e.adj:!0),r})});

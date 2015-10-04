@@ -12,15 +12,4 @@
   "tags": ["es6"]
 }
 !*/
-/* DOC
-Check if browser implements ECMAScript 6 String per specification.
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('es6string', !!(String.fromCodePoint &&
-    String.raw &&
-    String.prototype.codePointAt &&
-    String.prototype.repeat &&
-    String.prototype.startsWith &&
-    String.prototype.endsWith &&
-    String.prototype.contains));
-});
+define(["Modernizr"],function(e){e.addTest("es6string",!!(String.fromCodePoint&&String.raw&&String.prototype.codePointAt&&String.prototype.repeat&&String.prototype.startsWith&&String.prototype.endsWith&&String.prototype.contains))});

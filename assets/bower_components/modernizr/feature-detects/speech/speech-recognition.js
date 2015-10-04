@@ -16,7 +16,4 @@
   "tags": ["input", "speech"]
 }
 !*/
-
-define(['Modernizr', 'prefixed'], function(Modernizr, prefixed) {
-  Modernizr.addTest('speechrecognition', !!prefixed('SpeechRecognition', window));
-});
+define(["Modernizr","prefixed"],function(e,t){e.addTest("speechrecognition",!!t("SpeechRecognition",window))});

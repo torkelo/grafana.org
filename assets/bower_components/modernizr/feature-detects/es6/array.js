@@ -12,18 +12,4 @@
   "tags": ["es6"]
 }
 !*/
-/* DOC
-Check if browser implements ECMAScript 6 Array per specification.
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('es6array', !!(Array.prototype &&
-    Array.prototype.copyWithin &&
-    Array.prototype.fill &&
-    Array.prototype.find &&
-    Array.prototype.findIndex &&
-    Array.prototype.keys &&
-    Array.prototype.entries &&
-    Array.prototype.values &&
-    Array.from &&
-    Array.of));
-});
+define(["Modernizr"],function(e){e.addTest("es6array",!!(Array.prototype&&Array.prototype.copyWithin&&Array.prototype.fill&&Array.prototype.find&&Array.prototype.findIndex&&Array.prototype.keys&&Array.prototype.entries&&Array.prototype.values&&Array.from&&Array.of))});

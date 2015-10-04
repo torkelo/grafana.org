@@ -14,22 +14,4 @@
     }]
 }
 !*/
-/* DOC
-Detects if Photoshop style blending modes are available in canvas.
-*/
-define(['Modernizr', 'createElement', 'test/canvas'], function(Modernizr, createElement) {
-
-  Modernizr.addTest('canvasblending', function() {
-    if (Modernizr.canvas === false) {
-      return false;
-    }
-    var ctx = createElement('canvas').getContext('2d');
-    // firefox 3 throws an error when setting an invalid `globalCompositeOperation`
-    try {
-      ctx.globalCompositeOperation = 'screen';
-    } catch (e) {}
-
-    return ctx.globalCompositeOperation === 'screen';
-  });
-
-});
+define(["Modernizr","createElement","test/canvas"],function(e,t){e.addTest("canvasblending",function(){if(e.canvas===!1)return!1;var n=t("canvas").getContext("2d");try{n.globalCompositeOperation="screen"}catch(i){}return"screen"===n.globalCompositeOperation})});

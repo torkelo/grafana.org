@@ -14,13 +14,4 @@
   "authors": ["Ron Waldon (@jokeyrhyme)"]
 }
 !*/
-/* DOC
-Does the browser support HTML with non-standard / new elements?
-*/
-define(['Modernizr', 'createElement'], function(Modernizr, createElement) {
-  Modernizr.addTest('unknownelements', function() {
-    var a = createElement('a');
-    a.innerHTML = '<xyz></xyz>';
-    return a.childNodes.length === 1;
-  });
-});
+define(["Modernizr","createElement"],function(e,t){e.addTest("unknownelements",function(){var e=t("a");return e.innerHTML="<xyz></xyz>",1===e.childNodes.length})});

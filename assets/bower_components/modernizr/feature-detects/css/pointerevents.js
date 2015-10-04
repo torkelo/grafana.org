@@ -24,10 +24,4 @@
   ]
 }
 !*/
-define(['Modernizr', 'createElement'], function(Modernizr, createElement) {
-  Modernizr.addTest('csspointerevents', function() {
-    var style = createElement('a').style;
-    style.cssText = 'pointer-events:auto';
-    return style.pointerEvents === 'auto';
-  });
-});
+define(["Modernizr","createElement"],function(e,n){e.addTest("csspointerevents",function(){var e=n("a").style;return e.cssText="pointer-events:auto","auto"===e.pointerEvents})});

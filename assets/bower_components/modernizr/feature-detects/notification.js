@@ -14,9 +14,4 @@
   "polyfills": ["desktop-notify", "html5-notifications"]
 }
 !*/
-/* DOC
-Detects support for the Notifications API
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('notification', 'Notification' in window && 'permission' in window.Notification && 'requestPermission' in window.Notification);
-});
+define(["Modernizr"],function(e){e.addTest("notification","Notification"in window&&"permission"in window.Notification&&"requestPermission"in window.Notification)});

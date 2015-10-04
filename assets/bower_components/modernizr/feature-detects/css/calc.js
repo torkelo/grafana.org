@@ -8,23 +8,4 @@
   "authors": ["@calvein"]
 }
 !*/
-/* DOC
-Method of allowing calculated values for length units. For example:
-
-```css
-//lem {
-  width: calc(100% - 3em);
-}
-```
-*/
-define(['Modernizr', 'createElement', 'prefixes'], function(Modernizr, createElement, prefixes) {
-  Modernizr.addTest('csscalc', function() {
-    var prop = 'width:';
-    var value = 'calc(10px);';
-    var el = createElement('a');
-
-    el.style.cssText = prop + prefixes.join(value + prop);
-
-    return !!el.style.length;
-  });
-});
+define(["Modernizr","createElement","prefixes"],function(e,t,n){e.addTest("csscalc",function(){var e="width:",i="calc(10px);",r=t("a");return r.style.cssText=e+n.join(i+e),!!r.style.length})});

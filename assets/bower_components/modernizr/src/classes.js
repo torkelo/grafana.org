@@ -1,4 +1,1 @@
-define(function() {
-  var classes = [];
-  return classes;
-});
+define(function(){var e=[];return e});

@@ -25,6 +25,4 @@
   ]
 }
 !*/
-define(['Modernizr', 'testAllProps'], function(Modernizr, testAllProps) {
-  Modernizr.addTest('cssmask', testAllProps('maskRepeat', 'repeat-x', true));
-});
+define(["Modernizr","testAllProps"],function(e,n){e.addTest("cssmask",n("maskRepeat","repeat-x",!0))});

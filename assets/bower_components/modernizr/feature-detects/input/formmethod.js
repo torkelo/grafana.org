@@ -14,9 +14,4 @@
   ]
 }
 !*/
-/* DOC
-Detect support for the formmethod attribute on form inputs
-*/
-define(['Modernizr', 'createElement'], function(Modernizr, createElement) {
-  Modernizr.addTest('inputformmethod', !!('formMethod' in createElement('input')));
-});
+define(["Modernizr","createElement"],function(e,t){e.addTest("inputformmethod",!!("formMethod"in t("input")))});

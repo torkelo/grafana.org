@@ -15,6 +15,4 @@
   }]
 }
 !*/
-define(['Modernizr', 'testAllProps'], function(Modernizr, testAllProps) {
-  Modernizr.addTest('shapes', testAllProps('shapeOutside', 'content-box', true));
-});
+define(["Modernizr","testAllProps"],function(e,n){e.addTest("shapes",n("shapeOutside","content-box",!0))});

@@ -17,9 +17,4 @@
   "polyfills": ["fakeworker", "html5shims"]
 }
 !*/
-/* DOC
-Detects support for the basic `Worker` API from the Web Workers spec. Web Workers provide a simple means for web content to run scripts in background threads.
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('webworkers', 'Worker' in window);
-});
+define(["Modernizr"],function(e){e.addTest("webworkers","Worker"in window)});

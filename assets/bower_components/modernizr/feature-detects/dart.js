@@ -9,9 +9,4 @@
   }]
 }
 !*/
-/* DOC
-Detects native support for the Dart programming language.
-*/
-define(['Modernizr', 'prefixed'], function(Modernizr, prefixed) {
-  Modernizr.addTest('dart', !!prefixed('startDart', navigator));
-});
+define(["Modernizr","prefixed"],function(e,t){e.addTest("dart",!!t("startDart",navigator))});

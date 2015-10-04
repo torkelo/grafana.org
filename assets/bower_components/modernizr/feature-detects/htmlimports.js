@@ -16,10 +16,4 @@
   "tags": ["html", "import"]
 }
 !*/
-/* DOC
-Detects support for HTML import, a feature that is used for loading in Web Components.
- */
-
-define(['addTest', 'createElement'], function(addTest, createElement) {
-  addTest('htmlimports', 'import' in createElement('link'));
-});
+define(["addTest","createElement"],function(e,t){e("htmlimports","import"in t("link"))});

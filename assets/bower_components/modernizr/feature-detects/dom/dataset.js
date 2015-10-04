@@ -8,11 +8,4 @@
   "authors": ["@phiggins42"]
 }
 !*/
-define(['Modernizr', 'createElement'], function(Modernizr, createElement) {
-  // dataset API for data-* attributes
-  Modernizr.addTest('dataset', function() {
-    var n = createElement('div');
-    n.setAttribute('data-a-b', 'c');
-    return !!(n.dataset && n.dataset.aB === 'c');
-  });
-});
+define(["Modernizr","createElement"],function(e,t){e.addTest("dataset",function(){var e=t("div");return e.setAttribute("data-a-b","c"),!(!e.dataset||"c"!==e.dataset.aB)})});

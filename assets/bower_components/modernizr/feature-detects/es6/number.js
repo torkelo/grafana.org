@@ -12,17 +12,4 @@
   "tags": ["es6"]
 }
 !*/
-/* DOC
-Check if browser implements ECMAScript 6 Number per specification.
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('es6number', !!(Number.isFinite &&
-    Number.isInteger &&
-    Number.isSafeInteger &&
-    Number.isNaN &&
-    Number.parseInt &&
-    Number.parseFloat &&
-    Number.isInteger(Number.MAX_SAFE_INTEGER) &&
-    Number.isInteger(Number.MIN_SAFE_INTEGER) &&
-    Number.isFinite(Number.EPSILON)));
-});
+define(["Modernizr"],function(e){e.addTest("es6number",!!(Number.isFinite&&Number.isInteger&&Number.isSafeInteger&&Number.isNaN&&Number.parseInt&&Number.parseFloat&&Number.isInteger(Number.MAX_SAFE_INTEGER)&&Number.isInteger(Number.MIN_SAFE_INTEGER)&&Number.isFinite(Number.EPSILON)))});

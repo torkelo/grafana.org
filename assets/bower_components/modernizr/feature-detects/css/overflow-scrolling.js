@@ -11,6 +11,4 @@
   }]
 }
 !*/
-define(['Modernizr', 'testAllProps'], function(Modernizr, testAllProps) {
-  Modernizr.addTest('overflowscrolling', testAllProps('overflowScrolling', 'touch', true));
-});
+define(["Modernizr","testAllProps"],function(e,n){e.addTest("overflowscrolling",n("overflowScrolling","touch",!0))});

@@ -12,17 +12,4 @@
   }]
 }
 !*/
-define(['Modernizr', 'createElement', 'prefixes', 'testAllProps', 'test/css/supports'], function(Modernizr, createElement, testAllProps, prefixes) {
-  Modernizr.addTest('cssfilters', function() {
-    if (Modernizr.supports) {
-      return testAllProps('filter', 'blur(2px)');
-    } else {
-      var el = createElement('a');
-      el.style.cssText = prefixes.join('filter:blur(2px); ');
-      // https://github.com/Modernizr/Modernizr/issues/615
-      // documentMode is needed for false positives in oldIE, please see issue above
-      return !!el.style.length && ((document.documentMode === undefined || document.documentMode > 9));
-    }
-  });
-
-});
+define(["Modernizr","createElement","prefixes","testAllProps","test/css/supports"],function(e,n,t,i){e.addTest("cssfilters",function(){if(e.supports)return t("filter","blur(2px)");var o=n("a");return o.style.cssText=i.join("filter:blur(2px); "),!!o.style.length&&(void 0===document.documentMode||document.documentMode>9)})});

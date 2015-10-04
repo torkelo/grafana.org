@@ -9,12 +9,4 @@
   }]
 }
 !*/
-/* DOC
-Detects support for foreignObject tag in SVG.
-*/
-define(['Modernizr', 'toStringFn'], function(Modernizr, toStringFn) {
-  Modernizr.addTest('svgforeignobject', function() {
-    return !!document.createElementNS &&
-      /SVGForeignObject/.test(toStringFn.call(document.createElementNS('http://www.w3.org/2000/svg', 'foreignObject')));
-  });
-});
+define(["Modernizr","toStringFn"],function(e,t){e.addTest("svgforeignobject",function(){return!!document.createElementNS&&/SVGForeignObject/.test(t.call(document.createElementNS("http://www.w3.org/2000/svg","foreignObject")))})});

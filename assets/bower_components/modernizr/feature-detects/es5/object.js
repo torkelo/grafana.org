@@ -11,23 +11,4 @@
   "tags": ["es5"]
 }
 !*/
-/* DOC
-Check if browser implements ECMAScript 5 Object per specification.
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('es5object', function() {
-    return !!(Object.keys &&
-      Object.create &&
-      Object.getPrototypeOf &&
-      Object.getOwnPropertyNames &&
-      Object.isSealed &&
-      Object.isFrozen &&
-      Object.isExtensible &&
-      Object.getOwnPropertyDescriptor &&
-      Object.defineProperty &&
-      Object.defineProperties &&
-      Object.seal &&
-      Object.freeze &&
-      Object.preventExtensions);
-  });
-});
+define(["Modernizr"],function(e){e.addTest("es5object",function(){return!!(Object.keys&&Object.create&&Object.getPrototypeOf&&Object.getOwnPropertyNames&&Object.isSealed&&Object.isFrozen&&Object.isExtensible&&Object.getOwnPropertyDescriptor&&Object.defineProperty&&Object.defineProperties&&Object.seal&&Object.freeze&&Object.preventExtensions)})});

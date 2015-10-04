@@ -14,21 +14,4 @@
   }]
 }
 !*/
-/* DOC
-Tests for non-alpha lossless webp support.
-*/
-define(['Modernizr', 'addTest'], function(Modernizr, addTest) {
-  Modernizr.addAsyncTest(function() {
-    var image = new Image();
-
-    image.onerror = function() {
-      addTest('webplossless', false, {aliases: ['webp-lossless']});
-    };
-
-    image.onload = function() {
-      addTest('webplossless', image.width == 1, {aliases: ['webp-lossless']});
-    };
-
-    image.src = 'data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=';
-  });
-});
+define(["Modernizr","addTest"],function(e,t){e.addAsyncTest(function(){var e=new Image;e.onerror=function(){t("webplossless",!1,{aliases:["webp-lossless"]})},e.onload=function(){t("webplossless",1==e.width,{aliases:["webp-lossless"]})},e.src="data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA="})});

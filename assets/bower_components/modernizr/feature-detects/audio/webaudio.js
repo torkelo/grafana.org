@@ -13,17 +13,4 @@
   }]
 }
 !*/
-/* DOC
-Detects the older non standard webaudio API, (as opposed to the standards based AudioContext API)
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('webaudio', function() {
-    var prefixed = 'webkitAudioContext' in window;
-    var unprefixed = 'AudioContext' in window;
-
-    if (Modernizr._config.usePrefixes) {
-      return prefixed || unprefixed;
-    }
-    return unprefixed;
-  });
-});
+define(["Modernizr"],function(e){e.addTest("webaudio",function(){var n="webkitAudioContext"in window,t="AudioContext"in window;return e._config.usePrefixes?n||t:t})});

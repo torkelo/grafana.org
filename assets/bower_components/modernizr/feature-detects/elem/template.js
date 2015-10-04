@@ -12,6 +12,4 @@
   }]
 }
 !*/
-define(['Modernizr', 'createElement'], function(Modernizr, createElement) {
-  Modernizr.addTest('template', 'content' in createElement('template'));
-});
+define(["Modernizr","createElement"],function(e,t){e.addTest("template","content"in t("template"))});

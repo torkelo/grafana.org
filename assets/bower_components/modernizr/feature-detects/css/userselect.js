@@ -12,7 +12,4 @@
   }]
 }
 !*/
-define(['Modernizr', 'testAllProps'], function(Modernizr, testAllProps) {
-  //https://github.com/Modernizr/Modernizr/issues/250
-  Modernizr.addTest('userselect', testAllProps('userSelect', 'none', true));
-});
+define(["Modernizr","testAllProps"],function(e,t){e.addTest("userselect",t("userSelect","none",!0))});

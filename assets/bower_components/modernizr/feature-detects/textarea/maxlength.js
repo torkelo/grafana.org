@@ -12,9 +12,4 @@
   ]
 }
 !*/
-/* DOC
-Detect support for the maxlength attribute of a textarea element
-*/
-define(['Modernizr', 'createElement'], function(Modernizr, createElement) {
-  Modernizr.addTest('textareamaxlength', !!('maxLength' in createElement('textarea')));
-});
+define(["Modernizr","createElement"],function(t,e){t.addTest("textareamaxlength",!!("maxLength"in e("textarea")))});

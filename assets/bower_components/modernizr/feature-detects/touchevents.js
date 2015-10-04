@@ -17,34 +17,4 @@
   ]
 }
 !*/
-/* DOC
-Indicates if the browser supports the W3C Touch Events API.
-
-This *does not* necessarily reflect a touchscreen device:
-
-* Older touchscreen devices only emulate mouse events
-* Modern IE touch devices implement the Pointer Events API instead: use `Modernizr.pointerevents` to detect support for that
-* Some browsers & OS setups may enable touch APIs when no touchscreen is connected
-* Future browsers may implement other event models for touch interactions
-
-See this article: [You Can't Detect A Touchscreen](http://www.stucox.com/blog/you-cant-detect-a-touchscreen/).
-
-It's recommended to bind both mouse and touch/pointer events simultaneously – see [this HTML5 Rocks tutorial](http://www.html5rocks.com/en/mobile/touchandmouse/).
-
-This test will also return `true` for Firefox 4 Multitouch support.
-*/
-define(['Modernizr', 'prefixes', 'testStyles'], function(Modernizr, prefixes, testStyles) {
-  // Chrome (desktop) used to lie about its support on this, but that has since been rectified: http://crbug.com/36415
-  Modernizr.addTest('touchevents', function() {
-    var bool;
-    if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
-      bool = true;
-    } else {
-      var query = ['@media (', prefixes.join('touch-enabled),('), 'heartz', ')', '{#modernizr{top:9px;position:absolute}}'].join('');
-      testStyles(query, function(node) {
-        bool = node.offsetTop === 9;
-      });
-    }
-    return bool;
-  });
-});
+define(["Modernizr","prefixes","testStyles"],function(e,n,t){e.addTest("touchevents",function(){var e;if("ontouchstart"in window||window.DocumentTouch&&document instanceof DocumentTouch)e=!0;else{var o=["@media (",n.join("touch-enabled),("),"heartz",")","{#modernizr{top:9px;position:absolute}}"].join("");t(o,function(n){e=9===n.offsetTop})}return e})});

@@ -10,6 +10,4 @@
   ]
 }
 !*/
-define(['Modernizr', 'testAllProps'], function(Modernizr, testAllProps) {
-  Modernizr.addTest('boxshadow', testAllProps('boxShadow', '1px 1px', true));
-});
+define(["Modernizr","testAllProps"],function(e,n){e.addTest("boxshadow",n("boxShadow","1px 1px",!0))});

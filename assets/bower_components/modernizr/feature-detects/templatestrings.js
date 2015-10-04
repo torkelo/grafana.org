@@ -8,18 +8,4 @@
   }]
 }
 !*/
-/* DOC
-Template strings are string literals allowing embedded expressions.
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('templatestrings', function() {
-    var supports;
-    try {
-      // A number of tools, including uglifyjs and require, break on a raw "`", so
-      // use an eval to get around that.
-      eval('``');
-      supports = true;
-    } catch (e) {}
-    return !!supports;
-  });
-});
+define(["Modernizr"],function(Modernizr){Modernizr.addTest("templatestrings",function(){var supports;try{eval("``"),supports=!0}catch(e){}return!!supports})});

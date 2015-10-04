@@ -6,11 +6,4 @@
   "tags": ["css"]
 }
 !*/
-define(['Modernizr', 'testAllProps'], function(Modernizr, testAllProps) {
-  Modernizr.addTest('csstransforms', function() {
-    // Android < 3.0 is buggy, so we sniff and blacklist
-    // http://git.io/hHzL7w
-    return navigator.userAgent.indexOf('Android 2.') === -1 &&
-           testAllProps('transform', 'scale(1)', true);
-  });
-});
+define(["Modernizr","testAllProps"],function(e,t){e.addTest("csstransforms",function(){return-1===navigator.userAgent.indexOf("Android 2.")&&t("transform","scale(1)",!0)})});

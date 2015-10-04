@@ -17,8 +17,4 @@
   }]
 }
 !*/
-define(['Modernizr'], function(Modernizr) {
-  var newSyntax = 'CSS' in window && 'supports' in window.CSS;
-  var oldSyntax = 'supportsCSS' in window;
-  Modernizr.addTest('supports', newSyntax || oldSyntax);
-});
+define(["Modernizr"],function(e){var n="CSS"in window&&"supports"in window.CSS,t="supportsCSS"in window;e.addTest("supports",n||t)});

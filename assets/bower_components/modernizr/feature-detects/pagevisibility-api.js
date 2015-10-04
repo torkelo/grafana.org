@@ -17,9 +17,4 @@
   "polyfills": ["visibilityjs", "visiblyjs", "jquery-visibility"]
 }
 !*/
-/* DOC
-Detects support for the Page Visibility API, which can be used to disable unnecessary actions and otherwise improve user experience.
-*/
-define(['Modernizr', 'prefixed'], function(Modernizr, prefixed) {
-  Modernizr.addTest('pagevisibility', !!prefixed('hidden', document, false));
-});
+define(["Modernizr","prefixed"],function(e,t){e.addTest("pagevisibility",!!t("hidden",document,!1))});

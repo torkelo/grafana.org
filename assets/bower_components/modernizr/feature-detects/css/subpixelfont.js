@@ -17,17 +17,4 @@
   }]
 }
 !*/
-define(['Modernizr', 'testStyles'], function(Modernizr, testStyles) {
-  /*
-   * (to infer if GDI or DirectWrite is used on Windows)
-   */
-  testStyles(
-    '#modernizr{position: absolute; top: -10em; visibility:hidden; font: normal 10px arial;}#subpixel{float: left; font-size: 33.3333%;}',
-  function(elem) {
-    var subpixel = elem.firstChild;
-    subpixel.innerHTML = 'This is a text written in Arial';
-    Modernizr.addTest('subpixelfont', window.getComputedStyle ?
-      window.getComputedStyle(subpixel, null).getPropertyValue('width') !== '44px'
-    : false);
-  }, 1, ['subpixel']);
-});
+define(["Modernizr","testStyles"],function(e,t){t("#modernizr{position: absolute; top: -10em; visibility:hidden; font: normal 10px arial;}#subpixel{float: left; font-size: 33.3333%;}",function(t){var n=t.firstChild;n.innerHTML="This is a text written in Arial",e.addTest("subpixelfont",window.getComputedStyle?"44px"!==window.getComputedStyle(n,null).getPropertyValue("width"):!1)},1,["subpixel"])});

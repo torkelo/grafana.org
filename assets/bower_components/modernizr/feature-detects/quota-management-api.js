@@ -10,14 +10,4 @@
   }]
 }
 !*/
-/* DOC
-Detects the ability to request a specific amount of space for filesystem access
-*/
-define(['Modernizr', 'prefixed'], function(Modernizr, prefixed) {
-  Modernizr.addTest('quotamanagement', function() {
-    var tempStorage = prefixed('temporaryStorage', navigator);
-    var persStorage = prefixed('persistentStorage', navigator);
-
-    return !!(tempStorage && persStorage);
-  });
-});
+define(["Modernizr","prefixed"],function(e,t){e.addTest("quotamanagement",function(){var e=t("temporaryStorage",navigator),n=t("persistentStorage",navigator);return!(!e||!n)})});

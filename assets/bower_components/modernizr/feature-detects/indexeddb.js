@@ -7,19 +7,4 @@
   "polyfills": ["indexeddb"]
 }
 !*/
-/* DOC
-Detects support for the IndexedDB client-side storage API (final spec).
-*/
-define(['Modernizr', 'prefixed'], function(Modernizr, prefixed) {
-  // Vendors had inconsistent prefixing with the experimental Indexed DB:
-  // - Webkit's implementation is accessible through webkitIndexedDB
-  // - Firefox shipped moz_indexedDB before FF4b9, but since then has been mozIndexedDB
-  // For speed, we don't test the legacy (and beta-only) indexedDB
-
-  var indexeddb = prefixed('indexedDB', window);
-  Modernizr.addTest('indexeddb', !!indexeddb);
-
-  if (!!indexeddb) {
-    Modernizr.addTest('indexeddb.deletedatabase', 'deleteDatabase' in indexeddb);
-  }
-});
+define(["Modernizr","prefixed"],function(e,t){var n=t("indexedDB",window);e.addTest("indexeddb",!!n),n&&e.addTest("indexeddb.deletedatabase","deleteDatabase"in n)});

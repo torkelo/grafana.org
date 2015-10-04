@@ -6,17 +6,4 @@
   "tags": ["es6"]
 }
 !*/
-/* DOC
-Check if browser implements ECMAScript 6 Generators per specification.
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('generators', function() {
-    try {
-      /* jshint evil: true */
-      new Function('function* test() {}')();
-    } catch (e) {
-      return false;
-    }
-    return true;
-  });
-});
+define(["Modernizr"],function(e){e.addTest("generators",function(){try{new Function("function* test() {}")()}catch(e){return!1}return!0})});

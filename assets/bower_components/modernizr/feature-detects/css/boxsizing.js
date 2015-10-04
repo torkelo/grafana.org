@@ -15,6 +15,4 @@
   }]
 }
 !*/
-define(['Modernizr', 'testAllProps'], function(Modernizr, testAllProps) {
-  Modernizr.addTest('boxsizing', testAllProps('boxSizing', 'border-box', true) && (document.documentMode === undefined || document.documentMode > 7));
-});
+define(["Modernizr","testAllProps"],function(e,n){e.addTest("boxsizing",n("boxSizing","border-box",!0)&&(void 0===document.documentMode||document.documentMode>7))});

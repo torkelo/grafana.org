@@ -11,9 +11,4 @@
   "polyfills": ["pmxdr", "ppx", "flxhr"]
 }
 !*/
-/* DOC
-Detects support for Cross-Origin Resource Sharing: method of performing XMLHttpRequests across domains.
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('cors', 'XMLHttpRequest' in window && 'withCredentials' in new XMLHttpRequest());
-});
+define(["Modernizr"],function(t){t.addTest("cors","XMLHttpRequest"in window&&"withCredentials"in new XMLHttpRequest)});

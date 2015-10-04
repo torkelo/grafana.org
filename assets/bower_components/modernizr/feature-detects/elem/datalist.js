@@ -18,9 +18,4 @@
   }]
 }
 !*/
-define(['Modernizr', 'test/input'], function(Modernizr) {
-  // lol. we already have a test for datalist built in! silly you.
-  // Leaving it around in case anyone's using it
-
-  Modernizr.addTest('datalistelem', Modernizr.input.list);
-});
+define(["Modernizr","test/input"],function(e){e.addTest("datalistelem",e.input.list)});

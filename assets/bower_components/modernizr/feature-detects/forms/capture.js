@@ -9,10 +9,4 @@
   }]
 }
 !*/
-/* DOC
-When used on an `<input>`, this attribute signifies that the resource it takes should be generated via device's camera, camcorder, sound recorder.
-*/
-define(['Modernizr', 'createElement'], function(Modernizr, createElement) {
-  // testing for capture attribute in inputs
-  Modernizr.addTest('capture', ('capture' in createElement('input')));
-});
+define(["Modernizr","createElement"],function(e,t){e.addTest("capture","capture"in t("input"))});

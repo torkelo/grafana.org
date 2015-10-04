@@ -1,11 +1,1 @@
-define(['docElement'], function(docElement) {
-  /**
-   * A convenience helper to check if the document we are running in is an SVG document
-   *
-   * @access private
-   * @returns {boolean}
-   */
-
-  var isSVG = docElement.nodeName.toLowerCase() === 'svg';
-  return isSVG;
-});
+define(["docElement"],function(e){var t="svg"===e.nodeName.toLowerCase();return t});

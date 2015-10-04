@@ -11,17 +11,4 @@
   "warnings": [ "using position:sticky on anything but top aligned elements is buggy in Chrome < 37 and iOS <=7+" ]
 }
 !*/
-define(['Modernizr', 'createElement', 'prefixes'], function(Modernizr, createElement, prefixes) {
-  // Sticky positioning - constrains an element to be positioned inside the
-  // intersection of its container box, and the viewport.
-  Modernizr.addTest('csspositionsticky', function() {
-    var prop = 'position:';
-    var value = 'sticky';
-    var el = createElement('a');
-    var mStyle = el.style;
-
-    mStyle.cssText = prop + prefixes.join(value + ';' + prop).slice(0, -prop.length);
-
-    return mStyle.position.indexOf(value) !== -1;
-  });
-});
+define(["Modernizr","createElement","prefixes"],function(e,n,t){e.addTest("csspositionsticky",function(){var e="position:",i="sticky",o=n("a"),r=o.style;return r.cssText=e+t.join(i+";"+e).slice(0,-e.length),-1!==r.position.indexOf(i)})});

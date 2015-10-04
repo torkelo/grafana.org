@@ -10,6 +10,4 @@
   }]
 }
 !*/
-define(['Modernizr', 'testAllProps'], function(Modernizr, testAllProps) {
-  Modernizr.addTest('flexboxlegacy', testAllProps('boxDirection', 'reverse', true));
-});
+define(["Modernizr","testAllProps"],function(e,n){e.addTest("flexboxlegacy",n("boxDirection","reverse",!0))});

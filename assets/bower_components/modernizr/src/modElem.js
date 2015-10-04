@@ -1,18 +1,1 @@
-define(['Modernizr', 'createElement'], function(Modernizr, createElement) {
-  /**
-   * Create our "modernizr" element that we do most feature tests on.
-   *
-   * @access private
-   */
-
-  var modElem = {
-    elem : createElement('modernizr')
-  };
-
-  // Clean up this element
-  Modernizr._q.push(function() {
-    delete modElem.elem;
-  });
-
-  return modElem;
-});
+define(["Modernizr","createElement"],function(e,t){var n={elem:t("modernizr")};return e._q.push(function(){delete n.elem}),n});

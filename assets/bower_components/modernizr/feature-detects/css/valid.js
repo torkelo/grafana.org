@@ -8,15 +8,4 @@
   }]
 }
 !*/
-/* DOC
-  Detects support for the ':valid' CSS pseudo-class.
-*/
-define(['Modernizr', 'testStyles', 'createElement'], function(Modernizr, testStyles, createElement) {
-  Modernizr.addTest('cssvalid', function() {
-    return testStyles('#modernizr input{height:0;border:0;padding:0;margin:0;width:10px} #modernizr input:valid{width:50px}', function(elem) {
-      var input = createElement('input');
-      elem.appendChild(input);
-      return input.clientWidth > 10;
-    });
-  });
-});
+define(["Modernizr","testStyles","createElement"],function(e,n,t){e.addTest("cssvalid",function(){return n("#modernizr input{height:0;border:0;padding:0;margin:0;width:10px} #modernizr input:valid{width:50px}",function(e){var n=t("input");return e.appendChild(n),n.clientWidth>10})})});

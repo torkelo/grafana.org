@@ -11,10 +11,4 @@
   "builderAliases": ["fullscreen_api"]
 }
 !*/
-/* DOC
-Detects support for the ability to make the current website take over the user's entire screen
-*/
-define(['Modernizr', 'domPrefixes', 'prefixed'], function(Modernizr, domPrefixes, prefixed) {
-  // github.com/Modernizr/Modernizr/issues/739
-  Modernizr.addTest('fullscreen', !!(prefixed('exitFullscreen', document, false) || prefixed('cancelFullScreen', document, false)));
-});
+define(["Modernizr","domPrefixes","prefixed"],function(e,n,t){e.addTest("fullscreen",!(!t("exitFullscreen",document,!1)&&!t("cancelFullScreen",document,!1)))});

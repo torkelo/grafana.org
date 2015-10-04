@@ -10,10 +10,4 @@
   }]
 }
 !*/
-define(['Modernizr', 'createElement', 'testStyles'], function(Modernizr, createElement, testStyles) {
-  Modernizr.addTest('siblinggeneral', function() {
-    return testStyles('#modernizr div {width:100px} #modernizr div ~ div {width:200px;display:block}', function(elem) {
-      return elem.lastChild.offsetWidth == 200;
-    }, 2);
-  });
-});
+define(["Modernizr","createElement","testStyles"],function(e,n,t){e.addTest("siblinggeneral",function(){return t("#modernizr div {width:100px} #modernizr div ~ div {width:200px;display:block}",function(e){return 200==e.lastChild.offsetWidth},2)})});

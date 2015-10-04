@@ -15,13 +15,4 @@
   "knownBugs": ["False negative on some Chromia browsers."]
 }
 !*/
-/* DOC
-Detects support for inline SVG in HTML (not within XHTML).
-*/
-define(['Modernizr', 'createElement'], function(Modernizr, createElement) {
-  Modernizr.addTest('inlinesvg', function() {
-    var div = createElement('div');
-    div.innerHTML = '<svg/>';
-    return (typeof SVGRect != 'undefined' && div.firstChild && div.firstChild.namespaceURI) == 'http://www.w3.org/2000/svg';
-  });
-});
+define(["Modernizr","createElement"],function(e,t){e.addTest("inlinesvg",function(){var e=t("div");return e.innerHTML="<svg/>","http://www.w3.org/2000/svg"==("undefined"!=typeof SVGRect&&e.firstChild&&e.firstChild.namespaceURI)})});

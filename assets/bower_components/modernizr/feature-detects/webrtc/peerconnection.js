@@ -10,6 +10,4 @@
   }]
 }
 !*/
-define(['Modernizr', 'prefixed'], function(Modernizr, prefixed) {
-  Modernizr.addTest('peerconnection', !!prefixed('RTCPeerConnection', window));
-});
+define(["Modernizr","prefixed"],function(e,t){e.addTest("peerconnection",!!t("RTCPeerConnection",window))});

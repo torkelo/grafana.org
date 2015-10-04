@@ -10,9 +10,4 @@
   "polyfills": ["easyxdm", "postmessage-jquery"]
 }
 !*/
-/* DOC
-Detects support for the `window.postMessage` protocol for cross-document messaging.
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('postmessage', 'postMessage' in window);
-});
+define(["Modernizr"],function(e){e.addTest("postmessage","postMessage"in window)});

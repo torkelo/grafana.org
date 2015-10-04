@@ -13,9 +13,4 @@
     }]
 }
 !*/
-/* DOC
-Test for the `sizes` attribute on images
-*/
-define(['Modernizr', 'createElement'], function(Modernizr, createElement) {
-  Modernizr.addTest('sizes', 'sizes' in createElement('img'));
-});
+define(["Modernizr","createElement"],function(e,t){e.addTest("sizes","sizes"in t("img"))});

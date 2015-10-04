@@ -18,14 +18,4 @@
   "builderAliases": ["event_deviceorientation_motion"]
 }
 !*/
-/* DOC
-Part of Device Access aspect of HTML5, same category as geolocation.
-
-`devicemotion` tests for Device Motion Event support, returns boolean value true/false.
-
-`deviceorientation` tests for Device Orientation Event support, returns boolean value true/false
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('devicemotion', 'DeviceMotionEvent' in window);
-  Modernizr.addTest('deviceorientation', 'DeviceOrientationEvent' in window);
-});
+define(["Modernizr"],function(e){e.addTest("devicemotion","DeviceMotionEvent"in window),e.addTest("deviceorientation","DeviceOrientationEvent"in window)});

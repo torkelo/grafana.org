@@ -13,6 +13,4 @@
     }]
 }
 !*/
-define(['Modernizr', 'testAllProps'], function(Modernizr, testAllProps) {
-  Modernizr.addTest('textalignlast', testAllProps('textAlignLast'));
-});
+define(["Modernizr","testAllProps"],function(e,t){e.addTest("textalignlast",t("textAlignLast"))});

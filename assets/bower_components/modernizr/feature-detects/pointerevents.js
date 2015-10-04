@@ -14,25 +14,4 @@
   "polyfills": ["handjs"]
 }
 !*/
-/* DOC
-Detects support for the DOM Pointer Events API, which provides a unified event interface for pointing input devices, as implemented in IE10+.
-*/
-define(['Modernizr', 'domPrefixes', 'hasEvent'], function(Modernizr, domPrefixes, hasEvent) {
-  // **Test name hijacked!**
-  // Now refers to W3C DOM PointerEvents spec rather than the CSS pointer-events property.
-  Modernizr.addTest('pointerevents', function() {
-    // Cannot use `.prefixed()` for events, so test each prefix
-    var bool = false,
-    i = domPrefixes.length;
-
-    // Don't forget un-prefixed...
-    bool = Modernizr.hasEvent('pointerdown');
-
-    while (i-- && !bool) {
-      if (hasEvent(domPrefixes[i] + 'pointerdown')) {
-        bool = true;
-      }
-    }
-    return bool;
-  });
-});
+define(["Modernizr","domPrefixes","hasEvent"],function(e,t,n){e.addTest("pointerevents",function(){var i=!1,r=t.length;for(i=e.hasEvent("pointerdown");r--&&!i;)n(t[r]+"pointerdown")&&(i=!0);return i})});

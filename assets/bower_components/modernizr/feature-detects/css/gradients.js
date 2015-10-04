@@ -20,26 +20,4 @@
   }]
 }
 !*/
-define(['Modernizr', 'prefixes', 'createElement'], function(Modernizr, prefixes, createElement) {
-
-  Modernizr.addTest('cssgradients', function() {
-
-    var str1 = 'background-image:';
-    var str2 = 'gradient(linear,left top,right bottom,from(#9f9),to(white));';
-    var str3 = 'linear-gradient(left top,#9f9, white);';
-
-    // standard syntax             // trailing 'background-image:'
-    var css = str1 + prefixes.join(str3 + str1).slice(0, -str1.length);
-    if (Modernizr._config.usePrefixes) {
-    // legacy webkit syntax (FIXME: remove when syntax not in use anymore)
-      css += str1 + '-webkit-' + str2;
-    }
-
-    var elem = createElement('a');
-    var style = elem.style;
-    style.cssText = css;
-
-    // IE6 returns undefined so cast to string
-    return ('' + style.backgroundImage).indexOf('gradient') > -1;
-  });
-});
+define(["Modernizr","prefixes","createElement"],function(e,t,n){e.addTest("cssgradients",function(){var i="background-image:",r="gradient(linear,left top,right bottom,from(#9f9),to(white));",o="linear-gradient(left top,#9f9, white);",d=i+t.join(o+i).slice(0,-i.length);e._config.usePrefixes&&(d+=i+"-webkit-"+r);var s=n("a"),a=s.style;return a.cssText=d,(""+a.backgroundImage).indexOf("gradient")>-1})});

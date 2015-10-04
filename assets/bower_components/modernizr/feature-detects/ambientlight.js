@@ -8,9 +8,4 @@
   }]
 }
 !*/
-/* DOC
-Detects support for the API that provides information about the ambient light levels, as detected by the device's light detector, in terms of lux units.
-*/
-define(['Modernizr', 'hasEvent'], function(Modernizr, hasEvent) {
-  Modernizr.addTest('ambientlight', hasEvent('devicelight', window));
-});
+define(["Modernizr","hasEvent"],function(e,t){e.addTest("ambientlight",t("devicelight",window))});

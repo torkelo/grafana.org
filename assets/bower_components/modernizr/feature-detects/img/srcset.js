@@ -12,9 +12,4 @@
     }]
 }
 !*/
-/* DOC
-Test for the srcset attribute of images
-*/
-define(['Modernizr', 'createElement'], function(Modernizr, createElement) {
-  Modernizr.addTest('srcset', 'srcset' in createElement('img'));
-});
+define(["Modernizr","createElement"],function(e,t){e.addTest("srcset","srcset"in t("img"))});

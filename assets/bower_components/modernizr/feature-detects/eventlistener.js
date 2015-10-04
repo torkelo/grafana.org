@@ -10,9 +10,4 @@
   "polyfills": ["eventlistener"]
 }
 !*/
-/* DOC
-Detects native support for addEventListener
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('eventlistener', 'addEventListener' in window);
-});
+define(["Modernizr"],function(e){e.addTest("eventlistener","addEventListener"in window)});

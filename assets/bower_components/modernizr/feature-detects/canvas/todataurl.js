@@ -11,25 +11,4 @@
   }]
 }
 !*/
-define(['Modernizr', 'createElement', 'test/canvas'], function(Modernizr, createElement) {
-
-  var canvas = createElement('canvas');
-
-  Modernizr.addTest('todataurljpeg', function() {
-    return !!Modernizr.canvas && canvas.toDataURL('image/jpeg').indexOf('data:image/jpeg') === 0;
-  });
-  Modernizr.addTest('todataurlpng', function() {
-    return !!Modernizr.canvas && canvas.toDataURL('image/png').indexOf('data:image/png') === 0;
-  });
-  Modernizr.addTest('todataurlwebp', function() {
-    var supports = false;
-
-    // firefox 3 throws an error when you use an "invalid" toDataUrl
-    try {
-      supports = !!Modernizr.canvas && canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
-    } catch (e) {}
-
-    return supports;
-  });
-
-});
+define(["Modernizr","createElement","test/canvas"],function(e,t){var n=t("canvas");e.addTest("todataurljpeg",function(){return!!e.canvas&&0===n.toDataURL("image/jpeg").indexOf("data:image/jpeg")}),e.addTest("todataurlpng",function(){return!!e.canvas&&0===n.toDataURL("image/png").indexOf("data:image/png")}),e.addTest("todataurlwebp",function(){var t=!1;try{t=!!e.canvas&&0===n.toDataURL("image/webp").indexOf("data:image/webp")}catch(i){}return t})});

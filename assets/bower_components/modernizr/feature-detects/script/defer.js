@@ -10,9 +10,4 @@
   "knownBugs": ["False positive in Opera 12"]
 }
 !*/
-/* DOC
-Detects support for the `defer` attribute on the `<script>` element.
-*/
-define(['Modernizr', 'createElement'], function(Modernizr, createElement) {
-  Modernizr.addTest('scriptdefer', 'defer' in createElement('script'));
-});
+define(["Modernizr","createElement"],function(e,t){e.addTest("scriptdefer","defer"in t("script"))});

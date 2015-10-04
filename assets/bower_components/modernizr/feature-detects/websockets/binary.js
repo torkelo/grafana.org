@@ -6,24 +6,4 @@
   "builderAliases": ["websockets_binary"]
 }
 !*/
-define(['Modernizr'], function(Modernizr) {
-  // binaryType is truthy if there is support.. returns "blob" in new-ish chrome.
-  // plus.google.com/115535723976198353696/posts/ERN6zYozENV
-  // github.com/Modernizr/Modernizr/issues/370
-
-  Modernizr.addTest('websocketsbinary', function() {
-    var protocol = 'https:' == location.protocol ? 'wss' : 'ws',
-    protoBin;
-
-    if ('WebSocket' in window) {
-      if (protoBin = 'binaryType' in WebSocket.prototype) {
-        return protoBin;
-      }
-      try {
-        return !!(new WebSocket(protocol + '://.').binaryType);
-      } catch (e) {}
-    }
-
-    return false;
-  });
-});
+define(["Modernizr"],function(e){e.addTest("websocketsbinary",function(){var e,t="https:"==location.protocol?"wss":"ws";if("WebSocket"in window){if(e="binaryType"in WebSocket.prototype)return e;try{return!!new WebSocket(t+"://.").binaryType}catch(n){}}return!1})});

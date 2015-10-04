@@ -15,9 +15,4 @@
   "polyfills": ["perfnow"]
 }
 !*/
-/* DOC
-Detects support for the Navigation Timing API, for measuring browser and connection performance.
-*/
-define(['Modernizr', 'prefixed'], function(Modernizr, prefixed) {
-  Modernizr.addTest('performance', !!prefixed('performance', window));
-});
+define(["Modernizr","prefixed"],function(e,n){e.addTest("performance",!!n("performance",window))});

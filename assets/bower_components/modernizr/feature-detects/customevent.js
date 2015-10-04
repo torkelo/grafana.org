@@ -14,11 +14,4 @@
   "polyfills": ["eventlistener"]
 }
 !*/
-/* DOC
-
-Detects support for CustomEvent.
-
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('customevent', 'CustomEvent' in window && typeof window.CustomEvent === 'function');
-});
+define(["Modernizr"],function(e){e.addTest("customevent","CustomEvent"in window&&"function"==typeof window.CustomEvent)});

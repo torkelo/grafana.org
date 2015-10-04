@@ -7,6 +7,4 @@
   "builderAliases": ["css_mediaqueries"]
 }
 !*/
-define(['Modernizr', 'mq'], function(Modernizr, mq) {
-  Modernizr.addTest('mediaqueries', mq('only all'));
-});
+define(["Modernizr","mq"],function(e,t){e.addTest("mediaqueries",t("only all"))});

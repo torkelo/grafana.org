@@ -12,12 +12,4 @@
   }]
 }
 !*/
-/* DOC
-
-Determines if DOM4 MutationObserver support is available.
-
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('mutationobserver',
-    !!window.MutationObserver || !!window.WebKitMutationObserver);
-});
+define(["Modernizr"],function(e){e.addTest("mutationobserver",!!window.MutationObserver||!!window.WebKitMutationObserver)});

@@ -26,24 +26,4 @@
   }]
 }
 !*/
-define(['Modernizr', 'testStyles'], function(Modernizr, testStyles) {
-  var blacklist = (function() {
-    var ua = navigator.userAgent;
-    var wkvers = ua.match(/applewebkit\/([0-9]+)/gi) && parseFloat(RegExp.$1);
-    var webos = ua.match(/w(eb)?osbrowser/gi);
-    var wppre8 = ua.match(/windows phone/gi) && ua.match(/iemobile\/([0-9])+/gi) && parseFloat(RegExp.$1) >= 9;
-    var oldandroid = wkvers < 533 && ua.match(/android/gi);
-    return webos || oldandroid || wppre8;
-  }());
-  if (blacklist) {
-    Modernizr.addTest('fontface', false);
-  } else {
-    testStyles('@font-face {font-family:"font";src:url("https://")}', function(node, rule) {
-      var style = document.getElementById('smodernizr');
-      var sheet = style.sheet || style.styleSheet;
-      var cssText = sheet ? (sheet.cssRules && sheet.cssRules[0] ? sheet.cssRules[0].cssText : sheet.cssText || '') : '';
-      var bool = /src/i.test(cssText) && cssText.indexOf(rule.split(' ')[0]) === 0;
-      Modernizr.addTest('fontface', bool);
-    });
-  }
-});
+define(["Modernizr","testStyles"],function(e,t){var n=function(){var e=navigator.userAgent,t=e.match(/applewebkit\/([0-9]+)/gi)&&parseFloat(RegExp.$1),n=e.match(/w(eb)?osbrowser/gi),i=e.match(/windows phone/gi)&&e.match(/iemobile\/([0-9])+/gi)&&parseFloat(RegExp.$1)>=9,r=533>t&&e.match(/android/gi);return n||r||i}();n?e.addTest("fontface",!1):t('@font-face {font-family:"font";src:url("https://")}',function(t,n){var i=document.getElementById("smodernizr"),r=i.sheet||i.styleSheet,o=r?r.cssRules&&r.cssRules[0]?r.cssRules[0].cssText:r.cssText||"":"",d=/src/i.test(o)&&0===o.indexOf(n.split(" ")[0]);e.addTest("fontface",d)})});

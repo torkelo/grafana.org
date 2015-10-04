@@ -10,20 +10,4 @@
   }]
 }
 !*/
-/* DOC
-Determines if winding rules, which controls if a path can go clockwise or counterclockwise
-*/
-define(['Modernizr', 'createElement', 'test/canvas'], function(Modernizr, createElement) {
-
-  Modernizr.addTest('canvaswinding', function() {
-    if (Modernizr.canvas === false) {
-      return false;
-    }
-    var ctx = createElement('canvas').getContext('2d');
-
-    ctx.rect(0, 0, 10, 10);
-    ctx.rect(2, 2, 6, 6);
-    return ctx.isPointInPath(5, 5, 'evenodd') === false;
-  });
-
-});
+define(["Modernizr","createElement","test/canvas"],function(e,t){e.addTest("canvaswinding",function(){if(e.canvas===!1)return!1;var n=t("canvas").getContext("2d");return n.rect(0,0,10,10),n.rect(2,2,6,6),n.isPointInPath(5,5,"evenodd")===!1})});

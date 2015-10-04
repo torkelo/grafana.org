@@ -7,13 +7,4 @@
   "polyfills": ["jebgl", "cwebgl", "iewebgl"]
 }
 !*/
-define(['Modernizr', 'createElement'], function(Modernizr, createElement) {
-  Modernizr.addTest('webgl', function() {
-    var canvas = createElement('canvas');
-    var supports = 'probablySupportsContext' in canvas ? 'probablySupportsContext' :  'supportsContext';
-    if (supports in canvas) {
-      return canvas[supports]('webgl') || canvas[supports]('experimental-webgl');
-    }
-    return 'WebGLRenderingContext' in window;
-  });
-});
+define(["Modernizr","createElement"],function(e,t){e.addTest("webgl",function(){var e=t("canvas"),n="probablySupportsContext"in e?"probablySupportsContext":"supportsContext";return n in e?e[n]("webgl")||e[n]("experimental-webgl"):"WebGLRenderingContext"in window})});

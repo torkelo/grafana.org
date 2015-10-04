@@ -12,11 +12,4 @@
   "tags": ["es6"]
 }
 !*/
-/* DOC
-Check if browser implements ECMAScript 6 Object per specification.
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('es6object', !!(Object.assign &&
-    Object.is &&
-    Object.setPrototypeOf));
-});
+define(["Modernizr"],function(e){e.addTest("es6object",!!(Object.assign&&Object.is&&Object.setPrototypeOf))});

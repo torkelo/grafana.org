@@ -12,22 +12,4 @@
   "warnings": ["Opera Mini supports :target but doesn't update the hash for anchor links."]
 }
 !*/
-/* DOC
-Detects support for the ':target' CSS pseudo-class.
-*/
-define(['Modernizr'], function(Modernizr) {
-  // querySelector
-  Modernizr.addTest('target', function() {
-    var doc = window.document;
-    if (!('querySelectorAll' in doc)) {
-      return false;
-    }
-
-    try {
-      doc.querySelectorAll(':target');
-      return true;
-    } catch (e) {
-      return false;
-    }
-  });
-});
+define(["Modernizr"],function(e){e.addTest("target",function(){var e=window.document;if(!("querySelectorAll"in e))return!1;try{return e.querySelectorAll(":target"),!0}catch(n){return!1}})});

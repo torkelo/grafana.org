@@ -12,6 +12,4 @@
   "polyfills": ["getusermedia"]
 }
 !*/
-define(['Modernizr', 'prefixed'], function(Modernizr, prefixed) {
-  Modernizr.addTest('getusermedia', !!prefixed('getUserMedia', navigator));
-});
+define(["Modernizr","prefixed"],function(e,t){e.addTest("getusermedia",!!t("getUserMedia",navigator))});

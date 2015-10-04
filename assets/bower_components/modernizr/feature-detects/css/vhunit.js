@@ -14,12 +14,4 @@
   }]
 }
 !*/
-define(['Modernizr', 'testStyles'], function(Modernizr, testStyles) {
-  testStyles('#modernizr { height: 50vh; }', function(elem) {
-    var height = parseInt(window.innerHeight / 2, 10);
-    var compStyle = parseInt((window.getComputedStyle ?
-                              getComputedStyle(elem, null) :
-                              elem.currentStyle)['height'], 10);
-    Modernizr.addTest('cssvhunit', compStyle == height);
-  });
-});
+define(["Modernizr","testStyles"],function(e,t){t("#modernizr { height: 50vh; }",function(t){var n=parseInt(window.innerHeight/2,10),i=parseInt((window.getComputedStyle?getComputedStyle(t,null):t.currentStyle).height,10);e.addTest("cssvhunit",i==n)})});

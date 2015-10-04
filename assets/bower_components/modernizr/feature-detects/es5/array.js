@@ -11,21 +11,4 @@
   "tags": ["es5"]
 }
 !*/
-/* DOC
-Check if browser implements ECMAScript 5 Array per specification.
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('es5array', function() {
-    return !!(Array.prototype &&
-      Array.prototype.every &&
-      Array.prototype.filter &&
-      Array.prototype.forEach &&
-      Array.prototype.indexOf &&
-      Array.prototype.lastIndexOf &&
-      Array.prototype.map &&
-      Array.prototype.some &&
-      Array.prototype.reduce &&
-      Array.prototype.reduceRight &&
-      Array.isArray);
-  });
-});
+define(["Modernizr"],function(e){e.addTest("es5array",function(){return!!(Array.prototype&&Array.prototype.every&&Array.prototype.filter&&Array.prototype.forEach&&Array.prototype.indexOf&&Array.prototype.lastIndexOf&&Array.prototype.map&&Array.prototype.some&&Array.prototype.reduce&&Array.prototype.reduceRight&&Array.isArray)})});

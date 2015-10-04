@@ -15,11 +15,4 @@
   "polyfills": ["matchmediajs"]
 }
 !*/
-/* DOC
-
-Detects support for matchMedia.
-
-*/
-define(['Modernizr', 'prefixed'], function(Modernizr, prefixed) {
-  Modernizr.addTest('matchmedia', !!prefixed('matchMedia', window));
-});
+define(["Modernizr","prefixed"],function(e,t){e.addTest("matchmedia",!!t("matchMedia",window))});

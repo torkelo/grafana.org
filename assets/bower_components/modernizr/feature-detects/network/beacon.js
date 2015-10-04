@@ -13,9 +13,4 @@
   "authors": ["Cătălin Mariș"]
 }
 !*/
-/* DOC
-Detects support for an API that allows for asynchronous transfer of small HTTP data from the client to a server.
-*/
-define(['Modernizr'], function(Modernizr) {
-  Modernizr.addTest('beacon', 'sendBeacon' in navigator);
-});
+define(["Modernizr"],function(e){e.addTest("beacon","sendBeacon"in navigator)});

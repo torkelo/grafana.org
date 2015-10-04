@@ -8,10 +8,4 @@
   "authors": ["Stefan Wallin"]
 }
 !*/
-define(['Modernizr', 'createElement'], function(Modernizr, createElement) {
-  // Tests for progressbar-support. All browsers that don't support progressbar returns undefined =)
-  Modernizr.addTest('progressbar', createElement('progress').max !== undefined);
-
-  // Tests for meter-support. All browsers that don't support meters returns undefined =)
-  Modernizr.addTest('meter', createElement('meter').max !== undefined);
-});
+define(["Modernizr","createElement"],function(e,t){e.addTest("progressbar",void 0!==t("progress").max),e.addTest("meter",void 0!==t("meter").max)});

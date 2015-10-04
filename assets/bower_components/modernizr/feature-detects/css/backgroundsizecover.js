@@ -10,7 +10,4 @@
   }]
 }
 !*/
-define(['Modernizr', 'testAllProps'], function(Modernizr, testAllProps) {
-  // Must test value, as this specifically tests the `cover` value
-  Modernizr.addTest('bgsizecover', testAllProps('backgroundSize', 'cover'));
-});
+define(["Modernizr","testAllProps"],function(e,t){e.addTest("bgsizecover",t("backgroundSize","cover"))});

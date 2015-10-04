@@ -6,9 +6,4 @@
   "tags": ["es6"]
 }
 !*/
-/* DOC
-Check if browser implements ECMAScript 6 `String.prototype.contains` per specification.
-*/
-define(['Modernizr', 'is'], function(Modernizr, is) {
-  Modernizr.addTest('contains', is(String.prototype.contains, 'function'));
-});
+define(["Modernizr","is"],function(e,t){e.addTest("contains",t(String.prototype.contains,"function"))});

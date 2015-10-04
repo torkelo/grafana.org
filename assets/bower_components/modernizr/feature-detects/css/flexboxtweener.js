@@ -11,6 +11,4 @@
   "warnings": ["This represents an old syntax, not the latest standard syntax."]
 }
 !*/
-define(['Modernizr', 'testAllProps'], function(Modernizr, testAllProps) {
-  Modernizr.addTest('flexboxtweener', testAllProps('flexAlign', 'end', true));
-});
+define(["Modernizr","testAllProps"],function(e,n){e.addTest("flexboxtweener",n("flexAlign","end",!0))});
