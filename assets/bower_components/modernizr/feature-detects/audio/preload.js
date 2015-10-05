@@ -5,4 +5,4 @@
   "tags": ["audio", "media"]
 }
 !*/
-define(["Modernizr","createElement"],function(t,e){t.addTest("audiopreload","preload"in e("audio"))});
+define(["Modernizr","createElement"],function(e,t){e.addTest("audiopreload","preload"in t("audio"))});
