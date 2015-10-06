@@ -17,4 +17,4 @@
   }]
 }
 !*/
-define(["Modernizr"],function(e){var t="CSS"in window&&"supports"in window.CSS,n="supportsCSS"in window;e.addTest("supports",t||n)});
+define(["Modernizr"],function(e){var n="CSS"in window&&"supports"in window.CSS,t="supportsCSS"in window;e.addTest("supports",n||t)});

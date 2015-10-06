@@ -12,4 +12,4 @@
   "knownBugs": ["Will fail in Safari 5 due to its lack of support for the standards defined FileReader object"]
 }
 !*/
-define(["Modernizr"],function(e){e.addTest("filereader",!!(window.File&&window.FileList&&window.FileReader))});
+define(["Modernizr"],function(t){t.addTest("filereader",!!(window.File&&window.FileList&&window.FileReader))});

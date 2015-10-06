@@ -11,4 +11,4 @@
   }]
 }
 !*/
-define(["Modernizr","testAllProps"],function(e,t){e.addTest("borderradius",t("borderRadius","0px",!0))});
+define(["Modernizr","testAllProps"],function(e,n){e.addTest("borderradius",n("borderRadius","0px",!0))});

@@ -16,4 +16,4 @@
   }]
 }
 !*/
-define(["Modernizr","createElement"],function(e,t){e.addTest("bgpositionshorthand",function(){var e=t("a"),n=e.style,r="right 10px bottom 10px";return n.cssText="background-position: "+r+";",n.backgroundPosition===r})});
+define(["Modernizr","createElement"],function(e,t){e.addTest("bgpositionshorthand",function(){var e=t("a"),n=e.style,i="right 10px bottom 10px";return n.cssText="background-position: "+i+";",n.backgroundPosition===i})});
