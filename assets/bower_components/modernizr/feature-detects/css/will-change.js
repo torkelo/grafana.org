@@ -8,4 +8,4 @@
   }]
 }
 !*/
-define(["Modernizr","docElement"],function(e,n){e.addTest("willchange","willChange"in n.style)});
+define(["Modernizr","docElement"],function(e,t){e.addTest("willchange","willChange"in t.style)});

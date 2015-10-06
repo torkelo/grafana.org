@@ -14,4 +14,4 @@
   }]
 }
 !*/
-define(["Modernizr","docElement","testStyles","roundedEquals"],function(e,t,n,i){n("#modernizr1{width: 50vmax}#modernizr2{width:50px;height:50px;overflow:scroll}",function(n){var o=n.childNodes[1],r=n.childNodes[0],d=parseInt((r.offsetWidth-r.clientWidth)/2,10),s=t.clientWidth/100,a=t.clientHeight/100,c=parseInt(50*Math.max(s,a),10),u=parseInt((window.getComputedStyle?getComputedStyle(o,null):o.currentStyle).width,10);e.addTest("cssvmaxunit",i(c,u)||i(c,u-d))},2)});
+define(["Modernizr","docElement","testStyles","roundedEquals"],function(e,t,n,r){n("#modernizr1{width: 50vmax}#modernizr2{width:50px;height:50px;overflow:scroll}",function(n){var i=n.childNodes[1],o=n.childNodes[0],s=parseInt((o.offsetWidth-o.clientWidth)/2,10),a=t.clientWidth/100,u=t.clientHeight/100,l=parseInt(50*Math.max(a,u),10),c=parseInt((window.getComputedStyle?getComputedStyle(i,null):i.currentStyle).width,10);e.addTest("cssvmaxunit",r(l,c)||r(l,c-s))},2)});

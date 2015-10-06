@@ -11,4 +11,4 @@
   "warnings": [ "using position:sticky on anything but top aligned elements is buggy in Chrome < 37 and iOS <=7+" ]
 }
 !*/
-define(["Modernizr","createElement","prefixes"],function(e,n,t){e.addTest("csspositionsticky",function(){var e="position:",o="sticky",i=n("a"),r=i.style;return r.cssText=e+t.join(o+";"+e).slice(0,-e.length),-1!==r.position.indexOf(o)})});
+define(["Modernizr","createElement","prefixes"],function(e,t,n){e.addTest("csspositionsticky",function(){var e="position:",r="sticky",i=t("a"),o=i.style;return o.cssText=e+n.join(r+";"+e).slice(0,-e.length),-1!==o.position.indexOf(r)})});

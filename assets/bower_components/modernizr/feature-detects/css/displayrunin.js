@@ -14,4 +14,4 @@
   }]
 }
 !*/
-define(["Modernizr","testAllProps"],function(e,n){e.addTest("displayrunin",n("display","run-in"),{aliases:["display-runin"]})});
+define(["Modernizr","testAllProps"],function(e,t){e.addTest("displayrunin",t("display","run-in"),{aliases:["display-runin"]})});

@@ -11,4 +11,4 @@
   "tags": ["url"]
 }
 !*/
-define(["Modernizr"],function(t){t.addTest("urlparser",function(){var t;try{return t=new URL("http://modernizr.com/"),"http://modernizr.com/"===t.href}catch(e){return!1}})});
+define(["Modernizr"],function(e){e.addTest("urlparser",function(){var e;try{return e=new URL("http://modernizr.com/"),"http://modernizr.com/"===e.href}catch(t){return!1}})});

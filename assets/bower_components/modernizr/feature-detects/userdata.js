@@ -10,4 +10,4 @@
   }]
 }
 !*/
-define(["Modernizr","createElement"],function(t,e){t.addTest("userdata",!!e("div").addBehavior)});
+define(["Modernizr","createElement"],function(e,t){e.addTest("userdata",!!t("div").addBehavior)});

@@ -10,4 +10,4 @@
   }]
 }
 !*/
-define(["Modernizr","modElem"],function(e,t){e.addTest("cssexunit",function(){var e,n=t.elem.style;try{n.fontSize="3ex",e=-1!==n.fontSize.indexOf("ex")}catch(i){e=!1}return e})});
+define(["Modernizr","modElem"],function(e,t){e.addTest("cssexunit",function(){var e,n=t.elem.style;try{n.fontSize="3ex",e=-1!==n.fontSize.indexOf("ex")}catch(r){e=!1}return e})});
